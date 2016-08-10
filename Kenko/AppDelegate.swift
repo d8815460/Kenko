@@ -7,15 +7,26 @@
 //
 
 import UIKit
+import Fabric
+import Crashlytics
+import Parse
+import ParseCrashReporting
+import ParseFacebookUtilsV4
+import MBProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var networkStatus: Reachability.NetworkStatus?
+    private var firstLaunch: Bool = true
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        Fabric.with([Crashlytics.self])
+
         return true
     }
 

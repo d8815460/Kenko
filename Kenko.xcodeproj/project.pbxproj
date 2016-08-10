@@ -1,1121 +1,663 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>0ADA6E4E9D3B46CDC87ABC0B</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>17E225D623FDBE6AF2F8D23D</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Kenko/Pods-Kenko-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>235E62101D5AB6EA00E7B099</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>235E621B1D5AB6EA00E7B099</string>
-				<string>235E62301D5AB6EA00E7B099</string>
-				<string>235E623B1D5AB6EA00E7B099</string>
-				<string>235E621A1D5AB6EA00E7B099</string>
-				<string>945513B9789E55452AAF00F6</string>
-				<string>FC6278DFC8A37669D21C1B8C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>235E62111D5AB6EA00E7B099</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastSwiftUpdateCheck</key>
-				<string>0730</string>
-				<key>LastUpgradeCheck</key>
-				<string>0730</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>&#39423;&#36920; &#38515;</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>235E62181D5AB6EA00E7B099</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3.1</string>
-					</dict>
-					<key>235E622C1D5AB6EA00E7B099</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3.1</string>
-						<key>TestTargetID</key>
-						<string>235E62181D5AB6EA00E7B099</string>
-					</dict>
-					<key>235E62371D5AB6EA00E7B099</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>7.3.1</string>
-						<key>TestTargetID</key>
-						<string>235E62181D5AB6EA00E7B099</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>235E62141D5AB6EA00E7B099</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-				<string>Base</string>
-			</array>
-			<key>mainGroup</key>
-			<string>235E62101D5AB6EA00E7B099</string>
-			<key>productRefGroup</key>
-			<string>235E621A1D5AB6EA00E7B099</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>235E62181D5AB6EA00E7B099</string>
-				<string>235E622C1D5AB6EA00E7B099</string>
-				<string>235E62371D5AB6EA00E7B099</string>
-			</array>
-		</dict>
-		<key>235E62141D5AB6EA00E7B099</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>235E623F1D5AB6EA00E7B099</string>
-				<string>235E62401D5AB6EA00E7B099</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>235E62151D5AB6EA00E7B099</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>235E621F1D5AB6EA00E7B099</string>
-				<string>235E621D1D5AB6EA00E7B099</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>235E62161D5AB6EA00E7B099</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>B355BDB8D25C6F3513469132</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>235E62171D5AB6EA00E7B099</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>235E62271D5AB6EA00E7B099</string>
-				<string>235E62241D5AB6EA00E7B099</string>
-				<string>235E62221D5AB6EA00E7B099</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>235E62181D5AB6EA00E7B099</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>235E62411D5AB6EA00E7B099</string>
-			<key>buildPhases</key>
-			<array>
-				<string>0ADA6E4E9D3B46CDC87ABC0B</string>
-				<string>235E62151D5AB6EA00E7B099</string>
-				<string>235E62161D5AB6EA00E7B099</string>
-				<string>235E62171D5AB6EA00E7B099</string>
-				<string>17E225D623FDBE6AF2F8D23D</string>
-				<string>96F1B9144944E97ACC1BE541</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Kenko</string>
-			<key>productName</key>
-			<string>Kenko</string>
-			<key>productReference</key>
-			<string>235E62191D5AB6EA00E7B099</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>235E62191D5AB6EA00E7B099</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Kenko.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>235E621A1D5AB6EA00E7B099</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>235E62191D5AB6EA00E7B099</string>
-				<string>235E622D1D5AB6EA00E7B099</string>
-				<string>235E62381D5AB6EA00E7B099</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>235E621B1D5AB6EA00E7B099</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>235E621C1D5AB6EA00E7B099</string>
-				<string>235E621E1D5AB6EA00E7B099</string>
-				<string>235E62201D5AB6EA00E7B099</string>
-				<string>235E62231D5AB6EA00E7B099</string>
-				<string>235E62251D5AB6EA00E7B099</string>
-				<string>235E62281D5AB6EA00E7B099</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Kenko</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>235E621C1D5AB6EA00E7B099</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>AppDelegate.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>235E621D1D5AB6EA00E7B099</key>
-		<dict>
-			<key>fileRef</key>
-			<string>235E621C1D5AB6EA00E7B099</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>235E621E1D5AB6EA00E7B099</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>235E621F1D5AB6EA00E7B099</key>
-		<dict>
-			<key>fileRef</key>
-			<string>235E621E1D5AB6EA00E7B099</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>235E62201D5AB6EA00E7B099</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>235E62211D5AB6EA00E7B099</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>235E62211D5AB6EA00E7B099</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>235E62221D5AB6EA00E7B099</key>
-		<dict>
-			<key>fileRef</key>
-			<string>235E62201D5AB6EA00E7B099</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>235E62231D5AB6EA00E7B099</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Assets.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>235E62241D5AB6EA00E7B099</key>
-		<dict>
-			<key>fileRef</key>
-			<string>235E62231D5AB6EA00E7B099</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>235E62251D5AB6EA00E7B099</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>235E62261D5AB6EA00E7B099</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>235E62261D5AB6EA00E7B099</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/LaunchScreen.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>235E62271D5AB6EA00E7B099</key>
-		<dict>
-			<key>fileRef</key>
-			<string>235E62251D5AB6EA00E7B099</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>235E62281D5AB6EA00E7B099</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>235E62291D5AB6EA00E7B099</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>235E62321D5AB6EA00E7B099</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>235E622A1D5AB6EA00E7B099</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>235E622B1D5AB6EA00E7B099</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>235E622C1D5AB6EA00E7B099</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>235E62441D5AB6EA00E7B099</string>
-			<key>buildPhases</key>
-			<array>
-				<string>235E62291D5AB6EA00E7B099</string>
-				<string>235E622A1D5AB6EA00E7B099</string>
-				<string>235E622B1D5AB6EA00E7B099</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>235E622F1D5AB6EA00E7B099</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>KenkoTests</string>
-			<key>productName</key>
-			<string>KenkoTests</string>
-			<key>productReference</key>
-			<string>235E622D1D5AB6EA00E7B099</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>235E622D1D5AB6EA00E7B099</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>KenkoTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>235E622E1D5AB6EA00E7B099</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>235E62111D5AB6EA00E7B099</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>235E62181D5AB6EA00E7B099</string>
-			<key>remoteInfo</key>
-			<string>Kenko</string>
-		</dict>
-		<key>235E622F1D5AB6EA00E7B099</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>235E62181D5AB6EA00E7B099</string>
-			<key>targetProxy</key>
-			<string>235E622E1D5AB6EA00E7B099</string>
-		</dict>
-		<key>235E62301D5AB6EA00E7B099</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>235E62311D5AB6EA00E7B099</string>
-				<string>235E62331D5AB6EA00E7B099</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>KenkoTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>235E62311D5AB6EA00E7B099</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>KenkoTests.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>235E62321D5AB6EA00E7B099</key>
-		<dict>
-			<key>fileRef</key>
-			<string>235E62311D5AB6EA00E7B099</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>235E62331D5AB6EA00E7B099</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>235E62341D5AB6EA00E7B099</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>235E623D1D5AB6EA00E7B099</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>235E62351D5AB6EA00E7B099</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>235E62361D5AB6EA00E7B099</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>235E62371D5AB6EA00E7B099</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>235E62471D5AB6EA00E7B099</string>
-			<key>buildPhases</key>
-			<array>
-				<string>235E62341D5AB6EA00E7B099</string>
-				<string>235E62351D5AB6EA00E7B099</string>
-				<string>235E62361D5AB6EA00E7B099</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>235E623A1D5AB6EA00E7B099</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>KenkoUITests</string>
-			<key>productName</key>
-			<string>KenkoUITests</string>
-			<key>productReference</key>
-			<string>235E62381D5AB6EA00E7B099</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.ui-testing</string>
-		</dict>
-		<key>235E62381D5AB6EA00E7B099</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>KenkoUITests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>235E62391D5AB6EA00E7B099</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>235E62111D5AB6EA00E7B099</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>235E62181D5AB6EA00E7B099</string>
-			<key>remoteInfo</key>
-			<string>Kenko</string>
-		</dict>
-		<key>235E623A1D5AB6EA00E7B099</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>235E62181D5AB6EA00E7B099</string>
-			<key>targetProxy</key>
-			<string>235E62391D5AB6EA00E7B099</string>
-		</dict>
-		<key>235E623B1D5AB6EA00E7B099</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>235E623C1D5AB6EA00E7B099</string>
-				<string>235E623E1D5AB6EA00E7B099</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>KenkoUITests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>235E623C1D5AB6EA00E7B099</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>KenkoUITests.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>235E623D1D5AB6EA00E7B099</key>
-		<dict>
-			<key>fileRef</key>
-			<string>235E623C1D5AB6EA00E7B099</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>235E623E1D5AB6EA00E7B099</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>235E623F1D5AB6EA00E7B099</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>ENABLE_TESTABILITY</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>235E62401D5AB6EA00E7B099</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_ANALYZER_NONNULL</key>
-				<string>YES</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_NO_COMMON_BLOCKS</key>
-				<string>YES</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>235E62411D5AB6EA00E7B099</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>235E62421D5AB6EA00E7B099</string>
-				<string>235E62431D5AB6EA00E7B099</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>235E62421D5AB6EA00E7B099</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>481D719C2E9835974B33CA4A</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Kenko/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.ayi.Kenko</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>235E62431D5AB6EA00E7B099</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>812C4A4D17657796E2AF0293</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Kenko/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.ayi.Kenko</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>235E62441D5AB6EA00E7B099</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>235E62451D5AB6EA00E7B099</string>
-				<string>235E62461D5AB6EA00E7B099</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>235E62451D5AB6EA00E7B099</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>INFOPLIST_FILE</key>
-				<string>KenkoTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.ayi.KenkoTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/Kenko.app/Kenko</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>235E62461D5AB6EA00E7B099</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>INFOPLIST_FILE</key>
-				<string>KenkoTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.ayi.KenkoTests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/Kenko.app/Kenko</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>235E62471D5AB6EA00E7B099</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>235E62481D5AB6EA00E7B099</string>
-				<string>235E62491D5AB6EA00E7B099</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>235E62481D5AB6EA00E7B099</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>INFOPLIST_FILE</key>
-				<string>KenkoUITests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.ayi.KenkoUITests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_TARGET_NAME</key>
-				<string>Kenko</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>235E62491D5AB6EA00E7B099</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>INFOPLIST_FILE</key>
-				<string>KenkoUITests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.ayi.KenkoUITests</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_TARGET_NAME</key>
-				<string>Kenko</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>481D719C2E9835974B33CA4A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-Kenko.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-Kenko/Pods-Kenko.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>812C4A4D17657796E2AF0293</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-Kenko.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-Kenko/Pods-Kenko.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>945513B9789E55452AAF00F6</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>481D719C2E9835974B33CA4A</string>
-				<string>812C4A4D17657796E2AF0293</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>96F1B9144944E97ACC1BE541</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Kenko/Pods-Kenko-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>B355BDB8D25C6F3513469132</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E9778FCFAEC049737939DD75</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>E9778FCFAEC049737939DD75</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_Kenko.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>FC6278DFC8A37669D21C1B8C</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>E9778FCFAEC049737939DD75</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>235E62111D5AB6EA00E7B099</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		235E621D1D5AB6EA00E7B099 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E621C1D5AB6EA00E7B099 /* AppDelegate.swift */; };
+		235E621F1D5AB6EA00E7B099 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E621E1D5AB6EA00E7B099 /* ViewController.swift */; };
+		235E62221D5AB6EA00E7B099 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235E62201D5AB6EA00E7B099 /* Main.storyboard */; };
+		235E62241D5AB6EA00E7B099 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 235E62231D5AB6EA00E7B099 /* Assets.xcassets */; };
+		235E62271D5AB6EA00E7B099 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235E62251D5AB6EA00E7B099 /* LaunchScreen.storyboard */; };
+		235E62321D5AB6EA00E7B099 /* KenkoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E62311D5AB6EA00E7B099 /* KenkoTests.swift */; };
+		235E623D1D5AB6EA00E7B099 /* KenkoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E623C1D5AB6EA00E7B099 /* KenkoUITests.swift */; };
+		235E626D1D5AC50C00E7B099 /* PAPCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E62691D5AC50C00E7B099 /* PAPCache.swift */; };
+		235E626E1D5AC50C00E7B099 /* PAPCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E62691D5AC50C00E7B099 /* PAPCache.swift */; };
+		235E626F1D5AC50C00E7B099 /* PAPCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E62691D5AC50C00E7B099 /* PAPCache.swift */; };
+		235E62701D5AC50C00E7B099 /* PAPConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E626A1D5AC50C00E7B099 /* PAPConstants.swift */; };
+		235E62711D5AC50C00E7B099 /* PAPConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E626A1D5AC50C00E7B099 /* PAPConstants.swift */; };
+		235E62721D5AC50C00E7B099 /* PAPConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E626A1D5AC50C00E7B099 /* PAPConstants.swift */; };
+		235E62731D5AC50C00E7B099 /* PAPUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E626B1D5AC50C00E7B099 /* PAPUtility.swift */; };
+		235E62741D5AC50C00E7B099 /* PAPUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E626B1D5AC50C00E7B099 /* PAPUtility.swift */; };
+		235E62751D5AC50C00E7B099 /* PAPUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E626B1D5AC50C00E7B099 /* PAPUtility.swift */; };
+		235E62761D5AC50C00E7B099 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E626C1D5AC50C00E7B099 /* Reachability.swift */; };
+		235E62771D5AC50C00E7B099 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E626C1D5AC50C00E7B099 /* Reachability.swift */; };
+		235E62781D5AC50C00E7B099 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E626C1D5AC50C00E7B099 /* Reachability.swift */; };
+		B355BDB8D25C6F3513469132 /* Pods_Kenko.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9778FCFAEC049737939DD75 /* Pods_Kenko.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		235E622E1D5AB6EA00E7B099 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 235E62111D5AB6EA00E7B099 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 235E62181D5AB6EA00E7B099;
+			remoteInfo = Kenko;
+		};
+		235E62391D5AB6EA00E7B099 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 235E62111D5AB6EA00E7B099 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 235E62181D5AB6EA00E7B099;
+			remoteInfo = Kenko;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		235E62191D5AB6EA00E7B099 /* Kenko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kenko.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		235E621C1D5AB6EA00E7B099 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		235E621E1D5AB6EA00E7B099 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		235E62211D5AB6EA00E7B099 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		235E62231D5AB6EA00E7B099 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		235E62261D5AB6EA00E7B099 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		235E62281D5AB6EA00E7B099 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		235E622D1D5AB6EA00E7B099 /* KenkoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KenkoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		235E62311D5AB6EA00E7B099 /* KenkoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KenkoTests.swift; sourceTree = "<group>"; };
+		235E62331D5AB6EA00E7B099 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		235E62381D5AB6EA00E7B099 /* KenkoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KenkoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		235E623C1D5AB6EA00E7B099 /* KenkoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KenkoUITests.swift; sourceTree = "<group>"; };
+		235E623E1D5AB6EA00E7B099 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		235E625C1D5AC0E000E7B099 /* Kenko-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kenko-Bridging-Header.h"; sourceTree = "<group>"; };
+		235E625D1D5AC0E100E7B099 /* KenkoTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KenkoTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		235E625E1D5AC0E200E7B099 /* KenkoUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KenkoUITests-Bridging-Header.h"; sourceTree = "<group>"; };
+		235E62691D5AC50C00E7B099 /* PAPCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAPCache.swift; sourceTree = "<group>"; };
+		235E626A1D5AC50C00E7B099 /* PAPConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAPConstants.swift; sourceTree = "<group>"; };
+		235E626B1D5AC50C00E7B099 /* PAPUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAPUtility.swift; sourceTree = "<group>"; };
+		235E626C1D5AC50C00E7B099 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		481D719C2E9835974B33CA4A /* Pods-Kenko.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kenko.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kenko/Pods-Kenko.debug.xcconfig"; sourceTree = "<group>"; };
+		812C4A4D17657796E2AF0293 /* Pods-Kenko.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kenko.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kenko/Pods-Kenko.release.xcconfig"; sourceTree = "<group>"; };
+		E9778FCFAEC049737939DD75 /* Pods_Kenko.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kenko.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		235E62161D5AB6EA00E7B099 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B355BDB8D25C6F3513469132 /* Pods_Kenko.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		235E622A1D5AB6EA00E7B099 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		235E62351D5AB6EA00E7B099 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		235E62101D5AB6EA00E7B099 = {
+			isa = PBXGroup;
+			children = (
+				235E621B1D5AB6EA00E7B099 /* Kenko */,
+				235E62301D5AB6EA00E7B099 /* KenkoTests */,
+				235E623B1D5AB6EA00E7B099 /* KenkoUITests */,
+				235E621A1D5AB6EA00E7B099 /* Products */,
+				945513B9789E55452AAF00F6 /* Pods */,
+				FC6278DFC8A37669D21C1B8C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		235E621A1D5AB6EA00E7B099 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				235E62191D5AB6EA00E7B099 /* Kenko.app */,
+				235E622D1D5AB6EA00E7B099 /* KenkoTests.xctest */,
+				235E62381D5AB6EA00E7B099 /* KenkoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		235E621B1D5AB6EA00E7B099 /* Kenko */ = {
+			isa = PBXGroup;
+			children = (
+				235E62681D5AC50C00E7B099 /* Unity */,
+				235E621C1D5AB6EA00E7B099 /* AppDelegate.swift */,
+				235E621E1D5AB6EA00E7B099 /* ViewController.swift */,
+				235E62201D5AB6EA00E7B099 /* Main.storyboard */,
+				235E62231D5AB6EA00E7B099 /* Assets.xcassets */,
+				235E62251D5AB6EA00E7B099 /* LaunchScreen.storyboard */,
+				235E62281D5AB6EA00E7B099 /* Info.plist */,
+				235E625C1D5AC0E000E7B099 /* Kenko-Bridging-Header.h */,
+				235E625D1D5AC0E100E7B099 /* KenkoTests-Bridging-Header.h */,
+				235E625E1D5AC0E200E7B099 /* KenkoUITests-Bridging-Header.h */,
+			);
+			path = Kenko;
+			sourceTree = "<group>";
+		};
+		235E62301D5AB6EA00E7B099 /* KenkoTests */ = {
+			isa = PBXGroup;
+			children = (
+				235E62311D5AB6EA00E7B099 /* KenkoTests.swift */,
+				235E62331D5AB6EA00E7B099 /* Info.plist */,
+			);
+			path = KenkoTests;
+			sourceTree = "<group>";
+		};
+		235E623B1D5AB6EA00E7B099 /* KenkoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				235E623C1D5AB6EA00E7B099 /* KenkoUITests.swift */,
+				235E623E1D5AB6EA00E7B099 /* Info.plist */,
+			);
+			path = KenkoUITests;
+			sourceTree = "<group>";
+		};
+		235E62681D5AC50C00E7B099 /* Unity */ = {
+			isa = PBXGroup;
+			children = (
+				235E62691D5AC50C00E7B099 /* PAPCache.swift */,
+				235E626A1D5AC50C00E7B099 /* PAPConstants.swift */,
+				235E626B1D5AC50C00E7B099 /* PAPUtility.swift */,
+				235E626C1D5AC50C00E7B099 /* Reachability.swift */,
+			);
+			path = Unity;
+			sourceTree = "<group>";
+		};
+		945513B9789E55452AAF00F6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				481D719C2E9835974B33CA4A /* Pods-Kenko.debug.xcconfig */,
+				812C4A4D17657796E2AF0293 /* Pods-Kenko.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FC6278DFC8A37669D21C1B8C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9778FCFAEC049737939DD75 /* Pods_Kenko.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		235E62181D5AB6EA00E7B099 /* Kenko */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 235E62411D5AB6EA00E7B099 /* Build configuration list for PBXNativeTarget "Kenko" */;
+			buildPhases = (
+				0ADA6E4E9D3B46CDC87ABC0B /* Check Pods Manifest.lock */,
+				235E62151D5AB6EA00E7B099 /* Sources */,
+				235E62161D5AB6EA00E7B099 /* Frameworks */,
+				235E62171D5AB6EA00E7B099 /* Resources */,
+				17E225D623FDBE6AF2F8D23D /* Embed Pods Frameworks */,
+				96F1B9144944E97ACC1BE541 /* Copy Pods Resources */,
+				235E624A1D5ABE5500E7B099 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Kenko;
+			productName = Kenko;
+			productReference = 235E62191D5AB6EA00E7B099 /* Kenko.app */;
+			productType = "com.apple.product-type.application";
+		};
+		235E622C1D5AB6EA00E7B099 /* KenkoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 235E62441D5AB6EA00E7B099 /* Build configuration list for PBXNativeTarget "KenkoTests" */;
+			buildPhases = (
+				235E62291D5AB6EA00E7B099 /* Sources */,
+				235E622A1D5AB6EA00E7B099 /* Frameworks */,
+				235E622B1D5AB6EA00E7B099 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				235E622F1D5AB6EA00E7B099 /* PBXTargetDependency */,
+			);
+			name = KenkoTests;
+			productName = KenkoTests;
+			productReference = 235E622D1D5AB6EA00E7B099 /* KenkoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		235E62371D5AB6EA00E7B099 /* KenkoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 235E62471D5AB6EA00E7B099 /* Build configuration list for PBXNativeTarget "KenkoUITests" */;
+			buildPhases = (
+				235E62341D5AB6EA00E7B099 /* Sources */,
+				235E62351D5AB6EA00E7B099 /* Frameworks */,
+				235E62361D5AB6EA00E7B099 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				235E623A1D5AB6EA00E7B099 /* PBXTargetDependency */,
+			);
+			name = KenkoUITests;
+			productName = KenkoUITests;
+			productReference = 235E62381D5AB6EA00E7B099 /* KenkoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		235E62111D5AB6EA00E7B099 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "駿逸 陳";
+				TargetAttributes = {
+					235E62181D5AB6EA00E7B099 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					235E622C1D5AB6EA00E7B099 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 235E62181D5AB6EA00E7B099;
+					};
+					235E62371D5AB6EA00E7B099 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 235E62181D5AB6EA00E7B099;
+					};
+				};
+			};
+			buildConfigurationList = 235E62141D5AB6EA00E7B099 /* Build configuration list for PBXProject "Kenko" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 235E62101D5AB6EA00E7B099;
+			productRefGroup = 235E621A1D5AB6EA00E7B099 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				235E62181D5AB6EA00E7B099 /* Kenko */,
+				235E622C1D5AB6EA00E7B099 /* KenkoTests */,
+				235E62371D5AB6EA00E7B099 /* KenkoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		235E62171D5AB6EA00E7B099 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				235E62271D5AB6EA00E7B099 /* LaunchScreen.storyboard in Resources */,
+				235E62241D5AB6EA00E7B099 /* Assets.xcassets in Resources */,
+				235E62221D5AB6EA00E7B099 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		235E622B1D5AB6EA00E7B099 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		235E62361D5AB6EA00E7B099 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0ADA6E4E9D3B46CDC87ABC0B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		17E225D623FDBE6AF2F8D23D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kenko/Pods-Kenko-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		235E624A1D5ABE5500E7B099 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 641c1af9675270dbed145fbc8437b990ae01237a 817691a09ef5ec9a26cedafb581f15f2f9056201c4415d3a4f0187215cd7f21c";
+		};
+		96F1B9144944E97ACC1BE541 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kenko/Pods-Kenko-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		235E62151D5AB6EA00E7B099 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				235E62731D5AC50C00E7B099 /* PAPUtility.swift in Sources */,
+				235E621F1D5AB6EA00E7B099 /* ViewController.swift in Sources */,
+				235E62761D5AC50C00E7B099 /* Reachability.swift in Sources */,
+				235E621D1D5AB6EA00E7B099 /* AppDelegate.swift in Sources */,
+				235E626D1D5AC50C00E7B099 /* PAPCache.swift in Sources */,
+				235E62701D5AC50C00E7B099 /* PAPConstants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		235E62291D5AB6EA00E7B099 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				235E62741D5AC50C00E7B099 /* PAPUtility.swift in Sources */,
+				235E62711D5AC50C00E7B099 /* PAPConstants.swift in Sources */,
+				235E626E1D5AC50C00E7B099 /* PAPCache.swift in Sources */,
+				235E62771D5AC50C00E7B099 /* Reachability.swift in Sources */,
+				235E62321D5AB6EA00E7B099 /* KenkoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		235E62341D5AB6EA00E7B099 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				235E62751D5AC50C00E7B099 /* PAPUtility.swift in Sources */,
+				235E62721D5AC50C00E7B099 /* PAPConstants.swift in Sources */,
+				235E626F1D5AC50C00E7B099 /* PAPCache.swift in Sources */,
+				235E62781D5AC50C00E7B099 /* Reachability.swift in Sources */,
+				235E623D1D5AB6EA00E7B099 /* KenkoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		235E622F1D5AB6EA00E7B099 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 235E62181D5AB6EA00E7B099 /* Kenko */;
+			targetProxy = 235E622E1D5AB6EA00E7B099 /* PBXContainerItemProxy */;
+		};
+		235E623A1D5AB6EA00E7B099 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 235E62181D5AB6EA00E7B099 /* Kenko */;
+			targetProxy = 235E62391D5AB6EA00E7B099 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		235E62201D5AB6EA00E7B099 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				235E62211D5AB6EA00E7B099 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		235E62251D5AB6EA00E7B099 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				235E62261D5AB6EA00E7B099 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		235E623F1D5AB6EA00E7B099 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		235E62401D5AB6EA00E7B099 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		235E62421D5AB6EA00E7B099 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 481D719C2E9835974B33CA4A /* Pods-Kenko.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				INFOPLIST_FILE = Kenko/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = today.Kenko;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Kenko/Kenko-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		235E62431D5AB6EA00E7B099 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 812C4A4D17657796E2AF0293 /* Pods-Kenko.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = Kenko/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = today.Kenko;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Kenko/Kenko-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		235E62451D5AB6EA00E7B099 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = KenkoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ayi.KenkoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Kenko/KenkoTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kenko.app/Kenko";
+			};
+			name = Debug;
+		};
+		235E62461D5AB6EA00E7B099 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = KenkoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ayi.KenkoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Kenko/KenkoTests-Bridging-Header.h";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kenko.app/Kenko";
+			};
+			name = Release;
+		};
+		235E62481D5AB6EA00E7B099 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = KenkoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ayi.KenkoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Kenko/KenkoUITests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_TARGET_NAME = Kenko;
+			};
+			name = Debug;
+		};
+		235E62491D5AB6EA00E7B099 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = KenkoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ayi.KenkoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Kenko/KenkoUITests-Bridging-Header.h";
+				TEST_TARGET_NAME = Kenko;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		235E62141D5AB6EA00E7B099 /* Build configuration list for PBXProject "Kenko" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				235E623F1D5AB6EA00E7B099 /* Debug */,
+				235E62401D5AB6EA00E7B099 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		235E62411D5AB6EA00E7B099 /* Build configuration list for PBXNativeTarget "Kenko" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				235E62421D5AB6EA00E7B099 /* Debug */,
+				235E62431D5AB6EA00E7B099 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		235E62441D5AB6EA00E7B099 /* Build configuration list for PBXNativeTarget "KenkoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				235E62451D5AB6EA00E7B099 /* Debug */,
+				235E62461D5AB6EA00E7B099 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		235E62471D5AB6EA00E7B099 /* Build configuration list for PBXNativeTarget "KenkoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				235E62481D5AB6EA00E7B099 /* Debug */,
+				235E62491D5AB6EA00E7B099 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 235E62111D5AB6EA00E7B099 /* Project object */;
+}

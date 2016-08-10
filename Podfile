@@ -17,7 +17,7 @@ pod 'FormatterKit'
 pod 'UIImageEffects'
 pod 'UIImageAFAdditions', :git => 'https://github.com/teklabs/UIImageAFAdditions.git'
 pod 'Synchronized'
-
+pod 'Reachability', '~> 3.2'
 
 end
 

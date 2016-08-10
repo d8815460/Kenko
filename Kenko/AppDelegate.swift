@@ -88,6 +88,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.sharedApplication().registerUserNotificationSettings(settings)
         UIApplication.sharedApplication().registerForRemoteNotifications()
         
+        
+        self.window = UIWindow.init(frame: UIScreen.mainScreen().bounds)
+        self.window!.backgroundColor = UIColor.whiteColor()
+        self.window!.makeKeyAndVisible()
+        let tabController:FNFoldingTabBarController = FNFoldingTabBarController.init()
+        tabController.title = "FNFoldingTabBar"
+        tabController.tabBarBgColor = UIColor.clearColor()
+        
+        let vc0 = TimeLineViewController.init()
+        vc0.tabBarItem.title = "0";
+        vc0.tabBarItem.image = nil
+        
+        let vc1 = PostBlogViewController.init()
+        vc1.tabBarItem.title = "1";
+        vc1.tabBarItem.image = nil
+        
+        let vc2 = ChatViewController.init()
+        vc2.tabBarItem.title = "2";
+        vc2.tabBarItem.image = nil
+        
+        let vc3 = SettingTableViewController.init()
+        vc3.tabBarItem.title = "3";
+        vc3.tabBarItem.image = nil
+        
+        tabController.fn_viewControllers=[vc0, vc1, vc2, vc3]
+        
+        let naviController = UINavigationController.init(rootViewController: tabController)
+        self.window!.rootViewController = naviController
+        self.window!.makeKeyAndVisible()
+        
+        
         return true
     }
     

@@ -1,0 +1,20 @@
+{
+  "name": "UIImageAFAdditions",
+  "version": "0.1",
+  "summary": "Parallax and Sticky header done right using UICollectionViewLayout",
+  "description": "UICollectionView are flexible and you can use supplementary views to\nanything you wanted.",
+  "homepage": "https://github.com/teklabs/UIImageAFAdditions.git",
+  "license": "MIT",
+  "authors": {
+    "Craig Booker": "support@teklabsco.com"
+  },
+  "source": {
+    "git": "https://github.com/teklabs/UIImageAFAdditions.git",
+    "tag": "0.1"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*"
+}

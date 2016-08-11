@@ -14,6 +14,7 @@ class PostBlogViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        view.backgroundColor = UIColor.init(red: 127/255.0, green: 140/255.0, blue: 141/255.0, alpha: 1)
     }
 
     override func didReceiveMemoryWarning() {

@@ -93,10 +93,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.backgroundColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()
         let tabController:FNFoldingTabBarController = FNFoldingTabBarController.init()
-        tabController.title = "FNFoldingTabBar"
+        tabController.title = "Kenko.Today"
         tabController.tabBarBgColor = UIColor.clearColor()
         
-        let vc0 = TimeLineViewController.init()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc0 = storyboard.instantiateViewControllerWithIdentifier("timeline")
         vc0.tabBarItem.title = "0";
         vc0.tabBarItem.image = nil
         

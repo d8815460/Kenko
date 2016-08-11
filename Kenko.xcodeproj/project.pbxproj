@@ -47,6 +47,18 @@
 		235E629B1D5AE51800E7B099 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E629A1D5AE51800E7B099 /* ChatViewController.swift */; };
 		235E629C1D5AE51800E7B099 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E629A1D5AE51800E7B099 /* ChatViewController.swift */; };
 		235E629D1D5AE51800E7B099 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E629A1D5AE51800E7B099 /* ChatViewController.swift */; };
+		235E62A01D5AE8AA00E7B099 /* TimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E629F1D5AE8AA00E7B099 /* TimelineCell.swift */; };
+		235E62A11D5AE8AA00E7B099 /* TimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E629F1D5AE8AA00E7B099 /* TimelineCell.swift */; };
+		235E62A21D5AE8AA00E7B099 /* TimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E629F1D5AE8AA00E7B099 /* TimelineCell.swift */; };
+		235E62A41D5AE96200E7B099 /* MegaTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E62A31D5AE96200E7B099 /* MegaTheme.swift */; };
+		235E62A51D5AE96200E7B099 /* MegaTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E62A31D5AE96200E7B099 /* MegaTheme.swift */; };
+		235E62A61D5AE96200E7B099 /* MegaTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E62A31D5AE96200E7B099 /* MegaTheme.swift */; };
+		235E62A81D5B109000E7B099 /* TimeLineCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E62A71D5B109000E7B099 /* TimeLineCustomCell.swift */; };
+		235E62A91D5B109000E7B099 /* TimeLineCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E62A71D5B109000E7B099 /* TimeLineCustomCell.swift */; };
+		235E62AA1D5B109000E7B099 /* TimeLineCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E62A71D5B109000E7B099 /* TimeLineCustomCell.swift */; };
+		235E62AD1D5B22F000E7B099 /* PAPLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E62AC1D5B22F000E7B099 /* PAPLogInViewController.swift */; };
+		235E62AE1D5B22F000E7B099 /* PAPLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E62AC1D5B22F000E7B099 /* PAPLogInViewController.swift */; };
+		235E62AF1D5B22F000E7B099 /* PAPLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E62AC1D5B22F000E7B099 /* PAPLogInViewController.swift */; };
 		B355BDB8D25C6F3513469132 /* Pods_Kenko.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9778FCFAEC049737939DD75 /* Pods_Kenko.framework */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +107,10 @@
 		235E628E1D5AE4C300E7B099 /* TimeLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineViewController.swift; sourceTree = "<group>"; };
 		235E62961D5AE50300E7B099 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		235E629A1D5AE51800E7B099 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		235E629F1D5AE8AA00E7B099 /* TimelineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineCell.swift; sourceTree = "<group>"; };
+		235E62A31D5AE96200E7B099 /* MegaTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MegaTheme.swift; sourceTree = "<group>"; };
+		235E62A71D5B109000E7B099 /* TimeLineCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineCustomCell.swift; sourceTree = "<group>"; };
+		235E62AC1D5B22F000E7B099 /* PAPLogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAPLogInViewController.swift; sourceTree = "<group>"; };
 		481D719C2E9835974B33CA4A /* Pods-Kenko.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kenko.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kenko/Pods-Kenko.debug.xcconfig"; sourceTree = "<group>"; };
 		812C4A4D17657796E2AF0293 /* Pods-Kenko.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kenko.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kenko/Pods-Kenko.release.xcconfig"; sourceTree = "<group>"; };
 		E9778FCFAEC049737939DD75 /* Pods_Kenko.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kenko.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,8 +167,11 @@
 		235E621B1D5AB6EA00E7B099 /* Kenko */ = {
 			isa = PBXGroup;
 			children = (
+				235E62A31D5AE96200E7B099 /* MegaTheme.swift */,
+				235E629E1D5AE89D00E7B099 /* Cells */,
 				235E62791D5ADE7300E7B099 /* FNFoldingTabBar */,
 				235E62681D5AC50C00E7B099 /* Unity */,
+				235E62AB1D5B22CD00E7B099 /* Wellcom&Login&SignUp */,
 				235E621C1D5AB6EA00E7B099 /* AppDelegate.swift */,
 				235E628E1D5AE4C300E7B099 /* TimeLineViewController.swift */,
 				235E628A1D5AE49700E7B099 /* PostBlogViewController.swift */,
@@ -207,6 +226,23 @@
 				235E627C1D5ADE7300E7B099 /* FNFoldingTabBarController.swift */,
 			);
 			path = FNFoldingTabBar;
+			sourceTree = "<group>";
+		};
+		235E629E1D5AE89D00E7B099 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				235E629F1D5AE8AA00E7B099 /* TimelineCell.swift */,
+				235E62A71D5B109000E7B099 /* TimeLineCustomCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		235E62AB1D5B22CD00E7B099 /* Wellcom&Login&SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				235E62AC1D5B22F000E7B099 /* PAPLogInViewController.swift */,
+			);
+			name = "Wellcom&Login&SignUp";
 			sourceTree = "<group>";
 		};
 		945513B9789E55452AAF00F6 /* Pods */ = {
@@ -425,10 +461,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				235E62AD1D5B22F000E7B099 /* PAPLogInViewController.swift in Sources */,
+				235E62A81D5B109000E7B099 /* TimeLineCustomCell.swift in Sources */,
 				235E62971D5AE50300E7B099 /* SettingTableViewController.swift in Sources */,
 				235E628B1D5AE49700E7B099 /* PostBlogViewController.swift in Sources */,
 				235E62731D5AC50C00E7B099 /* PAPUtility.swift in Sources */,
 				235E62831D5ADE7300E7B099 /* FNFoldingTabBarController.swift in Sources */,
+				235E62A01D5AE8AA00E7B099 /* TimelineCell.swift in Sources */,
+				235E62A41D5AE96200E7B099 /* MegaTheme.swift in Sources */,
 				235E628F1D5AE4C300E7B099 /* TimeLineViewController.swift in Sources */,
 				235E621F1D5AB6EA00E7B099 /* ViewController.swift in Sources */,
 				235E62801D5ADE7300E7B099 /* FNFoldingTabBar.swift in Sources */,
@@ -444,15 +484,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				235E62A11D5AE8AA00E7B099 /* TimelineCell.swift in Sources */,
 				235E628C1D5AE49700E7B099 /* PostBlogViewController.swift in Sources */,
 				235E62741D5AC50C00E7B099 /* PAPUtility.swift in Sources */,
 				235E629C1D5AE51800E7B099 /* ChatViewController.swift in Sources */,
 				235E62811D5ADE7300E7B099 /* FNFoldingTabBar.swift in Sources */,
+				235E62A91D5B109000E7B099 /* TimeLineCustomCell.swift in Sources */,
 				235E62711D5AC50C00E7B099 /* PAPConstants.swift in Sources */,
 				235E626E1D5AC50C00E7B099 /* PAPCache.swift in Sources */,
 				235E62841D5ADE7300E7B099 /* FNFoldingTabBarController.swift in Sources */,
 				235E62771D5AC50C00E7B099 /* Reachability.swift in Sources */,
+				235E62AE1D5B22F000E7B099 /* PAPLogInViewController.swift in Sources */,
 				235E62981D5AE50300E7B099 /* SettingTableViewController.swift in Sources */,
+				235E62A51D5AE96200E7B099 /* MegaTheme.swift in Sources */,
 				235E62321D5AB6EA00E7B099 /* KenkoTests.swift in Sources */,
 				235E62901D5AE4C300E7B099 /* TimeLineViewController.swift in Sources */,
 			);
@@ -462,15 +506,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				235E62A21D5AE8AA00E7B099 /* TimelineCell.swift in Sources */,
 				235E628D1D5AE49700E7B099 /* PostBlogViewController.swift in Sources */,
 				235E62751D5AC50C00E7B099 /* PAPUtility.swift in Sources */,
 				235E629D1D5AE51800E7B099 /* ChatViewController.swift in Sources */,
 				235E62821D5ADE7300E7B099 /* FNFoldingTabBar.swift in Sources */,
+				235E62AA1D5B109000E7B099 /* TimeLineCustomCell.swift in Sources */,
 				235E62721D5AC50C00E7B099 /* PAPConstants.swift in Sources */,
 				235E626F1D5AC50C00E7B099 /* PAPCache.swift in Sources */,
 				235E62851D5ADE7300E7B099 /* FNFoldingTabBarController.swift in Sources */,
 				235E62781D5AC50C00E7B099 /* Reachability.swift in Sources */,
+				235E62AF1D5B22F000E7B099 /* PAPLogInViewController.swift in Sources */,
 				235E62991D5AE50300E7B099 /* SettingTableViewController.swift in Sources */,
+				235E62A61D5AE96200E7B099 /* MegaTheme.swift in Sources */,
 				235E623D1D5AB6EA00E7B099 /* KenkoUITests.swift in Sources */,
 				235E62911D5AE4C300E7B099 /* TimeLineViewController.swift in Sources */,
 			);

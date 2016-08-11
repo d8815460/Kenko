@@ -14,6 +14,7 @@ class ChatViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        view.backgroundColor = UIColor.init(red: 33/255.0, green: 128/255.0, blue: 189/255.0, alpha: 1)
     }
 
     override func didReceiveMemoryWarning() {

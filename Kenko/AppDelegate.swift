@@ -101,15 +101,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         vc0.tabBarItem.title = "0";
         vc0.tabBarItem.image = nil
         
-        let vc1 = PostBlogViewController.init()
+        let vc1 = storyboard.instantiateViewControllerWithIdentifier("post")
         vc1.tabBarItem.title = "1";
         vc1.tabBarItem.image = nil
         
-        let vc2 = ChatViewController.init()
+        let vc2 = storyboard.instantiateViewControllerWithIdentifier("chat")
         vc2.tabBarItem.title = "2";
         vc2.tabBarItem.image = nil
         
-        let vc3 = SettingTableViewController.init()
+        let vc3 = storyboard.instantiateViewControllerWithIdentifier("setting")
         vc3.tabBarItem.title = "3";
         vc3.tabBarItem.image = nil
         

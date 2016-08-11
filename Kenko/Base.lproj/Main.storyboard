@@ -27,7 +27,7 @@
         <!--Setting Table View Controller-->
         <scene sceneID="PHt-56-697">
             <objects>
-                <tableViewController id="xlc-LX-fih" customClass="SettingTableViewController" customModule="Kenko" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="setting" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xlc-LX-fih" customClass="SettingTableViewController" customModule="Kenko" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="e6Y-jo-emF">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,7 +55,7 @@
         <!--Chat View Controller-->
         <scene sceneID="FUp-Ul-ph9">
             <objects>
-                <viewController id="PAg-m0-MoF" customClass="ChatViewController" customModule="Kenko" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="chat" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PAg-m0-MoF" customClass="ChatViewController" customModule="Kenko" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KLa-VD-iOl"/>
                         <viewControllerLayoutGuide type="bottom" id="pJJ-Cm-hmn"/>
@@ -63,8 +63,25 @@
                     <view key="view" contentMode="scaleToFill" id="6Xp-yC-11z">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anr-f8-hja">
+                                <rect key="frame" x="20" y="285" width="560" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="anr-f8-hja" firstAttribute="centerX" secondItem="6Xp-yC-11z" secondAttribute="centerX" id="2M7-iF-2mp"/>
+                            <constraint firstItem="anr-f8-hja" firstAttribute="trailing" secondItem="6Xp-yC-11z" secondAttribute="trailingMargin" id="PX8-xG-1gK"/>
+                            <constraint firstItem="anr-f8-hja" firstAttribute="leading" secondItem="6Xp-yC-11z" secondAttribute="leadingMargin" id="T1S-Qx-zbK"/>
+                            <constraint firstItem="anr-f8-hja" firstAttribute="centerY" secondItem="6Xp-yC-11z" secondAttribute="centerY" id="weu-Ut-ss9"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="button" destination="anr-f8-hja" id="Thi-yW-UpH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rbR-W3-lJA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -73,7 +90,7 @@
         <!--Post Blog View Controller-->
         <scene sceneID="KyS-RV-Wbc">
             <objects>
-                <viewController id="j1G-Ua-gRD" customClass="PostBlogViewController" customModule="Kenko" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="post" useStoryboardIdentifierAsRestorationIdentifier="YES" id="j1G-Ua-gRD" customClass="PostBlogViewController" customModule="Kenko" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="In0-k5-aty"/>
                         <viewControllerLayoutGuide type="bottom" id="BUu-fW-YwU"/>

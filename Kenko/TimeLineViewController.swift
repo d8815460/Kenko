@@ -239,7 +239,9 @@ class TimeLineViewController: PFQueryTableViewController, PAPLogInViewController
     
     // PFLoginViewDelegate
     func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
-        
+        self.dismissViewControllerAnimated(true) { 
+            
+        }
     }
     
     func logInViewControllerDidCancelLogIn(logInController: PFLogInViewController) {

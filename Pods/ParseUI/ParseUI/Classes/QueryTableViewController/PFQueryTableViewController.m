@@ -21,7 +21,6 @@
 
 #import "PFQueryTableViewController.h"
 
-#import <Bolts/BFExecutor.h>
 #import <Bolts/BFTask.h>
 #import <Bolts/BFTaskCompletionSource.h>
 
@@ -32,7 +31,6 @@
 #import "PFLoadingView.h"
 #import "PFLocalization.h"
 #import "PFTableViewCell.h"
-#import "PFUIAlertView.h"
 
 // Add headers to kill any warnings.
 // `initWithStyle:` is a UITableViewController method.
@@ -46,7 +44,7 @@
 @end
 
 @interface PFQueryTableViewController () {
-    NSMutableArray<PFObject *> *_mutableObjects;
+    NSMutableArray *_mutableObjects;
 
     BOOL _firstLoad;           // Whether we have loaded the first set of objects
     NSInteger _currentPage;    // The last page that was loaded
@@ -213,18 +211,18 @@
     _currentPage = 0;
 }
 
-- (BFTask<NSArray<__kindof PFObject *> *> *)loadObjects {
+- (BFTask *)loadObjects {
     return [self loadObjects:0 clear:YES];
 }
 
-- (BFTask<NSArray<__kindof PFObject *> *> *)loadObjects:(NSInteger)page clear:(BOOL)clear {
+- (BFTask *)loadObjects:(NSInteger)page clear:(BOOL)clear {
     self.loading = YES;
     [self objectsWillLoad];
 
+    BFTaskCompletionSource *source = [BFTaskCompletionSource taskCompletionSource];
+
     PFQuery *query = [self queryForTable];
     [self _alterQuery:query forLoadingPage:page];
-
-    BFTaskCompletionSource<NSArray<__kindof PFObject *> *> *source = [BFTaskCompletionSource taskCompletionSource];
     [query findObjectsInBackgroundWithBlock:^(NSArray *foundObjects, NSError *error) {
         if (![Parse isLocalDatastoreEnabled] &&
             query.cachePolicy != kPFCachePolicyCacheOnly &&
@@ -253,11 +251,7 @@
         [self objectsDidLoad:error];
         [self.refreshControl endRefreshing];
 
-        if (error) {
-            [source trySetError:error];
-        } else {
-            [source trySetResult:foundObjects];
-        }
+        [source setError:error];
     }];
 
     return source.task;
@@ -403,8 +397,8 @@
         [allDeletionTasks addObject:[obj deleteInBackground]];
     }
 
-    [[BFTask taskForCompletionOfAllTasks:allDeletionTasks] continueWithExecutor:[BFExecutor mainThreadExecutor]
-                                                                      withBlock:deletionHandlerBlock];
+    [[BFTask taskForCompletionOfAllTasks:allDeletionTasks]
+                       continueWithBlock:deletionHandlerBlock];
 }
 
 - (PFTableViewCell *)tableView:(UITableView *)otherTableView cellForNextPageAtIndexPath:(NSIndexPath *)indexPath {
@@ -414,7 +408,7 @@
     if (cell == nil) {
         cell = [[PFActivityIndicatorTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                                        reuseIdentifier:cellIdentifier];
-        cell.textLabel.text = PFLocalizedString(@"Load more...", @"Load more...");
+        cell.textLabel.text = NSLocalizedString(@"Load more...", @"Load more...");
     }
 
     cell.animating = self.loading;
@@ -522,10 +516,29 @@
     // Fully reload on error.
     [self loadObjects];
 
-    NSString *message = [NSString stringWithFormat:@"%@: \"%@\"",
-                         PFLocalizedString(@"Error occurred during deletion", @"Error occurred during deletion"),
-                         error.localizedDescription];
-    [PFUIAlertView presentAlertInViewController:self withTitle:PFLocalizedString(@"Delete Error", @"Delete Error") message:message];
+    NSString *errorMessage = [NSString stringWithFormat:@"%@: \"%@\"",
+                              NSLocalizedString(@"Error occurred during deletion", @"Error occurred during deletion"),
+                              error.localizedDescription];
+
+    if ([UIAlertController class]) {
+        UIAlertController *errorController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Error", @"Error")
+                                                                                 message:errorMessage
+                                                                          preferredStyle:UIAlertControllerStyleAlert];
+
+        [errorController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"OK", @"OK")
+                                                            style:UIAlertActionStyleCancel
+                                                          handler:nil]];
+
+        [self presentViewController:errorController animated:YES completion:nil];
+    } else {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"Error")
+                                                            message:errorMessage
+                                                           delegate:nil
+                                                  cancelButtonTitle:NSLocalizedString(@"OK", @"OK")
+                                                  otherButtonTitles:nil];
+
+        [alertView show];
+    }
 }
 
 #pragma mark -
@@ -538,7 +551,7 @@
 #pragma mark -
 #pragma mark Accessors
 
-- (NSArray<__kindof PFObject *> *)objects {
+- (NSArray *)objects {
     return _mutableObjects;
 }
 

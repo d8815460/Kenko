@@ -56,9 +56,6 @@
 		235E62A81D5B109000E7B099 /* TimeLineCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E62A71D5B109000E7B099 /* TimeLineCustomCell.swift */; };
 		235E62A91D5B109000E7B099 /* TimeLineCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E62A71D5B109000E7B099 /* TimeLineCustomCell.swift */; };
 		235E62AA1D5B109000E7B099 /* TimeLineCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E62A71D5B109000E7B099 /* TimeLineCustomCell.swift */; };
-		235E62AD1D5B22F000E7B099 /* PAPLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E62AC1D5B22F000E7B099 /* PAPLogInViewController.swift */; };
-		235E62AE1D5B22F000E7B099 /* PAPLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E62AC1D5B22F000E7B099 /* PAPLogInViewController.swift */; };
-		235E62AF1D5B22F000E7B099 /* PAPLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E62AC1D5B22F000E7B099 /* PAPLogInViewController.swift */; };
 		238E9EC41D5C09D2003FC76C /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238E9DC61D5C09D1003FC76C /* FBSDKMessengerShareKit.framework */; };
 		238E9EC61D5C09D2003FC76C /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 238E9DC81D5C09D1003FC76C /* LICENSE.txt */; };
 		238E9EC71D5C09D2003FC76C /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 238E9DC91D5C09D1003FC76C /* README.txt */; };
@@ -113,7 +110,6 @@
 		235E629F1D5AE8AA00E7B099 /* TimelineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineCell.swift; sourceTree = "<group>"; };
 		235E62A31D5AE96200E7B099 /* MegaTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MegaTheme.swift; sourceTree = "<group>"; };
 		235E62A71D5B109000E7B099 /* TimeLineCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineCustomCell.swift; sourceTree = "<group>"; };
-		235E62AC1D5B22F000E7B099 /* PAPLogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PAPLogInViewController.swift; sourceTree = "<group>"; };
 		238E9DC61D5C09D1003FC76C /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
 		238E9DC81D5C09D1003FC76C /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		238E9DC91D5C09D1003FC76C /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
@@ -247,7 +243,6 @@
 		235E62AB1D5B22CD00E7B099 /* Wellcom&Login&SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				235E62AC1D5B22F000E7B099 /* PAPLogInViewController.swift */,
 			);
 			name = "Wellcom&Login&SignUp";
 			sourceTree = "<group>";
@@ -481,7 +476,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				235E62AD1D5B22F000E7B099 /* PAPLogInViewController.swift in Sources */,
 				235E62A81D5B109000E7B099 /* TimeLineCustomCell.swift in Sources */,
 				235E62971D5AE50300E7B099 /* SettingTableViewController.swift in Sources */,
 				235E628B1D5AE49700E7B099 /* PostBlogViewController.swift in Sources */,
@@ -514,7 +508,6 @@
 				235E626E1D5AC50C00E7B099 /* PAPCache.swift in Sources */,
 				235E62841D5ADE7300E7B099 /* FNFoldingTabBarController.swift in Sources */,
 				235E62771D5AC50C00E7B099 /* Reachability.swift in Sources */,
-				235E62AE1D5B22F000E7B099 /* PAPLogInViewController.swift in Sources */,
 				235E62981D5AE50300E7B099 /* SettingTableViewController.swift in Sources */,
 				235E62A51D5AE96200E7B099 /* MegaTheme.swift in Sources */,
 				235E62321D5AB6EA00E7B099 /* KenkoTests.swift in Sources */,
@@ -536,7 +529,6 @@
 				235E626F1D5AC50C00E7B099 /* PAPCache.swift in Sources */,
 				235E62851D5ADE7300E7B099 /* FNFoldingTabBarController.swift in Sources */,
 				235E62781D5AC50C00E7B099 /* Reachability.swift in Sources */,
-				235E62AF1D5B22F000E7B099 /* PAPLogInViewController.swift in Sources */,
 				235E62991D5AE50300E7B099 /* SettingTableViewController.swift in Sources */,
 				235E62A61D5AE96200E7B099 /* MegaTheme.swift in Sources */,
 				235E623D1D5AB6EA00E7B099 /* KenkoUITests.swift in Sources */,
@@ -683,6 +675,7 @@
 				PROVISIONING_PROFILE = "43f44908-62cc-476f-b0de-5be2975e3779";
 				SWIFT_OBJC_BRIDGING_HEADER = "Kenko/Kenko-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -704,6 +697,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "43f44908-62cc-476f-b0de-5be2975e3779";
 				SWIFT_OBJC_BRIDGING_HEADER = "Kenko/Kenko-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

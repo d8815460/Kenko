@@ -11,7 +11,7 @@ import Fabric
 import Crashlytics
 import Parse
 import ParseCrashReporting
-import ParseFacebookUtilsV4
+import ParseFacebookUtils
 import MBProgressHUD
 
 @UIApplicationMain
@@ -42,7 +42,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ParseCrashReporting.enable()
         Parse.setApplicationId("HvbrCuCAF3PwHACiplKeghYbeIcpPVFlSvSXmhrQ", clientKey: "NTwqjCdGPQesiN4Enox3ytfgzqWqJT89WshyL0Hx")
         // 設定FacebookUtilsV4
-        PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
+//        PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
+//        PFFacebookUtils.initialize()
+        PFFacebookUtils.initializeFacebook()
         // TODO: PFFacebookUtils.initialize()
         // ****************************************************************************
         
@@ -66,7 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Badge歸零
         if application.applicationIconBadgeNumber != 0 {
             application.applicationIconBadgeNumber = 0
-            PFInstallation.currentInstallation()!.saveInBackground()
+            PFInstallation.currentInstallation().saveInBackground()
         }
         
         let defaultACL: PFACL = PFACL()
@@ -125,7 +127,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-        return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+        var wasHandled = false
+        
+        if PFFacebookUtils.session() != nil {
+            wasHandled = wasHandled || FBAppCall.handleOpenURL(url, sourceApplication: sourceApplication, withSession: PFFacebookUtils.session())
+        } else {
+            wasHandled = wasHandled || FBAppCall.handleOpenURL(url, sourceApplication: sourceApplication)
+        }
+        
+        wasHandled = wasHandled || handleActionURL(url)
+        
+        return wasHandled
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
@@ -134,8 +146,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         let currentInstallation = PFInstallation.currentInstallation()
-        currentInstallation?.setDeviceTokenFromData(deviceToken)
-        currentInstallation?.saveInBackground()
+        currentInstallation.setDeviceTokenFromData(deviceToken)
+        currentInstallation.saveInBackground()
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
@@ -146,15 +158,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         NSNotificationCenter.defaultCenter().postNotificationName(PAPAppDelegateApplicationDidReceiveRemoteNotification, object: nil, userInfo: userInfo)
-//        NotificationCenter.default().post(name: NSNotification.Name(rawValue: PAPAppDelegateApplicationDidReceiveRemoteNotification), object: nil, userInfo: userInfo)
         
         if UIApplication.sharedApplication().applicationState != UIApplicationState.Active {
-        // Track app opens due to a push notification being acknowledged while the app wasn't active.
+            // Track app opens due to a push notification being acknowledged while the app wasn't active.
             PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
         }
         
         if PFUser.currentUser() != nil {
-        // FIXME: Looks so lengthy, any better way?
+            // FIXME: Looks so lengthy, any better way?
+//            if self.tabBarController!.viewControllers!.count > PAPTabBarControllerViewControllerIndex.ActivityTabBarItemIndex.rawValue {
+//                let tabBarItem: UITabBarItem = self.tabBarController!.viewControllers![PAPTabBarControllerViewControllerIndex.ActivityTabBarItemIndex.rawValue].tabBarItem
+//                
+//                if let currentBadgeValue: String = tabBarItem.badgeValue where currentBadgeValue.length > 0 {
+//                    tabBarItem.badgeValue = String(Int(currentBadgeValue)! + 1)
+//                } else {
+//                    tabBarItem.badgeValue = "1"
+//                }
+//            }
         }
 
     }
@@ -179,14 +199,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Clear badge and update installation, required for auto-incrementing badges.
         if application.applicationIconBadgeNumber != 0 {
             application.applicationIconBadgeNumber = 0
-            PFInstallation.currentInstallation()!.saveInBackground()
+            PFInstallation.currentInstallation().saveInBackground()
         }
         
         // Clears out all notifications from Notification Center.
         UIApplication.sharedApplication().cancelAllLocalNotifications()
         application.applicationIconBadgeNumber = 0
         
-        FBSDKAppEvents.activateApp()
+        FBAppCall.handleDidBecomeActiveWithSession(PFFacebookUtils.session())
+        // TODO: V4
+//        FBSDKAppEvents.activateApp()
     }
 
     func applicationWillTerminate(application: UIApplication) {
@@ -221,16 +243,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSUserDefaults.standardUserDefaults().synchronize()
         
         // Unsubscribe from push notifications by removing the user association from the current installation.
-        PFInstallation.currentInstallation()?.removeObjectForKey(kPAPInstallationUserKey)
-        PFInstallation.currentInstallation()!.saveInBackground()
+        PFInstallation.currentInstallation().removeObjectForKey(kPAPInstallationUserKey)
+        PFInstallation.currentInstallation().saveInBackground()
         
         // Clear all caches
         PFQuery.clearAllCachedResults()
         
         // Log out
         PFUser.logOut()
-        //        FBSession.setActiveSession(nil)
-        _ = FBSDKAccessToken.currentAccessToken().tokenString
+        FBSession.setActiveSession(nil)
+// V4???       FBSDKAccessToken.currentAccessToken().tokenString
         
         // clear out cached data, view controllers, etc
         

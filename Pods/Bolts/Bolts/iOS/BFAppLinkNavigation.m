@@ -8,10 +8,15 @@
  *
  */
 
+#import <UIKit/UIKit.h>
+
 #import "BFAppLinkNavigation.h"
-
-#import <Bolts/Bolts.h>
-
+#import "BFTaskCompletionSource.h"
+#import "BFAppLinkTarget.h"
+#import "BoltsVersion.h"
+#import "BFWebViewAppLinkResolver.h"
+#import "BFExecutor.h"
+#import "BFTask.h"
 #import "BFMeasurementEvent_Internal.h"
 #import "BFAppLink_Internal.h"
 
@@ -20,9 +25,6 @@ FOUNDATION_EXPORT NSString *const BFAppLinkTargetKeyName;
 FOUNDATION_EXPORT NSString *const BFAppLinkUserAgentKeyName;
 FOUNDATION_EXPORT NSString *const BFAppLinkExtrasKeyName;
 FOUNDATION_EXPORT NSString *const BFAppLinkVersionKeyName;
-FOUNDATION_EXPORT NSString *const BFAppLinkRefererAppLink;
-FOUNDATION_EXPORT NSString *const BFAppLinkRefererAppName;
-FOUNDATION_EXPORT NSString *const BFAppLinkRefererUrl;
 
 static id<BFAppLinkResolving> defaultResolver;
 
@@ -46,20 +48,12 @@ static id<BFAppLinkResolving> defaultResolver;
     return navigation;
 }
 
-+ (NSDictionary *)callbackAppLinkDataForAppWithName:(NSString *)appName url:(NSString *)url {
-    return @{BFAppLinkRefererAppLink: @{BFAppLinkRefererAppName: appName, BFAppLinkRefererUrl: url}};
-}
-
 - (NSString *)stringByEscapingQueryString:(NSString *)string {
-#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_7_0 || __MAC_OS_X_VERSION_MIN_REQUIRED >= __MAC_10_9
-    return [string stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-#else
     return (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL,
                                                                                  (CFStringRef)string,
                                                                                  NULL,
                                                                                  (CFStringRef) @":/?#[]@!$&'()*+,;=",
                                                                                  kCFStringEncodingUTF8));
-#endif
 }
 
 - (NSURL *)appLinkURLWithTargetURL:(NSURL *)targetUrl error:(NSError **)error {
@@ -67,7 +61,7 @@ static id<BFAppLinkResolving> defaultResolver;
 
     // Add applink protocol data
     if (!appLinkData[BFAppLinkUserAgentKeyName]) {
-        appLinkData[BFAppLinkUserAgentKeyName] = [NSString stringWithFormat:@"Bolts iOS %@", BoltsFrameworkVersionString];
+        appLinkData[BFAppLinkUserAgentKeyName] = [NSString stringWithFormat:@"Bolts iOS %@", BOLTS_VERSION];
     }
     if (!appLinkData[BFAppLinkVersionKeyName]) {
         appLinkData[BFAppLinkVersionKeyName] = BFAppLinkVersion;
@@ -200,7 +194,7 @@ static id<BFAppLinkResolving> defaultResolver;
     }
 }
 
-+ (BFTask *)resolveAppLinkInBackground:(NSURL *)destination resolver:(id<BFAppLinkResolving>)resolver {
++ (BFTask *)resolveAppLinkInBackground:(NSURL *)destination resolver:(id)resolver {
     return [resolver appLinkFromURLInBackground:destination];
 }
 
@@ -234,40 +228,6 @@ static id<BFAppLinkResolving> defaultResolver;
     return [[BFAppLinkNavigation navigationWithAppLink:link
                                                 extras:nil
                                            appLinkData:nil] navigate:error];
-}
-
-+ (BFAppLinkNavigationType)navigationTypeForLink:(BFAppLink *)link {
-    return [[self navigationWithAppLink:link extras:nil appLinkData:nil] navigationType];
-}
-
-- (BFAppLinkNavigationType)navigationType {
-    BFAppLinkTarget *eligibleTarget = nil;
-    for (BFAppLinkTarget *target in self.appLink.targets) {
-        if ([[UIApplication sharedApplication] canOpenURL:target.URL]) {
-            eligibleTarget = target;
-            break;
-        }
-    }
-
-    if (eligibleTarget != nil) {
-        NSURL *appLinkURL = [self appLinkURLWithTargetURL:eligibleTarget.URL error:nil];
-        if (appLinkURL != nil) {
-            return BFAppLinkNavigationTypeApp;
-        } else {
-            return BFAppLinkNavigationTypeFailure;
-        }
-    }
-
-    if (self.appLink.webURL != nil) {
-        NSURL *appLinkURL = [self appLinkURLWithTargetURL:eligibleTarget.URL error:nil];
-        if (appLinkURL != nil) {
-            return BFAppLinkNavigationTypeBrowser;
-        } else {
-            return BFAppLinkNavigationTypeFailure;
-        }
-    }
-
-    return BFAppLinkNavigationTypeFailure;
 }
 
 + (id<BFAppLinkResolving>)defaultResolver {

@@ -1,18 +1,16 @@
 PODS:
-  - Bolts (1.8.4):
-    - Bolts/AppLinks (= 1.8.4)
-    - Bolts/Tasks (= 1.8.4)
-  - Bolts/AppLinks (1.8.4):
+  - Bolts (1.2.0):
+    - Bolts/AppLinks (= 1.2.0)
+    - Bolts/Tasks (= 1.2.0)
+  - Bolts/AppLinks (1.2.0):
     - Bolts/Tasks
-  - Bolts/Tasks (1.8.4)
+  - Bolts/Tasks (1.2.0)
   - Canvas (0.1.2)
   - Crashlytics (3.7.3):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.7)
-  - FBSDKCoreKit (4.14.0):
-    - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.14.0):
-    - FBSDKCoreKit
+  - Facebook-iOS-SDK (3.24.4):
+    - Bolts (~> 1.2)
   - FormatterKit (1.8.1):
     - FormatterKit/AddressFormatter (= 1.8.1)
     - FormatterKit/ArrayFormatter (= 1.8.1)
@@ -43,64 +41,66 @@ PODS:
     - FormatterKit/Resources
   - FormatterKit/URLRequestFormatter (1.8.1):
     - FormatterKit/Resources
-  - MBProgressHUD (1.0.0)
-  - Parse (1.14.2):
-    - Bolts/Tasks (~> 1.8)
-  - ParseCrashReporting (1.9.2):
-    - Bolts/Tasks (~> 1.5)
-    - Parse (~> 1.9)
-  - ParseFacebookUtilsV4 (1.11.1):
-    - Bolts/Tasks (>= 1.6)
-    - FBSDKCoreKit (~> 4.10)
-    - FBSDKLoginKit (~> 4.10)
-    - FBSDKTVOSKit (~> 4.10)
-    - Parse (~> 1.12)
-  - ParseUI (1.2.0):
-    - Bolts/Tasks (~> 1.3)
-    - Parse (~> 1.9)
+  - MBProgressHUD (0.9.2)
+  - Parse (1.7.5.3):
+    - Bolts/Tasks (>= 1.2.0)
+  - ParseCrashReporting (1.7.5.3):
+    - Bolts/Tasks (>= 1.2.0)
+    - Parse (~> 1.7.5.3)
+  - ParseFacebookUtils (1.7.5.3):
+    - Bolts/Tasks (>= 1.2.0)
+    - Facebook-iOS-SDK (~> 3.23)
+    - Parse (~> 1.7.5.3)
+  - ParseUI (1.1.4):
+    - Parse (~> 1.7)
   - Reachability (3.2)
   - Synchronized (2.0.2)
   - UIImageAFAdditions (0.1)
   - UIImageEffects (0.0.1)
 
 DEPENDENCIES:
+  - Bolts (from `https://github.com/kwkhaw/Bolts-iOS.git`)
   - Canvas
   - Crashlytics
   - Fabric
-  - FormatterKit
   - FormatterKit (~> 1.8)
-  - MBProgressHUD
-  - Parse
-  - ParseCrashReporting (~> 1.9)
-  - ParseFacebookUtilsV4 (~> 1.11)
-  - ParseUI
+  - FormatterKit (~> 1.8.0)
+  - MBProgressHUD (~> 0.9.1)
+  - Parse (~> 1.7.5)
+  - ParseCrashReporting (~> 1.7.5)
+  - ParseFacebookUtils (~> 1.7.5)
+  - ParseUI (= 1.1.4)
   - Reachability (~> 3.2)
-  - Synchronized
+  - Synchronized (~> 2.0.0)
   - UIImageAFAdditions (from `https://github.com/teklabs/UIImageAFAdditions.git`)
-  - UIImageEffects
+  - UIImageEffects (~> 0.0.1)
 
 EXTERNAL SOURCES:
+  Bolts:
+    :git: https://github.com/kwkhaw/Bolts-iOS.git
   UIImageAFAdditions:
     :git: https://github.com/teklabs/UIImageAFAdditions.git
 
 CHECKOUT OPTIONS:
+  Bolts:
+    :commit: 412f62aa979dff584bb7e7b7685bc95d907fd5ca
+    :git: https://github.com/kwkhaw/Bolts-iOS.git
   UIImageAFAdditions:
     :commit: bd07487284ad76e611fcdcd6401ae409a1d9a1fd
     :git: https://github.com/teklabs/UIImageAFAdditions.git
 
 SPEC CHECKSUMS:
-  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  Bolts: c4173988ebd9d67397a18f7142d1414884d2ac9b
   Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
   Crashlytics: 76f6beaff70acf226139582c09c78461597c2b98
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
-  FBSDKCoreKit: 6e020b5db0b5bd1e01f5fb0902131befd129a502
-  FBSDKLoginKit: da563567a108050ef83739c8c8c001ee9e25fa13
+  Facebook-iOS-SDK: 5a7c414a084708220b72d5fd016f2cf3eb6deda4
   FormatterKit: 11ad17b983200629246a5a466f6f1bfa2df823cb
-  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
-  ParseCrashReporting: 33b760facc649d4fd99eef8f35dcda6a406099e5
-  ParseFacebookUtilsV4: 2f30c2b7021c8005d3042781da7ef87d06589421
-  ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  Parse: 373adbb1ad2e34d383542c3b28f678c49ebe4881
+  ParseCrashReporting: 36d2e2770d7502d943b81c013acd5193946ced46
+  ParseFacebookUtils: 008a24dc35884519ed6a6750648beb5149f1fad9
+  ParseUI: d1228541b02a36a7354c8f47747f5f7a89cf1ff0
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   Synchronized: edaeea246a887b188919876723b0d447314ad11d
   UIImageAFAdditions: bdb543889f97aea5cc9a8d0c985c03bb8b4ceb96

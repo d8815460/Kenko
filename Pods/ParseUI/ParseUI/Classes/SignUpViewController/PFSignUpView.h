@@ -23,48 +23,36 @@
 
 #import <ParseUI/ParseUIConstants.h>
 
-NS_ASSUME_NONNULL_BEGIN
+PFUI_ASSUME_NONNULL_BEGIN
 
-/**
+/*!
  `PFSignUpFields` bitmask specifies the sign up elements which are enabled in the view.
 
  @see PFSignUpViewController
  @see PFSignUpView
  */
 typedef NS_OPTIONS(NSInteger, PFSignUpFields) {
-    /** Username and password fields. */
+    /*! Username and password fields. */
     PFSignUpFieldsUsernameAndPassword = 0,
-    /** Email field. */
+    /*! Email field. */
     PFSignUpFieldsEmail = 1 << 0,
-    /** This field can be used for something else. */
+    /*! This field can be used for something else. */
     PFSignUpFieldsAdditional = 1 << 1,
-    /** Sign Up Button */
+    /*! Sign Up Button */
     PFSignUpFieldsSignUpButton = 1 << 2,
-    /** Dismiss Button */
+    /*! Dismiss Button */
     PFSignUpFieldsDismissButton = 1 << 3,
-    /** Default value. Combines Username, Password, Email, Sign Up and Dismiss Buttons. */
+    /*! Default value. Combines Username, Password, Email, Sign Up and Dismiss Buttons. */
     PFSignUpFieldsDefault = (PFSignUpFieldsUsernameAndPassword |
                              PFSignUpFieldsEmail |
                              PFSignUpFieldsSignUpButton |
                              PFSignUpFieldsDismissButton)
 };
 
-/**
- `PFSignUpFields`'s accessibity identifiers
- 
- @see PFSignUpView
- */
-extern NSString *const PFSignUpViewUsernameFieldAccessibilityIdentifier;
-extern NSString *const PFSignUpViewEmailFieldAccessibilityIdentifier;
-extern NSString *const PFSignUpViewPasswordFieldAccessibilityIdentifier;
-extern NSString *const PFSignUpViewAdditionalFieldAccessibilityIdentifier;
-extern NSString *const PFSignUpViewSignUpButtonAccessibilityIdentifier;
-extern NSString *const PFSignUpViewDismissButtonAccessibilityIdentifier;
-
 @class PFTextField;
 
-/**
- The `PFSignUpView` class provides a standard sign up interface for authenticating a `PFUser`.
+/*!
+ The `PFSignUpView` class provides a standard sign up interface for authenticating a <PFUser>.
  */
 @interface PFSignUpView : UIScrollView
 
@@ -72,41 +60,41 @@ extern NSString *const PFSignUpViewDismissButtonAccessibilityIdentifier;
 /// @name Creating SignUp View
 ///--------------------------------------
 
-/**
- Initializes the view with the specified sign up elements.
+/*!
+ @abstract Initializes the view with the specified sign up elements.
 
  @param fields A bitmask specifying the sign up elements which are enabled in the view
 
- @return An initialized `PFSignUpView` object or `nil` if the object couldn't be created.
+ @returns An initialized `PFSignUpView` object or `nil` if the object couldn't be created.
 
  @see PFSignUpFields
  */
 - (instancetype)initWithFields:(PFSignUpFields)fields;
 
-/**
- The view controller that will present this view.
+/*!
+ @abstract The view controller that will present this view.
 
- Used to lay out elements correctly when the presenting view controller has translucent elements.
+ @discussion Used to lay out elements correctly when the presenting view controller has translucent elements.
  */
-@property (nullable, nonatomic, weak) UIViewController *presentingViewController;
+@property (PFUI_NULLABLE_PROPERTY nonatomic, weak) UIViewController *presentingViewController;
 
 ///--------------------------------------
 /// @name Customizing the Logo
 ///--------------------------------------
 
-/**
- The logo. By default, it is the Parse logo.
+/*!
+ @abstract The logo. By default, it is the Parse logo.
  */
-@property (nullable, nonatomic, strong) UIView *logo;
+@property (PFUI_NULLABLE_PROPERTY nonatomic, strong) UIView *logo;
 
 ///--------------------------------------
 /// @name Configure Username Behaviour
 ///--------------------------------------
 
-/**
- If email should be used to log in, instead of username
+/*!
+ @abstract If email should be used to log in, instead of username
 
- By default, this is set to `NO`.
+ @discussion By default, this is set to `NO`.
  */
 @property (nonatomic, assign) BOOL emailAsUsername;
 
@@ -114,43 +102,43 @@ extern NSString *const PFSignUpViewDismissButtonAccessibilityIdentifier;
 /// @name Sign Up Elements
 ///--------------------------------------
 
-/**
- The bitmask which specifies the enabled sign up elements in the view
+/*!
+ @abstract The bitmask which specifies the enabled sign up elements in the view
  */
 @property (nonatomic, assign, readonly) PFSignUpFields fields;
 
-/**
- The username text field.
+/*!
+ @abstract The username text field.
  */
-@property (nullable, nonatomic, strong, readonly) PFTextField *usernameField;
+@property (PFUI_NULLABLE_PROPERTY nonatomic, strong, readonly) PFTextField *usernameField;
 
-/**
- The password text field.
+/*!
+ @abstract The password text field.
  */
-@property (nullable, nonatomic, strong, readonly) PFTextField *passwordField;
+@property (PFUI_NULLABLE_PROPERTY nonatomic, strong, readonly) PFTextField *passwordField;
 
-/**
- The email text field. It is `nil` if the element is not enabled.
+/*!
+ @abstract The email text field. It is `nil` if the element is not enabled.
  */
-@property (nullable, nonatomic, strong, readonly) PFTextField *emailField;
+@property (PFUI_NULLABLE_PROPERTY nonatomic, strong, readonly) PFTextField *emailField;
 
-/**
- The additional text field. It is `nil` if the element is not enabled.
+/*!
+ @abstract The additional text field. It is `nil` if the element is not enabled.
 
- This field is intended to be customized.
+ @discussion This field is intended to be customized.
  */
-@property (nullable, nonatomic, strong, readonly) PFTextField *additionalField;
+@property (PFUI_NULLABLE_PROPERTY nonatomic, strong, readonly) PFTextField *additionalField;
 
-/**
- The sign up button. It is `nil` if the element is not enabled.
+/*!
+ @abstract The sign up button. It is `nil` if the element is not enabled.
  */
-@property (nullable, nonatomic, strong, readonly) UIButton *signUpButton;
+@property (PFUI_NULLABLE_PROPERTY nonatomic, strong, readonly) UIButton *signUpButton;
 
-/**
- The dismiss button. It is `nil` if the element is not enabled.
+/*!
+ @abstract The dismiss button. It is `nil` if the element is not enabled.
  */
-@property (nullable, nonatomic, strong, readonly) UIButton *dismissButton;
+@property (PFUI_NULLABLE_PROPERTY nonatomic, strong, readonly) UIButton *dismissButton;
 
 @end
 
-NS_ASSUME_NONNULL_END
+PFUI_ASSUME_NONNULL_END

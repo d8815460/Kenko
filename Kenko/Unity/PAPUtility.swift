@@ -1,7 +1,7 @@
 import Foundation
 import CoreGraphics
 import UIImageAFAdditions
-import ParseFacebookUtilsV4
+import ParseFacebookUtils
 
 class PAPUtility {
 
@@ -17,7 +17,7 @@ class PAPUtility {
         queryExistingLikes.cachePolicy = PFCachePolicy.NetworkOnly
         queryExistingLikes.findObjectsInBackgroundWithBlock { (activities, error) in
             if error == nil {
-                for activity in activities as [PFObject]! {
+                for activity in activities as! [PFObject]! {
 // FIXME: To be removed! this is synchronous!                    activity.delete()
                     activity.deleteInBackground()
                 }
@@ -49,7 +49,7 @@ class PAPUtility {
 
                         var isLikedByCurrentUser = false
 
-                        for activity in objects as [PFObject]! {
+                        for activity in objects as! [PFObject]! {
                             if (activity.objectForKey(kPAPActivityTypeKey) as! String) == kPAPActivityTypeLike && activity.objectForKey(kPAPActivityFromUserKey) != nil {
                                 likers.append(activity.objectForKey(kPAPActivityFromUserKey) as! PFUser)
                             } else if (activity.objectForKey(kPAPActivityTypeKey) as! String) == kPAPActivityTypeComment && activity.objectForKey(kPAPActivityFromUserKey) != nil {
@@ -81,7 +81,7 @@ class PAPUtility {
         queryExistingLikes.cachePolicy = PFCachePolicy.NetworkOnly
         queryExistingLikes.findObjectsInBackgroundWithBlock { (activities, error) in
             if error == nil {
-                for activity in activities as [PFObject]! {
+                for activity in activities as! [PFObject]! {
 // FIXME: To be removed! this is synchronous!                    activity.delete()
                     activity.deleteInBackground()
                 }
@@ -100,7 +100,7 @@ class PAPUtility {
 
                         var isLikedByCurrentUser = false
 
-                        for activity in objects as [PFObject]! {
+                        for activity in objects as! [PFObject]! {
                             if (activity.objectForKey(kPAPActivityTypeKey) as! String) == kPAPActivityTypeLike {
                                 likers.append(activity.objectForKey(kPAPActivityFromUserKey) as! PFUser)
                             } else if (activity.objectForKey(kPAPActivityTypeKey) as! String) == kPAPActivityTypeComment {
@@ -145,7 +145,7 @@ class PAPUtility {
         let smallRoundedImageData: NSData = UIImagePNGRepresentation(smallRoundedImage)!
 
         if mediumImageData.length > 0 {
-            let fileMediumImage: PFFile = PFFile(data: mediumImageData)!
+            let fileMediumImage: PFFile = PFFile(data: mediumImageData)
             fileMediumImage.saveInBackgroundWithBlock { (succeeded, error) in
                 if error == nil {
                     PFUser.currentUser()!.setObject(fileMediumImage, forKey: kPAPUserProfilePicMediumKey)
@@ -155,7 +155,7 @@ class PAPUtility {
         }
 
         if smallRoundedImageData.length > 0 {
-            let fileSmallRoundedImage: PFFile = PFFile(data: smallRoundedImageData)!
+            let fileSmallRoundedImage: PFFile = PFFile(data: smallRoundedImageData)
             fileSmallRoundedImage.saveInBackgroundWithBlock { (succeeded, error) in
                 if error == nil {
                     PFUser.currentUser()!.setObject(fileSmallRoundedImage, forKey: kPAPUserProfilePicSmallKey)
@@ -169,7 +169,7 @@ class PAPUtility {
     class func userHasValidFacebookData(user: PFUser) -> Bool {
         // Check that PFUser has valid fbid that matches current FBSessions userId
         let facebookId = user.objectForKey(kPAPUserFacebookIDKey) as? String
-        return (facebookId != nil && facebookId?.characters.count > 0 && facebookId == FBSDKAccessToken.currentAccessToken().userID)
+        return (facebookId != nil && facebookId?.characters.count > 0 && facebookId == PFFacebookUtils.session()!.accessTokenData.userID)
     }
 
     class func userHasProfilePictures(user: PFUser) -> Bool {
@@ -257,7 +257,7 @@ class PAPUtility {
         query.findObjectsInBackgroundWithBlock { (followActivities, error) in
             // While normally there should only be one follow activity returned, we can't guarantee that.
             if error == nil {
-                for followActivity: PFObject in followActivities as [PFObject]! {
+                for followActivity: PFObject in followActivities as! [PFObject]! {
                     followActivity.deleteEventually()
                 }
             }
@@ -271,7 +271,7 @@ class PAPUtility {
         query.whereKey(kPAPActivityToUserKey, containedIn: users)
         query.whereKey(kPAPActivityTypeKey, equalTo: kPAPActivityTypeFollow)
         query.findObjectsInBackgroundWithBlock { (activities, error) in
-            for activity in activities as [PFObject]! {
+            for activity in activities as! [PFObject]! {
                 activity.deleteEventually()
             }
         }

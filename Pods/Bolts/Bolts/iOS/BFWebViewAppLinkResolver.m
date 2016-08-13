@@ -101,39 +101,36 @@ static NSString *const BFWebViewAppLinkResolverShouldFallbackKey = @"should_fall
     // or a dictionary with the response data to be returned.
     BFTaskCompletionSource *tcs = [BFTaskCompletionSource taskCompletionSource];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    [request setValue:BFWebViewAppLinkResolverMetaTagPrefix forHTTPHeaderField:BFWebViewAppLinkResolverPreferHeader];
+    [request setValue:BFWebViewAppLinkResolverMetaTagPrefix
+   forHTTPHeaderField:BFWebViewAppLinkResolverPreferHeader];
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse *response,
+                                               NSData *data,
+                                               NSError *connectionError) {
+                               if (connectionError) {
+                                   [tcs setError:connectionError];
+                                   return;
+                               }
 
-    void (^completion)(NSURLResponse *response, NSData *data, NSError *error) = ^(NSURLResponse *response, NSData *data, NSError *error) {
-        if (error) {
-            [tcs setError:error];
-            return;
-        }
+                               if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+                                   NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
 
-        if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
-            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+                                   // NSURLConnection usually follows redirects automatically, but the
+                                   // documentation is unclear what the default is. This helps it along.
+                                   if (httpResponse.statusCode >= 300 && httpResponse.statusCode < 400) {
+                                       NSString *redirectString = httpResponse.allHeaderFields[@"Location"];
+                                       NSURL *redirectURL = [NSURL URLWithString:redirectString];
+                                       [tcs setResult:redirectURL];
+                                       return;
+                                   }
+                               }
 
-            // NSURLConnection usually follows redirects automatically, but the
-            // documentation is unclear what the default is. This helps it along.
-            if (httpResponse.statusCode >= 300 && httpResponse.statusCode < 400) {
-                NSString *redirectString = httpResponse.allHeaderFields[@"Location"];
-                NSURL *redirectURL = [NSURL URLWithString:redirectString];
-                [tcs setResult:redirectURL];
-                return;
-            }
-        }
-
-        [tcs setResult:@{ @"response" : response, @"data" : data }];
-    };
-
-#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_7_0 || __MAC_OS_X_VERSION_MIN_REQUIRED >= __MAC_10_9
-    NSURLSession *session = [NSURLSession sharedSession];
-    [[session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        completion(response, data, error);
-    }] resume];
-#else
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:completion];
-#endif
-
+                               [tcs setResult:@{
+                                                @"response" : response,
+                                                @"data" : data
+                                                }];
+                           }];
     return [tcs.task continueWithSuccessBlock:^id(BFTask *task) {
         // If we redirected, just keep recursing.
         if ([task.result isKindOfClass:[NSURL class]]) {
@@ -246,13 +243,6 @@ static NSString *const BFWebViewAppLinkResolverShouldFallbackKey = @"should_fall
             platformData = @[ appLinkDict[BFWebViewAppLinkResolverIPhoneKey] ?: @{},
                               appLinkDict[BFWebViewAppLinkResolverIOSKey] ?: @{} ];
             break;
-#ifdef __TVOS_9_0
-        case UIUserInterfaceIdiomTV:
-#endif
-#ifdef __IPHONE_9_3
-        case UIUserInterfaceIdiomCarPlay:
-#endif
-        case UIUserInterfaceIdiomUnspecified:
         default:
             // Future-proofing. Other User Interface idioms should only hit ios.
             platformData = @[ appLinkDict[BFWebViewAppLinkResolverIOSKey] ?: @{} ];

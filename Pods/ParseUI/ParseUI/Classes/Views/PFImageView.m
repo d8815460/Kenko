@@ -47,8 +47,8 @@
 #pragma mark -
 #pragma mark Load
 
-- (BFTask<UIImage *> *)loadInBackground {
-    BFTaskCompletionSource<UIImage *> *source = [BFTaskCompletionSource taskCompletionSource];
+- (BFTask *)loadInBackground {
+    BFTaskCompletionSource *source = [BFTaskCompletionSource taskCompletionSource];
     [self loadInBackground:^(UIImage *image, NSError *error) {
         if (error) {
             [source trySetError:error];
@@ -127,11 +127,17 @@
                 return;
             }
 
-            dispatch_async(dispatch_get_main_queue(), ^{
-                // check if a latter issued loadInBackground has not replaced the file being loaded
-                if (file == _file) {
-                    self.image = image;
+            if (file != _file) {
+                // a latter issued loadInBackground has replaced the file being loaded
+                if (completion) {
+                    completion(image, nil);
                 }
+
+                return;
+            }
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.image = image;
 
                 if (completion) {
                     completion(image, nil);

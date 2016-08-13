@@ -31,13 +31,12 @@
 #import "PFImageView.h"
 #import "PFLoadingView.h"
 #import "PFLocalization.h"
-#import "PFUIAlertView.h"
 
 static NSString *const PFQueryCollectionViewCellIdentifier = @"cell";
 static NSString *const PFQueryCollectionViewNextPageReusableViewIdentifier = @"nextPageView";
 
 @interface PFQueryCollectionViewController () {
-    NSMutableArray<PFObject *> *_mutableObjects;
+    NSMutableArray *_mutableObjects;
 
     BOOL _firstLoad;           // Whether we have loaded the first set of objects
     NSInteger _currentPage;    // The last page that was loaded
@@ -79,10 +78,6 @@ static NSString *const PFQueryCollectionViewNextPageReusableViewIdentifier = @"n
     [self _setupWithClassName:nil];
 
     return self;
-}
-
-- (instancetype)initWithCollectionViewLayout:(UICollectionViewLayout *)layout {
-    return[self initWithCollectionViewLayout:layout className:nil];
 }
 
 - (instancetype)initWithCollectionViewLayout:(UICollectionViewLayout *)layout className:(NSString *)className {
@@ -227,18 +222,18 @@ static NSString *const PFQueryCollectionViewNextPageReusableViewIdentifier = @"n
 #pragma mark -
 #pragma mark Loading Data
 
-- (BFTask<NSArray<__kindof PFObject *> *> *)loadObjects {
+- (BFTask *)loadObjects {
     return [self loadObjects:0 clear:YES];
 }
 
-- (BFTask<NSArray<__kindof PFObject *> *> *)loadObjects:(NSInteger)page clear:(BOOL)clear {
+- (BFTask *)loadObjects:(NSInteger)page clear:(BOOL)clear {
     self.loading = YES;
     [self objectsWillLoad];
 
+    BFTaskCompletionSource *source = [BFTaskCompletionSource taskCompletionSource];
+
     PFQuery *query = [self queryForCollection];
     [self _alterQuery:query forLoadingPage:page];
-
-    BFTaskCompletionSource<NSArray<__kindof PFObject *> *> *source = [BFTaskCompletionSource taskCompletionSource];
     [query findObjectsInBackgroundWithBlock:^(NSArray *foundObjects, NSError *error) {
         if (![Parse isLocalDatastoreEnabled] &&
             query.cachePolicy != kPFCachePolicyCacheOnly &&
@@ -267,12 +262,9 @@ static NSString *const PFQueryCollectionViewNextPageReusableViewIdentifier = @"n
         [self objectsDidLoad:error];
         [self.refreshControl endRefreshing];
 
-        if (error) {
-            [source trySetError:error];
-        } else {
-            [source trySetResult:foundObjects];
-        }
+        [source setError:error];
     }];
+
     return source.task;
 }
 
@@ -334,7 +326,7 @@ static NSString *const PFQueryCollectionViewNextPageReusableViewIdentifier = @"n
     _currentNextPageView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter
                                                               withReuseIdentifier:PFQueryCollectionViewNextPageReusableViewIdentifier
                                                                      forIndexPath:[self _indexPathForPaginationReusableView]];
-    _currentNextPageView.textLabel.text = PFLocalizedString(@"Load more...", @"Load more...");
+    _currentNextPageView.textLabel.text = NSLocalizedString(@"Load more...", @"Load more...");
     [_currentNextPageView addTarget:self action:@selector(loadNextPage) forControlEvents:UIControlEventTouchUpInside];
     _currentNextPageView.animating = self.loading;
     return _currentNextPageView;
@@ -359,7 +351,12 @@ static NSString *const PFQueryCollectionViewNextPageReusableViewIdentifier = @"n
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
            viewForSupplementaryElementOfKind:(NSString *)kind
                                  atIndexPath:(NSIndexPath *)indexPath {
-    return [self collectionViewReusableViewForNextPageAction:collectionView];
+    if ([self _shouldShowPaginationView] &&
+        [kind isEqualToString:UICollectionElementKindSectionFooter] &&
+        [indexPath isEqual:[self _indexPathForPaginationReusableView]]) {
+        return [self collectionViewReusableViewForNextPageAction:collectionView];
+    }
+    return nil;
 }
 
 #pragma mark -
@@ -392,10 +389,29 @@ static NSString *const PFQueryCollectionViewNextPageReusableViewIdentifier = @"n
     // Fully reload on error.
     [self loadObjects];
 
-    NSString *message = [NSString stringWithFormat:@"%@: \"%@\"",
-                              PFLocalizedString(@"Error occurred during deletion", @"Error occurred during deletion"),
+    NSString *errorMessage = [NSString stringWithFormat:@"%@: \"%@\"",
+                              NSLocalizedString(@"Error occurred during deletion", @"Error occurred during deletion"),
                               error.localizedDescription];
-    [PFUIAlertView presentAlertInViewController:self withTitle:PFLocalizedString(@"Delete Error", @"Delete Error") message:message];
+
+    if ([UIAlertController class]) {
+        UIAlertController *errorController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Error", @"Error")
+                                                                                 message:errorMessage
+                                                                          preferredStyle:UIAlertControllerStyleAlert];
+
+        [errorController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"OK", @"OK")
+                                                            style:UIAlertActionStyleCancel
+                                                          handler:nil]];
+
+        [self presentViewController:errorController animated:YES completion:nil];
+    } else {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"Error")
+                                                            message:errorMessage
+                                                           delegate:nil
+                                                  cancelButtonTitle:NSLocalizedString(@"OK", @"OK")
+                                                  otherButtonTitles:nil];
+
+        [alertView show];
+    }
 }
 
 #pragma mark -

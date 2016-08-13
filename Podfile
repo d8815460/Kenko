@@ -4,19 +4,23 @@
 target 'Kenko' do
 
 use_frameworks!
-pod 'Parse'
-pod 'ParseUI'
-pod 'MBProgressHUD'
+pod 'Parse', '~> 1.7.5'
+pod 'ParseFacebookUtils', '~> 1.7.5'
+#pod 'ParseFacebookUtilsV4', '~> 1.11'
+pod 'ParseCrashReporting', '~> 1.7.5'
+# Workaround for the unknown crashes Bolts (https://github.com/BoltsFramework/Bolts-iOS/issues/102)
+pod 'Bolts', :git => 'https://github.com/kwkhaw/Bolts-iOS.git'
+pod 'ParseUI', '1.1.4'
+pod 'MBProgressHUD', '~> 0.9.1'
 pod 'Fabric'
 pod 'Crashlytics'
-pod 'ParseCrashReporting', '~> 1.9'
-pod 'ParseFacebookUtilsV4', '~> 1.11'
+
 pod 'FormatterKit', '~> 1.8'
 pod 'Canvas'
-pod 'FormatterKit'
-pod 'UIImageEffects'
+pod 'FormatterKit', '~> 1.8.0'
+pod 'UIImageEffects', '~> 0.0.1'
 pod 'UIImageAFAdditions', :git => 'https://github.com/teklabs/UIImageAFAdditions.git'
-pod 'Synchronized'
+pod 'Synchronized', '~> 2.0.0'
 pod 'Reachability', '~> 3.2'
 
 end

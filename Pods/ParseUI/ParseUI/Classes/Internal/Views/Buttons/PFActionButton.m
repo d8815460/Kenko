@@ -33,23 +33,12 @@ static const UIEdgeInsets PFActionButtonContentEdgeInsets = { .top = 0.0f, .left
 
 @property (nonatomic, strong) PFActionButtonConfiguration *configuration;
 
-- (instancetype)initWithCoder:(nonnull NSCoder *)decoder NS_DESIGNATED_INITIALIZER;
-- (instancetype)initWithFrame:(CGRect)frame NS_DESIGNATED_INITIALIZER;
-
 @end
 
 @implementation PFActionButton
 
 #pragma mark -
 #pragma mark Init
-
-- (instancetype)initWithFrame:(CGRect)frame {
-    return [super initWithFrame:frame];
-}
-
-- (instancetype)initWithCoder:(nonnull NSCoder *)decoder {
-    return [super initWithCoder:decoder];
-}
 
 - (instancetype)initWithConfiguration:(PFActionButtonConfiguration *)configuration
                           buttonStyle:(PFActionButtonStyle)buttonStyle {
@@ -169,10 +158,6 @@ static const UIEdgeInsets PFActionButtonContentEdgeInsets = { .top = 0.0f, .left
 
 #pragma mark -
 #pragma mark Init
-
-- (instancetype)init {
-    return [self initWithBackgroundImageColor:nil image:nil];
-}
 
 - (instancetype)initWithBackgroundImageColor:(UIColor *)backgroundImageColor
                                        image:(UIImage *)image {

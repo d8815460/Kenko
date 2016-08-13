@@ -25,7 +25,7 @@
 #import <Parse/PFPurchase.h>
 #import <Parse/PFQuery.h>
 
-#import "PFUIAlertView.h"
+#import "PFAlertView.h"
 #import "PFLocalization.h"
 #import "PFPurchaseTableViewCell.h"
 
@@ -88,15 +88,15 @@ static NSString *const PFProductMetadataPriceLocaleKey = @"priceLocale";
 
             cell.state = PFPurchaseTableViewCellStateDownloading;
             [PFPurchase downloadAssetForTransaction:transaction
-                                         completion:^(NSString *filePath, NSError *error) {
-                                             if (!error) {
+                                         completion:^(NSString *filePath, NSError *downloadError) {
+                                             if (!downloadError) {
                                                  cell.state = PFPurchaseTableViewCellStateDownloaded;
                                              } else {
                                                  cell.state = PFPurchaseTableViewCellStateNormal;
 
-                                                 NSString *title = PFLocalizedString(@"Download Error",
+                                                 NSString *title = NSLocalizedString(@"Download Error",
                                                                                      @"Download Error");
-                                                 [PFUIAlertView presentAlertInViewController:self withTitle:title error:error];
+                                                 [PFUIAlertView showAlertViewWithTitle:title error:downloadError];
                                              }
                                          }
                                            progress:^(int percentDone) {
@@ -174,8 +174,8 @@ static NSString *const PFProductMetadataPriceLocaleKey = @"priceLocale";
         PFProduct *product = self.objects[indexPath.row];
         [PFPurchase buyProduct:product.productIdentifier block:^(NSError *error) {
             if (error) {
-                NSString *title = PFLocalizedString(@"Purchase Error", @"Purchase Error");
-                [PFUIAlertView presentAlertInViewController:self withTitle:title error:error];
+                NSString *title = NSLocalizedString(@"Purchase Error", @"Purchase Error");
+                [PFUIAlertView showAlertViewWithTitle:title error:error];
             }
         }];
     }

@@ -24,24 +24,24 @@
 #import <ParseUI/ParseUIConstants.h>
 #import <ParseUI/PFQueryTableViewController.h>
 
-NS_ASSUME_NONNULL_BEGIN
+PFUI_ASSUME_NONNULL_BEGIN
 
-/**
+/*!
  `PFProductTableViewController` displays in-app purchase products stored on Parse.
  In addition to setting up in-app purchases in iTunes Connect, the app developer needs
  to register product information on Parse, in the Product class.
  */
 @interface PFProductTableViewController : PFQueryTableViewController
 
-/**
- Initializes a product table view controller.
+/*!
+ @abstract Initializes a product table view controller.
 
  @param style The UITableViewStyle for the table
 
- @return An initialized `PFProductTableViewController` object or `nil` if the object couldn't be created.
+ @returns An initialized `PFProductTableViewController` object or `nil` if the object couldn't be created.
  */
 - (instancetype)initWithStyle:(UITableViewStyle)style NS_DESIGNATED_INITIALIZER;
 
 @end
 
-NS_ASSUME_NONNULL_END
+PFUI_ASSUME_NONNULL_END

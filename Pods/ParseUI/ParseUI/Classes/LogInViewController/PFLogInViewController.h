@@ -21,19 +21,17 @@
 
 #import <UIKit/UIKit.h>
 
-#import <Parse/PFConstants.h>
-
 #import <ParseUI/ParseUIConstants.h>
 #import <ParseUI/PFLogInView.h>
 
-NS_ASSUME_NONNULL_BEGIN
+PFUI_ASSUME_NONNULL_BEGIN
 
 @class PFSignUpViewController;
 @class PFUser;
 @protocol PFLogInViewControllerDelegate;
 
-/**
- The `PFLogInViewController` class presents and manages a standard authentication interface for logging in a `PFUser`.
+/*!
+ The `PFLogInViewController` class presents and manages a standard authentication interface for logging in a <PFUser>.
  */
 @interface PFLogInViewController : UIViewController <UITextFieldDelegate>
 
@@ -41,52 +39,52 @@ NS_ASSUME_NONNULL_BEGIN
 /// @name Configuring Log In Elements
 ///--------------------------------------
 
-/**
- A bitmask specifying the log in elements which are enabled in the view.
+/*!
+ @abstract A bitmask specifying the log in elements which are enabled in the view.
 
  @see PFLogInFields
  */
 @property (nonatomic, assign) PFLogInFields fields;
 
 
-/**
- The log in view. It contains all the enabled log in elements.
+/*!
+ @abstract The log in view. It contains all the enabled log in elements.
 
  @see PFLogInView
  */
-@property (nullable, nonatomic, strong, readonly) PFLogInView *logInView;
+@property (PFUI_NULLABLE_PROPERTY nonatomic, strong, readonly) PFLogInView *logInView;
 
 ///--------------------------------------
 /// @name Configuring Log In Behaviors
 ///--------------------------------------
 
-/**
- The delegate that responds to the control events of `PFLogInViewController`.
+/*!
+ @abstract The delegate that responds to the control events of `PFLogInViewController`.
 
  @see PFLogInViewControllerDelegate
  */
-@property (nullable, nonatomic, weak) id<PFLogInViewControllerDelegate> delegate;
+@property (PFUI_NULLABLE_PROPERTY nonatomic, weak) id<PFLogInViewControllerDelegate> delegate;
 
-/**
- The facebook permissions that Facebook log in requests for.
+/*!
+ @abstract The facebook permissions that Facebook log in requests for.
 
- If unspecified, the default is basic facebook permissions.
+ @discussion If unspecified, the default is basic facebook permissions.
  */
-@property (nullable, nonatomic, copy) NSArray<NSString *> *facebookPermissions;
+@property (PFUI_NULLABLE_PROPERTY nonatomic, copy) NSArray *facebookPermissions;
 
-/**
- The sign up controller if sign up is enabled.
+/*!
+ @abstract The sign up controller if sign up is enabled.
 
- Use this to configure the sign up view, and the transition animation to the sign up view.
+ @discussion Use this to configure the sign up view, and the transition animation to the sign up view.
  The default is a sign up view with a username, a password, a dismiss button and a sign up button.
  */
-@property (nullable, nonatomic, strong) PFSignUpViewController *signUpController;
+@property (PFUI_NULLABLE_PROPERTY nonatomic, strong) PFSignUpViewController *signUpController;
 
-/**
- Whether to prompt for the email as username on the login view.
+/*!
+ @abstract Whether to prompt for the email as username on the login view.
 
- If set to `YES`, we'll prompt for the email in the username field.
- This property value propagates to the attached `signUpController`.
+ @discussion If set to `YES`, we'll prompt for the email in the username field.
+ This property value propagates to the attached <signUpController>.
  By default, this is set to `NO`.
  */
 @property (nonatomic, assign) BOOL emailAsUsername;
@@ -97,19 +95,19 @@ NS_ASSUME_NONNULL_BEGIN
 /// @name Notifications
 ///--------------------------------------
 
-/**
- The notification is posted immediately after the log in succeeds.
+/*!
+ @abstract The notification is posted immediately after the log in succeeds.
  */
 extern NSString *const PFLogInSuccessNotification;
 
-/**
- The notification is posted immediately after the log in fails.
- If the delegate prevents the log in from starting, the notification is not sent.
+/*!
+ @abstract The notification is posted immediately after the log in fails.
+ @discussion If the delegate prevents the log in from starting, the notification is not sent.
  */
 extern NSString *const PFLogInFailureNotification;
 
-/**
- The notification is posted immediately after the log in is cancelled.
+/*!
+ @abstract The notification is posted immediately after the log in is cancelled.
  */
 extern NSString *const PFLogInCancelNotification;
 
@@ -117,8 +115,8 @@ extern NSString *const PFLogInCancelNotification;
 /// @name PFLogInViewControllerDelegate
 ///--------------------------------------
 
-/**
- The `PFLogInViewControllerDelegate` protocol defines methods a delegate of a `PFLogInViewController` should implement.
+/*!
+ The `PFLogInViewControllerDelegate` protocol defines methods a delegate of a <PFLogInViewController> should implement.
  All methods of this protocol are optional.
  */
 @protocol PFLogInViewControllerDelegate <NSObject>
@@ -129,14 +127,14 @@ extern NSString *const PFLogInCancelNotification;
 /// @name Customizing Behavior
 ///--------------------------------------
 
-/**
- Sent to the delegate to determine whether the log in request should be submitted to the server.
+/*!
+ @abstract Sent to the delegate to determine whether the log in request should be submitted to the server.
 
  @param logInController The login view controller that is requesting the data.
  @param username the username the user tries to log in with.
  @param password the password the user tries to log in with.
 
- @return A `BOOL` indicating whether the log in should proceed.
+ @returns A `BOOL` indicating whether the log in should proceed.
  */
 - (BOOL)logInViewController:(PFLogInViewController *)logInController
 shouldBeginLogInWithUsername:(NSString *)username
@@ -146,27 +144,28 @@ shouldBeginLogInWithUsername:(NSString *)username
 /// @name Responding to Actions
 ///--------------------------------------
 
-/**
- Sent to the delegate when a `PFUser` is logged in.
+/*!
+ @abstract Sent to the delegate when a <PFUser> is logged in.
 
  @param logInController The login view controller where login finished.
- @param user `PFUser` object that is a result of the login.
+ @param user <PFUser> object that is a result of the login.
  */
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user;
 
-/**
- Sent to the delegate when the log in attempt fails.
+/*!
+ @abstract Sent to the delegate when the log in attempt fails.
 
- If you implement this method, PFLoginViewController will not automatically show its default
+ @discussion If you implement this method, PFLoginViewController will not automatically show its default
  login failure alert view. Instead, you should show your custom alert view in your implementation.
 
  @param logInController The login view controller where login failed.
  @param error `NSError` object representing the error that occured.
  */
-- (void)logInViewController:(PFLogInViewController *)logInController didFailToLogInWithError:(nullable NSError *)error;
+- (void)logInViewController:(PFLogInViewController *)logInController
+    didFailToLogInWithError:(PFUI_NULLABLE NSError *)error;
 
-/**
- Sent to the delegate when the log in screen is cancelled.
+/*!
+ @abstract Sent to the delegate when the log in screen is cancelled.
 
  @param logInController The login view controller where login was cancelled.
  */
@@ -174,4 +173,4 @@ shouldBeginLogInWithUsername:(NSString *)username
 
 @end
 
-NS_ASSUME_NONNULL_END
+PFUI_ASSUME_NONNULL_END

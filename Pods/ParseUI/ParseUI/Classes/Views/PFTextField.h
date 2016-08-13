@@ -23,46 +23,46 @@
 
 #import <ParseUI/ParseUIConstants.h>
 
-NS_ASSUME_NONNULL_BEGIN
+PFUI_ASSUME_NONNULL_BEGIN
 
-/**
+/*!
  `PFTextFieldSeparatorStyle` bitmask specifies the style of the separators,
  that should be used for a given `PFTextField`.
 
  @see PFTextField
  */
 typedef NS_OPTIONS(uint8_t, PFTextFieldSeparatorStyle){
-    /** No separators are visible. */
+    /*! No separators are visible. */
     PFTextFieldSeparatorStyleNone = 0,
-    /** Separator on top of the text field. */
+    /*! Separator on top of the text field. */
     PFTextFieldSeparatorStyleTop = 1 << 0,
-    /** Separator at the bottom of the text field. */
+    /*! Separator at the bottom of the text field. */
     PFTextFieldSeparatorStyleBottom = 1 << 1
 };
 
-/**
+/*!
  `PFTextField` class serves as a stylable subclass of `UITextField`.
  It includes styles that are specific to `ParseUI` framework and allows advanced customization.
  */
 @interface PFTextField : UITextField
 
-/**
- Separator style bitmask that should be applied to this textfield.
+/*!
+ @abstract Separator style bitmask that should be applied to this textfield.
 
- Default: `PFTextFieldSeparatorStyleNone`
+ @discussion Default: <PFTextFieldSeparatorStyleNone>
 
  @see PFTextFieldSeparatorStyle
  */
 @property (nonatomic, assign) PFTextFieldSeparatorStyle separatorStyle;
 
-/**
- Color that should be used for the separators, if they are visible.
+/*!
+ @abstract Color that should be used for the separators, if they are visible.
 
- Default: `227,227,227,1.0`.
+ @discussion Default: `227,227,227,1.0`.
  */
-@property (nullable, nonatomic, strong) UIColor *separatorColor UI_APPEARANCE_SELECTOR;
+@property (PFUI_NULLABLE_PROPERTY nonatomic, strong) UIColor *separatorColor UI_APPEARANCE_SELECTOR;
 
-/**
+/*!
  This method is a convenience initializer that sets both `frame` and `separatorStyle` for an instance of `PFTextField.`
 
  @param frame          The frame rectangle for the view, measured in points.
@@ -74,4 +74,4 @@ typedef NS_OPTIONS(uint8_t, PFTextFieldSeparatorStyle){
 
 @end
 
-NS_ASSUME_NONNULL_END
+PFUI_ASSUME_NONNULL_END

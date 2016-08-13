@@ -23,39 +23,39 @@
 
 #import <ParseUI/ParseUIConstants.h>
 
-NS_ASSUME_NONNULL_BEGIN
+PFUI_ASSUME_NONNULL_BEGIN
 
 @class PFImageView;
 @class PFObject;
 
-/**
+/*!
  The `PFCollectionViewCell` class represents a collection view cell which can
  download and display remote images stored on Parse as well as has a default simple text label.
  */
 @interface PFCollectionViewCell : UICollectionViewCell
 
-/**
- A simple lazy-loaded label for the collection view cell.
+/*!
+ @abstract A simple lazy-loaded label for the collection view cell.
  */
 @property (nonatomic, strong, readonly) UILabel *textLabel;
 
-/**
- The lazy-loaded imageView of the collection view cell.
+/*!
+ @abstract The lazy-loaded imageView of the collection view cell.
 
  @see PFImageView
  */
 @property (nonatomic, strong, readonly) PFImageView *imageView;
 
-/**
- This method should update all the relevant information inside a subclass of `PFCollectionViewCell`.
+/*!
+ @abstract This method should update all the relevant information inside a subclass of `PFCollectionViewCell`.
 
- This method is automatically called by `PFQueryCollectionViewController` whenever the cell
+ @discussion This method is automatically called by <PFQueryCollectionViewController> whenever the cell
  should display new information. By default this method does nothing.
 
  @param object An instance of `PFObject` to update from.
  */
-- (void)updateFromObject:(nullable PFObject *)object;
+- (void)updateFromObject:(PFUI_NULLABLE PFObject *)object;
 
 @end
 
-NS_ASSUME_NONNULL_END
+PFUI_ASSUME_NONNULL_END

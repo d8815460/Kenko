@@ -1,0 +1,6 @@
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/ParseFacebookUtils" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Crashlytics" "${PODS_ROOT}/Headers/Public/Fabric"
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/ParseFacebookUtils"
+OTHER_LDFLAGS = -ObjC -l"ParseFacebookUtilsLib" -l"sqlite3" -l"z" -framework "AudioToolbox" -framework "CFNetwork" -framework "CoreGraphics" -framework "CoreLocation" -framework "QuartzCore" -framework "Security" -framework "StoreKit" -framework "SystemConfiguration" -weak_framework "Accounts" -weak_framework "Social"
+PODS_ROOT = ${SRCROOT}
+SKIP_INSTALL = YES

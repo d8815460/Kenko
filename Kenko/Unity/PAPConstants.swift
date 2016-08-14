@@ -72,6 +72,18 @@ let kPAPUserAlreadyAutoFollowedFacebookFriendsKey   = "userAlreadyAutoFollowedFa
 let kPAPUserEmailKey                                = "email"
 let kPAPUserAutoFollowKey                           = "autoFollow"
 
+
+// MARK:- Posts Class
+
+// Class key
+let kPAPPostsClassKey = "Posts"
+// Field keys
+let kPAPPostsUserKey            = "user"
+let kPAPPostsTitleKey           = "title"
+let kPAPPostsContentKey         = "content"
+let kPAPPostsPhotoKey           = "photo"
+let kPAPPostsThumbnailKey       = "thumbnail"
+
 // MARK:- Photo Class
 
 // Class key

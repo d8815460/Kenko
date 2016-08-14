@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var networkStatus: Reachability.NetworkStatus?
     private var firstLaunch: Bool = true
-    
+    private var tabController: FNFoldingTabBarController?
     
     func sharedInstance() -> AppDelegate{
         return UIApplication.sharedApplication().delegate as! AppDelegate
@@ -94,9 +94,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow.init(frame: UIScreen.mainScreen().bounds)
         self.window!.backgroundColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()
-        let tabController:FNFoldingTabBarController = FNFoldingTabBarController.init()
-        tabController.title = "Kenko.Today"
-        tabController.tabBarBgColor = UIColor.clearColor()
+        tabController = FNFoldingTabBarController.init()
+        tabController!.title = "Kenko.Today"
+        tabController!.tabBarBgColor = UIColor.clearColor()
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc0 = storyboard.instantiateViewControllerWithIdentifier("timeline")
@@ -115,12 +115,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         vc3.tabBarItem.title = "3";
         vc3.tabBarItem.image = nil
         
-        tabController.fn_viewControllers=[vc0, vc1, vc2, vc3]
+        tabController!.fn_viewControllers=[vc0, vc1, vc2, vc3]
         
-        let naviController = UINavigationController.init(rootViewController: tabController)
+        let naviController = UINavigationController.init(rootViewController: tabController!)
         self.window!.rootViewController = naviController
         self.window!.makeKeyAndVisible()
-        
         
         return true
     }
@@ -230,7 +229,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // 跳出首頁Tabbar頁面
     internal func presentTabBarController() {
+        if tabController == nil {
+            tabController = FNFoldingTabBarController.init()
+        }
+//        tabController!.title = "Kenko.Today"
+//        tabController!.tabBarBgColor = UIColor.clearColor()
         
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc0 = storyboard.instantiateViewControllerWithIdentifier("timeline")
+        vc0.tabBarItem.title = "0";
+        vc0.tabBarItem.image = nil
+        
+        let vc1 = storyboard.instantiateViewControllerWithIdentifier("post")
+        vc1.tabBarItem.title = "1";
+        vc1.tabBarItem.image = nil
+        
+        let vc2 = storyboard.instantiateViewControllerWithIdentifier("chat")
+        vc2.tabBarItem.title = "2";
+        vc2.tabBarItem.image = nil
+        
+        let vc3 = storyboard.instantiateViewControllerWithIdentifier("setting")
+        vc3.tabBarItem.title = "3";
+        vc3.tabBarItem.image = nil
+        
+        tabController!.fn_viewControllers=[vc0, vc1, vc2, vc3]
+        
+        let naviController = UINavigationController.init(rootViewController: tabController!)
+        self.window!.rootViewController = naviController
+        self.window!.makeKeyAndVisible()
     }
     
     func logOut() {
@@ -336,13 +362,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                self.homeViewController!.loadObjects()
     }
     
-    func shouldProceedToMainInterface(user: PFUser)-> Bool{
-        //        MBProgressHUD.hideHUDForView(navController!.presentedViewController!.view, animated: true)
-        self.presentTabBarController()
-        
-        //        self.navController!.dismissViewControllerAnimated(true, completion: nil)
-        return true
-    }
+//    func shouldProceedToMainInterface(user: PFUser)-> Bool{
+//        //        MBProgressHUD.hideHUDForView(navController!.presentedViewController!.view, animated: true)
+//        self.presentTabBarController()
+//        
+//        //        self.navController!.dismissViewControllerAnimated(true, completion: nil)
+//        return true
+//    }
     
     func handleActionURL(url: NSURL) -> Bool {
         if url.host == kPAPLaunchURLHostTakePicture {
@@ -370,11 +396,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if error != nil {
                 print("Error auto following users: \(error)")
             }
-            
-//            MBProgressHUD.hideHUDForView(self.navController!.presentedViewController!.view, animated:false)
-//            self.homeViewController!.loadObjects()
         }
     }
-
+    
+    
+    // TabBar Delegate
+    func presentToTabbarIndex(index:NSInteger) {
+        if index == 0 {
+            // TimeLine頁面
+        } else if index == 1 {
+            // Post 頁面
+            let Post:PostBlogViewController = tabController?.viewControllers![1] as! PostBlogViewController
+            Post.prepareToWrite()
+        } else if index == 2 {
+            // Chatbot 頁面
+        } else if index == 3 {
+            // Setting 頁面
+        }
+//        tabController?.selectedIndex = index
+//        self.window?.rootViewController!.childViewControllers[0].selectedIndex = index
+//        print(self.window!.rootViewController)
+    }
 }
 

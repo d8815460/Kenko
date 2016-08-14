@@ -11,6 +11,7 @@ import ParseUI
 import Synchronized
 import MBProgressHUD
 import ParseFacebookUtils
+import FormatterKit
 
 class TimeLineViewController: PFQueryTableViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
 
@@ -20,6 +21,7 @@ class TimeLineViewController: PFQueryTableViewController, PFLogInViewControllerD
     private var delegate: PFLogInViewControllerDelegate?
     private var _profilePicData: NSMutableData? = nil
     private var hud: MBProgressHUD?
+    private var timeIntervalFormatter: TTTTimeIntervalFormatter?
     
     override init(style: UITableViewStyle, className: String?) {
         super.init(style: style, className: className)
@@ -54,6 +56,8 @@ class TimeLineViewController: PFQueryTableViewController, PFLogInViewControllerD
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
         view.backgroundColor = UIColor.init(red: 94/255.0, green: 89/255.0, blue: 151/255.0, alpha: 1)
+        
+        self.timeIntervalFormatter = TTTTimeIntervalFormatter()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -116,10 +120,16 @@ class TimeLineViewController: PFQueryTableViewController, PFLogInViewControllerD
                     cell.profileImageView?.image = UIImage(data: photo!)
                 }
             })
-            
             cell.nameLabel?.text = user?.objectForKey(kPAPUserDisplayNameKey) as? String
-            cell.photoImageView?.image = UIImage(named: "dish")
-            cell.dateLabel?.text = "2 mins ago"
+            
+            let timeInterval: NSTimeInterval = object!.createdAt!.timeIntervalSinceNow
+            let timestamp: String = self.timeIntervalFormatter!.stringForTimeInterval(timeInterval)
+            cell.dateLabel?.text = timestamp
+            
+            let photofile:PFFile = (object?.objectForKey("photo") as? PFFile)!
+            photofile.getDataInBackgroundWithBlock({ (data, error) in
+                cell.photoImageView?.image = UIImage(data: data!)
+            })
             
             return cell
         } else {
@@ -135,7 +145,9 @@ class TimeLineViewController: PFQueryTableViewController, PFLogInViewControllerD
             })
             cell.nameLabel?.text = user?.objectForKey(kPAPUserDisplayNameKey) as? String
             cell.postLabel?.text = object?.objectForKey("content") as? String
-            cell.dateLabel?.text = "2 mins ago"
+            let timeInterval: NSTimeInterval = object!.createdAt!.timeIntervalSinceNow
+            let timestamp: String = self.timeIntervalFormatter!.stringForTimeInterval(timeInterval)
+            cell.dateLabel?.text = timestamp
             return cell
         }
     }
@@ -143,43 +155,6 @@ class TimeLineViewController: PFQueryTableViewController, PFLogInViewControllerD
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 200
     }
- 
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-     if editingStyle == .Delete {
-     // Delete the row from the data source
-     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-     } else if editingStyle == .Insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
     
     /*
     // MARK: - Navigation
@@ -242,8 +217,6 @@ class TimeLineViewController: PFQueryTableViewController, PFLogInViewControllerD
     // PFLoginViewDelegate
     
     func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
-//        self.handleFacebookSession()
-        
         logInController.dismissViewControllerAnimated(true) {
             
         }

@@ -59,6 +59,7 @@ class FNFoldingTabBarController: UITabBarController, FNFoldingTabBarDelegate {
     
     func tabTappedAtIndex(index: NSInteger) {
         selectedIndex = index
+        (UIApplication.sharedApplication().delegate as! AppDelegate).presentToTabbarIndex(index)
     }
     
     override func didReceiveMemoryWarning() {

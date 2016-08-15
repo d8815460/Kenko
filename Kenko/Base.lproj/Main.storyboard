@@ -458,7 +458,13 @@
                             <outlet property="delegate" destination="XcA-PI-0qB" id="GGV-2X-oxM"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="還有三步驟就完成" id="1Ah-Ok-Qwg"/>
+                    <navigationItem key="navigationItem" title="還有三步驟就完成" id="1Ah-Ok-Qwg">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="cancel" id="c3l-UM-dcr">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="XcA-PI-0qB" id="Nd9-bA-9I8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="photoButton" destination="OlT-QS-IAm" id="WHk-jY-Kuh"/>
                         <outlet property="photoCheckMark" destination="WnT-nN-c9v" id="n1j-EV-3uG"/>
@@ -470,11 +476,115 @@
                         <outlet property="postSubTitle" destination="M4s-Yd-sbj" id="9T2-19-kJe"/>
                         <outlet property="postTitle" destination="hdI-nv-1QH" id="0vA-AQ-NxS"/>
                         <outlet property="postTitleCheckMark" destination="fkN-U1-Xnc" id="zxi-c2-Jhq"/>
+                        <segue destination="P7K-5o-dfz" kind="show" identifier="setTitle" id="AHb-YW-UkH"/>
+                        <segue destination="0v5-uo-bhd" kind="show" identifier="setDetail" id="iX2-Mq-TGu"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="csK-VC-441" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2429" y="1008"/>
+        </scene>
+        <!--撰寫貼文細節-->
+        <scene sceneID="8F3-Ou-dKA">
+            <objects>
+                <viewController storyboardIdentifier="detail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0v5-uo-bhd" customClass="WriteDetailViewController" customModule="Kenko" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mNd-6C-2hL"/>
+                        <viewControllerLayoutGuide type="bottom" id="0r3-n7-8Zb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="S9c-Bl-EBd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="為您的貼文撰寫更詳細的內容，例如此刻的心情。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0nL-NY-6x4">
+                                <rect key="frame" x="22" y="89" width="556" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="CXL-0a-OuX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OBv-1B-aqS">
+                                <rect key="frame" x="18" y="18" width="564" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="PZ4-Rp-pex"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0nL-NY-6x4" firstAttribute="top" secondItem="mNd-6C-2hL" secondAttribute="bottom" constant="25" id="9Ti-Q2-p9g"/>
+                            <constraint firstItem="OBv-1B-aqS" firstAttribute="top" secondItem="S9c-Bl-EBd" secondAttribute="topMargin" constant="18" id="BaW-1a-cSl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0nL-NY-6x4" secondAttribute="trailing" constant="2" id="VFK-4B-njY"/>
+                            <constraint firstItem="0nL-NY-6x4" firstAttribute="leading" secondItem="S9c-Bl-EBd" secondAttribute="leadingMargin" constant="2" id="bFL-G9-djt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OBv-1B-aqS" secondAttribute="trailing" constant="-2" id="q40-T3-BqF"/>
+                            <constraint firstItem="OBv-1B-aqS" firstAttribute="leading" secondItem="S9c-Bl-EBd" secondAttribute="leadingMargin" constant="-2" id="qrv-jU-P4R"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="撰寫貼文細節" id="v7Q-NE-3yu"/>
+                    <connections>
+                        <outlet property="textLabel" destination="0nL-NY-6x4" id="MZf-S5-jPC"/>
+                        <outlet property="textView" destination="OBv-1B-aqS" id="w0p-Jh-jkm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="okU-H3-lP6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3091" y="1718"/>
+        </scene>
+        <!--撰寫貼文標題-->
+        <scene sceneID="vUs-dw-aB4">
+            <objects>
+                <viewController storyboardIdentifier="title" useStoryboardIdentifierAsRestorationIdentifier="YES" id="P7K-5o-dfz" customClass="WriteTitleViewController" customModule="Kenko" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O1r-T6-Jdd"/>
+                        <viewControllerLayoutGuide type="bottom" id="JXU-Ih-AbR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2zi-6j-WM1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xrv-qn-r2l">
+                                <rect key="frame" x="18" y="18" width="564" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="Tpl-IY-ci7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="為您的貼文撰寫一個描述性的標題" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTx-Vs-MIK">
+                                <rect key="frame" x="22" y="89" width="556" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="b0O-hy-Z7x"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WTx-Vs-MIK" firstAttribute="trailing" secondItem="2zi-6j-WM1" secondAttribute="trailingMargin" constant="-2" id="7be-W7-I5e"/>
+                            <constraint firstItem="WTx-Vs-MIK" firstAttribute="leading" secondItem="2zi-6j-WM1" secondAttribute="leadingMargin" constant="2" id="9Fk-kI-y0J"/>
+                            <constraint firstItem="xrv-qn-r2l" firstAttribute="top" secondItem="2zi-6j-WM1" secondAttribute="topMargin" constant="18" id="Esn-7i-pj3"/>
+                            <constraint firstItem="xrv-qn-r2l" firstAttribute="leading" secondItem="2zi-6j-WM1" secondAttribute="leadingMargin" constant="-2" id="PyZ-UL-AXJ"/>
+                            <constraint firstItem="WTx-Vs-MIK" firstAttribute="top" secondItem="O1r-T6-Jdd" secondAttribute="bottom" constant="25" id="SVd-iZ-IqJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xrv-qn-r2l" secondAttribute="trailing" constant="-2" id="i21-0q-MNj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="撰寫貼文標題" id="WbC-rz-ecL"/>
+                    <connections>
+                        <outlet property="textLabel" destination="WTx-Vs-MIK" id="gZl-IA-uuM"/>
+                        <outlet property="textView" destination="xrv-qn-r2l" id="m2f-Q7-zPx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LyF-gb-4wt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3091" y="1008"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ssl-oL-Uqv">

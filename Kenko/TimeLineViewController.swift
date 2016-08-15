@@ -27,7 +27,7 @@ class TimeLineViewController: PFQueryTableViewController, PFLogInViewControllerD
         super.init(style: style, className: className)
         
         //Use the Parse built-in user class
-        self.parseClassName = "Post"
+        self.parseClassName = kPAPPostsClassKey
         self.delegate = self
         //This is a custom column in the user class.
         self.pullToRefreshEnabled = true
@@ -38,7 +38,7 @@ class TimeLineViewController: PFQueryTableViewController, PFLogInViewControllerD
         super.init(coder: aDecoder)
         
         //Use the Parse built-in user class
-        self.parseClassName = "Post"
+        self.parseClassName = kPAPPostsClassKey
         
         //This is a custom column in the user class.
         self.pullToRefreshEnabled = true
@@ -78,7 +78,7 @@ class TimeLineViewController: PFQueryTableViewController, PFLogInViewControllerD
     
 
     override func queryForTable() -> PFQuery {
-        let query = PFQuery(className: "Post")
+        let query = PFQuery(className: kPAPPostsClassKey)
         
         query.limit = 1000
         query.includeKey(kPAPPhotoUserKey)

@@ -404,6 +404,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func presentToTabbarIndex(index:NSInteger) {
         if index == 0 {
             // TimeLine頁面
+            tabController?.selectedIndex = 0
+            
         } else if index == 1 {
             // Post 頁面
             let Post:PostBlogViewController = tabController?.viewControllers![1] as! PostBlogViewController
@@ -414,7 +416,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Setting 頁面
         }
 //        tabController?.selectedIndex = index
-//        self.window?.rootViewController!.childViewControllers[0].selectedIndex = index
+        
 //        print(self.window!.rootViewController)
     }
 }

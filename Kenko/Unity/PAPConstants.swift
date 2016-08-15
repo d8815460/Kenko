@@ -126,3 +126,6 @@ let kPAPPushPayloadActivityFollowKey   = "f"
 let kPAPPushPayloadFromUserObjectIdKey = "fu"
 let kPAPPushPayloadToUserObjectIdKey   = "tu"
 let kPAPPushPayloadPhotoObjectIdKey = "pid"
+
+
+var postObject:PFObject?

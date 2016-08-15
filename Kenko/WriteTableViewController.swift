@@ -11,10 +11,8 @@ import MBProgressHUD
 
 class WriteTableViewController: UITableViewController, UIImagePickerControllerDelegate, UIActionSheetDelegate, UINavigationControllerDelegate, UIAlertViewDelegate {
 
-    var _detailItem:AnyObject?
     private var hasPhoto:Bool?
     private var coundownNumber:Int?
-    private var publicToPost:PFObject?
     private var hud:MBProgressHUD?
     private var titleLabel:UILabel?
     private var fileMeiumImage:PFFile?
@@ -34,10 +32,6 @@ class WriteTableViewController: UITableViewController, UIImagePickerControllerDe
     @IBOutlet weak var photoButton: UIButton!
     
     
-    func setDetailItem(detailItem:AnyObject) {
-        _detailItem = detailItem
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -52,6 +46,7 @@ class WriteTableViewController: UITableViewController, UIImagePickerControllerDe
         self.titleLabel?.font = UIFont.init(name: "ProximaNova-Bold", size: 17)
         self.titleLabel?.textAlignment = NSTextAlignment.Center
         self.navigationItem.titleView = self.titleLabel
+        
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -60,36 +55,35 @@ class WriteTableViewController: UITableViewController, UIImagePickerControllerDe
         
         var cell:UITableViewCell = UITableViewCell.init()
         var index:NSIndexPath = NSIndexPath.init()
-        print("_data = \(_detailItem)")
+        print("_data = \(postObject)")
         
-        if _detailItem != nil {
-            let postDetail = _detailItem as! PFObject
+        if postObject != nil {
             
-            if (postDetail.objectForKey(kPAPPostsTitleKey) != nil) {
+            if (postObject!.objectForKey(kPAPPostsTitleKey) != nil) {
                 index = NSIndexPath.init(forRow: 0, inSection: 0)
                 cell = self.tableView.cellForRowAtIndexPath(index)!
                 
-                self.postTitle.text = "Title：\(postDetail.objectForKey(kPAPPostsTitleKey))"
+                self.postTitle.text = "標題：\(postObject!.objectForKey(kPAPPostsTitleKey)!)"
                 self.postTitle.textColor = UIColor.blackColor()
                 self.postSubTitle.text = nil
                 self.postTitleCheckMark.hidden = false
                 coundownNumber = coundownNumber! - 1
             }
             
-            if (postDetail.objectForKey(kPAPPostsContentKey) != nil) {
+            if (postObject!.objectForKey(kPAPPostsContentKey) != nil) {
                 index = NSIndexPath.init(forRow: 1, inSection: 0)
                 cell = self.tableView.cellForRowAtIndexPath(index)!
                 
-                self.postTitle.text = "Title：\(postDetail.objectForKey(kPAPPostsContentKey))"
-                self.postTitle.textColor = UIColor.blackColor()
+                self.postDetail.text = "內容：\(postObject!.objectForKey(kPAPPostsContentKey)!)"
+                self.postDetail.textColor = UIColor.blackColor()
                 self.postSubTitle.text = nil
-                self.postTitleCheckMark.hidden = false
+                self.postDetailCheckMark.hidden = false
                 coundownNumber = coundownNumber! - 1
             }
             
-            if (postDetail.objectForKey(kPAPPostsPhotoKey) != nil) {
+            if (postObject!.objectForKey(kPAPPostsPhotoKey) != nil) {
                 hasPhoto = true
-                let photoFile = postDetail.objectForKey(kPAPPostsPhotoKey)
+                let photoFile = postObject!.objectForKey(kPAPPostsPhotoKey)
                 photoFile?.getDataInBackgroundWithBlock({ (data, error) in
                     self.photoView.image = UIImage.init(data: data!)
                 })
@@ -114,6 +108,11 @@ class WriteTableViewController: UITableViewController, UIImagePickerControllerDe
         } else if coundownNumber == 0 {
             self.titleLabel?.text = "準備發布！"
         }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -163,7 +162,24 @@ class WriteTableViewController: UITableViewController, UIImagePickerControllerDe
         self.photoView.image = image
         hasPhoto = true
         
+        let mediumImage = self.photoView.image!.thumbnailImage(640, transparentBorder: 0, cornerRadius: 0, interpolationQuality: CGInterpolationQuality.High)
+        let smallRoundedImage = self.photoView.image!.thumbnailImage(120, transparentBorder: 0, cornerRadius: 0, interpolationQuality: CGInterpolationQuality.Low)
+        
+        let mediumImageData = UIImagePNGRepresentation(mediumImage)
+        let smallRoundedImageData = UIImagePNGRepresentation(smallRoundedImage)
+        
         //開始上傳檔案
+        if hasPhoto == true {
+            if mediumImageData?.length > 0 {
+                let fileMeiumImage = PFFile.init(data: mediumImageData!)
+                postObject![kPAPPostsPhotoKey] = fileMeiumImage
+            }
+            
+            if smallRoundedImageData?.length > 0 {
+                let fileSmallRoundedImage = PFFile.init(data: smallRoundedImageData!)
+                postObject![kPAPPostsThumbnailKey] = fileSmallRoundedImage
+            }
+        }
     }
     
     
@@ -191,15 +207,18 @@ class WriteTableViewController: UITableViewController, UIImagePickerControllerDe
         // #warning Incomplete implementation, return the number of rows
         if coundownNumber == 0 {
             return 3
+        } else if coundownNumber == 1 && hasPhoto == false {
+            self.titleLabel?.text = "準備發布！"
+            return 3
         }
         return 2
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == 0 {
-            self.performSegueWithIdentifier("setTitle", sender: nil)
+            self.performSegueWithIdentifier("setTitle", sender: postObject)
         } else if indexPath.row == 1 {
-            self.performSegueWithIdentifier("setDetail", sender: nil)
+            self.performSegueWithIdentifier("setDetail", sender: postObject)
         } else if indexPath.row == 2 {
             self.postPosts()
         }
@@ -212,40 +231,33 @@ class WriteTableViewController: UITableViewController, UIImagePickerControllerDe
         hud?.labelText = "Save post ..."
         hud?.dimBackground = true
         
-        let saveObject = _detailItem as! PFObject
+        let saveObject = postObject!
         
         let ACL:PFACL = PFACL()
         ACL.setPublicReadAccess(true)
         ACL.setPublicWriteAccess(true)
         saveObject.ACL = ACL
         
-        let mediumImage = self.photoView.image!.thumbnailImage(640, transparentBorder: 0, cornerRadius: 0, interpolationQuality: CGInterpolationQuality.High)
-        let smallRoundedImage = self.photoView.image!.thumbnailImage(120, transparentBorder: 0, cornerRadius: 0, interpolationQuality: CGInterpolationQuality.Low)
-        
-        let mediumImageData = UIImagePNGRepresentation(mediumImage)
-        let smallRoundedImageData = UIImagePNGRepresentation(smallRoundedImage)
-        
-        if hasPhoto == true {
-            if mediumImageData?.length > 0 {
-                let fileMeiumImage = PFFile.init(data: mediumImageData!)
-                saveObject[kPAPPostsPhotoKey] = fileMeiumImage
-            }
-            
-            if smallRoundedImageData?.length > 0 {
-                let fileSmallRoundedImage = PFFile.init(data: smallRoundedImageData!)
-                saveObject[kPAPPostsThumbnailKey] = fileSmallRoundedImage
-            }
-        }
-        
         saveObject[kPAPPostsUserKey] = PFUser.currentUser()
         saveObject.saveEventually { (successed, error) in
             if successed {
                 print("Posts uploaded.")
+                self.dismissViewControllerAnimated(true, completion: nil)
             } else {
                 print("error upload post: \(error.debugDescription)")
+                self.dismissViewControllerAnimated(true, completion: nil)
             }
         }
     }
+    
+    @IBAction func cancelButtonPressed(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        (UIApplication.sharedApplication().delegate as! AppDelegate).presentToTabbarIndex(0)
+    }
+    
+    
+    
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
@@ -298,6 +310,22 @@ class WriteTableViewController: UITableViewController, UIImagePickerControllerDe
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "setTitle" {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let titleView = storyboard.instantiateViewControllerWithIdentifier("title") as! WriteTitleViewController
+            if postObject != nil {
+                titleView.setDetailItem(postObject!)
+            }
+            
+            
+        } else if segue.identifier == "setDetail" {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let detailView = storyboard.instantiateViewControllerWithIdentifier("detail") as! WriteDetailViewController
+            if postObject != nil {
+                detailView.setDetailItem(postObject!)
+            }
+        }
     }
     
 

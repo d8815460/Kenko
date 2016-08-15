@@ -8,12 +8,38 @@
 
 import UIKit
 
-class WriteTitleViewController: UIViewController {
+class WriteTitleViewController: UIViewController, UITextViewDelegate {
 
+    var _detailItem:AnyObject?
+    @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var textView: UITextView!
+    
+    func setDetailItem(detailItem:AnyObject) {
+        _detailItem = detailItem
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        textView.delegate = self
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if postObject != nil {
+            if (postObject!.objectForKey(kPAPPostsTitleKey) != nil) {
+                textView.text = postObject!.objectForKey(kPAPPostsTitleKey) as! String
+                textLabel.hidden = true
+            } else {
+                textLabel.hidden = false
+            }
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        textView.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +47,36 @@ class WriteTitleViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func textViewDidChange(textView: UITextView) {
+        if textView.text.characters.count > 0 {
+            textLabel.hidden = true
+        } else {
+            textLabel.hidden = false
+        }
+    }
+    
+    func textViewShouldBeginEditing(textView: UITextView) -> Bool {
+        
+        return true
+    }
+    
+    func textViewDidEndEditing(textView: UITextView) {
+        if textView.text.characters.count > 0 {
+            if postObject == nil {
+                postObject = PFObject.init(className: kPAPPostsClassKey)
+            }
+            postObject![kPAPPostsTitleKey]  = textView.text
+        }
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
 
     /*
     // MARK: - Navigation

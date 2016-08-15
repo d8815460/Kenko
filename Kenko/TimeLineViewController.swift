@@ -32,6 +32,7 @@ class TimeLineViewController: PFQueryTableViewController, PFLogInViewControllerD
         //This is a custom column in the user class.
         self.pullToRefreshEnabled = true
         self.paginationEnabled = false
+        self.objectsPerPage = 10
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -43,6 +44,7 @@ class TimeLineViewController: PFQueryTableViewController, PFLogInViewControllerD
         //This is a custom column in the user class.
         self.pullToRefreshEnabled = true
         self.paginationEnabled = false
+        self.objectsPerPage = 10
     }
     
     override func viewDidLoad() {
@@ -84,7 +86,7 @@ class TimeLineViewController: PFQueryTableViewController, PFLogInViewControllerD
         query.includeKey(kPAPPhotoUserKey)
         
         //It's very important to sort the query.  Otherwise you'll end up with unexpected results
-        query.orderByAscending("createdAt")
+        query.orderByDescending("createdAt")
         
         
         query.cachePolicy = PFCachePolicy.CacheThenNetwork
@@ -110,7 +112,7 @@ class TimeLineViewController: PFQueryTableViewController, PFLogInViewControllerD
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell? {
         
         if ((object?.objectForKey("photo")) != nil) {
-            let cell = tableView.dequeueReusableCellWithIdentifier("TimelineCell",  forIndexPath: indexPath) as! TimelineCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("TimelineCellPhoto",  forIndexPath: indexPath) as! TimelineCell
             
             cell.typeImageView?.image = UIImage(named: "timeline-photo")
             let user:PFUser? = object?.objectForKey(kPAPPhotoUserKey) as? PFUser
@@ -154,6 +156,10 @@ class TimeLineViewController: PFQueryTableViewController, PFLogInViewControllerD
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 200
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("article", sender: postObject)
     }
     
     /*

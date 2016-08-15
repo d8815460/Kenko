@@ -62,6 +62,9 @@
 		23B218931D5F6DCC00F6C52D /* WriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B218921D5F6DCC00F6C52D /* WriteTableViewController.swift */; };
 		23B4B76E1D613405006F99D5 /* WriteTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B4B76D1D613405006F99D5 /* WriteTitleViewController.swift */; };
 		23B4B7701D613413006F99D5 /* WriteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B4B76F1D613413006F99D5 /* WriteDetailViewController.swift */; };
+		23B4B7721D622B10006F99D5 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B4B7711D622B10006F99D5 /* ArticleViewController.swift */; };
+		23B4B7731D622B10006F99D5 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B4B7711D622B10006F99D5 /* ArticleViewController.swift */; };
+		23B4B7741D622B10006F99D5 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B4B7711D622B10006F99D5 /* ArticleViewController.swift */; };
 		B355BDB8D25C6F3513469132 /* Pods_Kenko.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9778FCFAEC049737939DD75 /* Pods_Kenko.framework */; };
 /* End PBXBuildFile section */
 
@@ -119,6 +122,7 @@
 		23B218921D5F6DCC00F6C52D /* WriteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteTableViewController.swift; sourceTree = "<group>"; };
 		23B4B76D1D613405006F99D5 /* WriteTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteTitleViewController.swift; sourceTree = "<group>"; };
 		23B4B76F1D613413006F99D5 /* WriteDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteDetailViewController.swift; sourceTree = "<group>"; };
+		23B4B7711D622B10006F99D5 /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		481D719C2E9835974B33CA4A /* Pods-Kenko.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kenko.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kenko/Pods-Kenko.debug.xcconfig"; sourceTree = "<group>"; };
 		812C4A4D17657796E2AF0293 /* Pods-Kenko.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kenko.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kenko/Pods-Kenko.release.xcconfig"; sourceTree = "<group>"; };
 		E9778FCFAEC049737939DD75 /* Pods_Kenko.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kenko.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,6 +187,7 @@
 				235E62AB1D5B22CD00E7B099 /* Wellcom&Login&SignUp */,
 				235E621C1D5AB6EA00E7B099 /* AppDelegate.swift */,
 				235E628E1D5AE4C300E7B099 /* TimeLineViewController.swift */,
+				23B4B7711D622B10006F99D5 /* ArticleViewController.swift */,
 				23B218941D5F70BB00F6C52D /* Post */,
 				235E629A1D5AE51800E7B099 /* ChatViewController.swift */,
 				235E62961D5AE50300E7B099 /* SettingTableViewController.swift */,
@@ -507,6 +512,7 @@
 				235E62801D5ADE7300E7B099 /* FNFoldingTabBar.swift in Sources */,
 				235E62761D5AC50C00E7B099 /* Reachability.swift in Sources */,
 				235E621D1D5AB6EA00E7B099 /* AppDelegate.swift in Sources */,
+				23B4B7721D622B10006F99D5 /* ArticleViewController.swift in Sources */,
 				235E626D1D5AC50C00E7B099 /* PAPCache.swift in Sources */,
 				23B218931D5F6DCC00F6C52D /* WriteTableViewController.swift in Sources */,
 				235E629B1D5AE51800E7B099 /* ChatViewController.swift in Sources */,
@@ -525,6 +531,7 @@
 				235E62811D5ADE7300E7B099 /* FNFoldingTabBar.swift in Sources */,
 				235E62A91D5B109000E7B099 /* TimeLineCustomCell.swift in Sources */,
 				235E62711D5AC50C00E7B099 /* PAPConstants.swift in Sources */,
+				23B4B7731D622B10006F99D5 /* ArticleViewController.swift in Sources */,
 				235E626E1D5AC50C00E7B099 /* PAPCache.swift in Sources */,
 				235E62841D5ADE7300E7B099 /* FNFoldingTabBarController.swift in Sources */,
 				235E62771D5AC50C00E7B099 /* Reachability.swift in Sources */,
@@ -546,6 +553,7 @@
 				235E62821D5ADE7300E7B099 /* FNFoldingTabBar.swift in Sources */,
 				235E62AA1D5B109000E7B099 /* TimeLineCustomCell.swift in Sources */,
 				235E62721D5AC50C00E7B099 /* PAPConstants.swift in Sources */,
+				23B4B7741D622B10006F99D5 /* ArticleViewController.swift in Sources */,
 				235E626F1D5AC50C00E7B099 /* PAPCache.swift in Sources */,
 				235E62851D5ADE7300E7B099 /* FNFoldingTabBarController.swift in Sources */,
 				235E62781D5AC50C00E7B099 /* Reachability.swift in Sources */,

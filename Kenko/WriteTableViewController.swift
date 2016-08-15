@@ -8,6 +8,7 @@
 
 import UIKit
 import MBProgressHUD
+import MobileCoreServices
 
 class WriteTableViewController: UITableViewController, UIImagePickerControllerDelegate, UIActionSheetDelegate, UINavigationControllerDelegate, UIAlertViewDelegate {
 
@@ -142,10 +143,59 @@ class WriteTableViewController: UITableViewController, UIImagePickerControllerDe
     }
     
     func shouldStartCameraController() -> Bool {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) == false{
+            return false
+        }
+        let cameraUI:UIImagePickerController = UIImagePickerController.init()
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) && UIImagePickerController.availableMediaTypesForSourceType(UIImagePickerControllerSourceType.Camera)!.contains(kUTTypeImage as String) {
+            
+            cameraUI.mediaTypes = [kUTTypeImage as String]
+            cameraUI.sourceType = UIImagePickerControllerSourceType.Camera
+            
+            if UIImagePickerController.isCameraDeviceAvailable(UIImagePickerControllerCameraDevice.Rear) {
+                cameraUI.cameraDevice = UIImagePickerControllerCameraDevice.Rear
+            } else if UIImagePickerController.isCameraDeviceAvailable(UIImagePickerControllerCameraDevice.Front) {
+                cameraUI.cameraDevice = UIImagePickerControllerCameraDevice.Front
+            }
+        } else {
+            return false
+        }
+        
+        cameraUI.allowsEditing = true
+        cameraUI.showsCameraControls = true
+        cameraUI.delegate = self
+        
+        self.presentViewController(cameraUI, animated: true, completion: nil)
+        
         return true
     }
     
     func shouldStartPhotoLibraryPickerController() -> Bool {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) == false{
+            return false
+        }
+        let cameraUI:UIImagePickerController = UIImagePickerController.init()
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) && UIImagePickerController.availableMediaTypesForSourceType(UIImagePickerControllerSourceType.PhotoLibrary)!.contains(kUTTypeImage as String) {
+            
+            cameraUI.mediaTypes = [kUTTypeImage as String]
+            cameraUI.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            
+        } else if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum) && UIImagePickerController.availableMediaTypesForSourceType(UIImagePickerControllerSourceType.SavedPhotosAlbum)!.contains(kUTTypeImage as String){
+            
+            cameraUI.mediaTypes = [kUTTypeImage as String]
+            cameraUI.sourceType = UIImagePickerControllerSourceType.SavedPhotosAlbum
+            
+        } else {
+            return false
+        }
+        
+        cameraUI.allowsEditing = true
+        cameraUI.delegate = self
+        
+        self.presentViewController(cameraUI, animated: true, completion: nil)
+        
         return true
     }
     
@@ -160,6 +210,7 @@ class WriteTableViewController: UITableViewController, UIImagePickerControllerDe
         self.dismissViewControllerAnimated(true, completion: nil)
         
         self.photoView.image = image
+        self.photoCheckMark.hidden = false
         hasPhoto = true
         
         let mediumImage = self.photoView.image!.thumbnailImage(640, transparentBorder: 0, cornerRadius: 0, interpolationQuality: CGInterpolationQuality.High)
@@ -167,17 +218,31 @@ class WriteTableViewController: UITableViewController, UIImagePickerControllerDe
         
         let mediumImageData = UIImagePNGRepresentation(mediumImage)
         let smallRoundedImageData = UIImagePNGRepresentation(smallRoundedImage)
-        
+        hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        hud?.labelText = "Upload photo..."
+        hud?.dimBackground = true
         //開始上傳檔案
         if hasPhoto == true {
             if mediumImageData?.length > 0 {
                 let fileMeiumImage = PFFile.init(data: mediumImageData!)
-                postObject![kPAPPostsPhotoKey] = fileMeiumImage
-            }
-            
-            if smallRoundedImageData?.length > 0 {
-                let fileSmallRoundedImage = PFFile.init(data: smallRoundedImageData!)
-                postObject![kPAPPostsThumbnailKey] = fileSmallRoundedImage
+                fileMeiumImage.saveInBackgroundWithBlock({ (successed, error) in
+                    if successed {
+                        if postObject == nil {
+                            postObject = PFObject.init(className: kPAPPostsClassKey)
+                        }
+                        postObject![kPAPPostsPhotoKey] = fileMeiumImage
+                        
+                        if smallRoundedImageData?.length > 0 {
+                            let fileSmallRoundedImage = PFFile.init(data: smallRoundedImageData!)
+                            fileSmallRoundedImage.saveInBackgroundWithBlock({ (successed, error) in
+                                if successed {
+                                    postObject![kPAPPostsThumbnailKey] = fileSmallRoundedImage
+                                    self.hud?.hide(true)
+                                }
+                            })
+                        }
+                    }
+                })
             }
         }
     }
@@ -186,13 +251,16 @@ class WriteTableViewController: UITableViewController, UIImagePickerControllerDe
     // MARK: - UIActionSheetDelegate
     
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
-        if buttonIndex == 0 {
+        if buttonIndex == 1 {
             self.shouldStartCameraController()
-        } else if buttonIndex == 1 {
-            self.shouldStartPhotoLibraryPickerController()
         } else if buttonIndex == 2 {
+            self.shouldStartPhotoLibraryPickerController()
+        } else if buttonIndex == 3 {
             self.photoView.image = UIImage.init(named: "camera2")
             hasPhoto = false
+            self.photoCheckMark.hidden = true
+        } else {
+            // Do nothing.
         }
     }
     
@@ -240,13 +308,17 @@ class WriteTableViewController: UITableViewController, UIImagePickerControllerDe
         
         saveObject[kPAPPostsUserKey] = PFUser.currentUser()
         saveObject.saveEventually { (successed, error) in
+            self.hud?.hide(true)
             if successed {
                 print("Posts uploaded.")
+                postObject = nil
                 self.dismissViewControllerAnimated(true, completion: nil)
             } else {
                 print("error upload post: \(error.debugDescription)")
+                postObject = nil
                 self.dismissViewControllerAnimated(true, completion: nil)
             }
+            (UIApplication.sharedApplication().delegate as! AppDelegate).presentToTabbarIndex(0)
         }
     }
     
@@ -317,6 +389,9 @@ class WriteTableViewController: UITableViewController, UIImagePickerControllerDe
             if postObject != nil {
                 titleView.setDetailItem(postObject!)
             }
+            let backItem = UIBarButtonItem()
+            backItem.title = "Back"
+            navigationItem.backBarButtonItem = backItem
             
             
         } else if segue.identifier == "setDetail" {
@@ -325,6 +400,9 @@ class WriteTableViewController: UITableViewController, UIImagePickerControllerDe
             if postObject != nil {
                 detailView.setDetailItem(postObject!)
             }
+            let backItem = UIBarButtonItem()
+            backItem.title = "Back"
+            navigationItem.backBarButtonItem = backItem
         }
     }
     

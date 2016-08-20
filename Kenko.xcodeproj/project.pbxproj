@@ -186,8 +186,7 @@
 				235E62681D5AC50C00E7B099 /* Unity */,
 				235E62AB1D5B22CD00E7B099 /* Wellcom&Login&SignUp */,
 				235E621C1D5AB6EA00E7B099 /* AppDelegate.swift */,
-				235E628E1D5AE4C300E7B099 /* TimeLineViewController.swift */,
-				23B4B7711D622B10006F99D5 /* ArticleViewController.swift */,
+				23BAC7E51D6323BE00EA7365 /* Timeline */,
 				23B218941D5F70BB00F6C52D /* Post */,
 				235E629A1D5AE51800E7B099 /* ChatViewController.swift */,
 				235E62961D5AE50300E7B099 /* SettingTableViewController.swift */,
@@ -277,6 +276,15 @@
 				23B4B76F1D613413006F99D5 /* WriteDetailViewController.swift */,
 			);
 			name = Post;
+			sourceTree = "<group>";
+		};
+		23BAC7E51D6323BE00EA7365 /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				235E628E1D5AE4C300E7B099 /* TimeLineViewController.swift */,
+				23B4B7711D622B10006F99D5 /* ArticleViewController.swift */,
+			);
+			name = Timeline;
 			sourceTree = "<group>";
 		};
 		945513B9789E55452AAF00F6 /* Pods */ = {

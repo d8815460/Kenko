@@ -159,18 +159,27 @@ class TimeLineViewController: PFQueryTableViewController, PFLogInViewControllerD
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("article", sender: postObject)
+        self.performSegueWithIdentifier("article", sender: self.objects![indexPath.row] as! PFObject)
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let sendObject:PFObject = sender as! PFObject
+        
+        if segue.identifier == "article" {
+            let articleView = segue.destinationViewController as! ArticleViewController
+            articleView.receiveData = sendObject
+            let backItem = UIBarButtonItem()
+            backItem.title = "Back"
+            navigationItem.backBarButtonItem = backItem
+        }
     }
-    */
+ 
 
     func presentLoginViewController(animated: Bool) {
         if _presentedLoginViewController {

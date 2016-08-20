@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FormatterKit
 
 class ArticleViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -29,46 +30,66 @@ class ArticleViewController: UITableViewController, UICollectionViewDelegate, UI
     @IBOutlet var photosLayout : UICollectionViewFlowLayout!
     @IBOutlet var photosContainer : UIView!
     
+    private var timeIntervalFormatter: TTTTimeIntervalFormatter?
     var photos : [String]!
+    
+    var receiveData: AnyObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.timeIntervalFormatter = TTTTimeIntervalFormatter()
+        
+        let post:PFObject = receiveData as! PFObject
+        
         titleLabel.font = UIFont(name: MegaTheme.fontName, size: 21)
         titleLabel.textColor = UIColor.whiteColor()
-        titleLabel.text = "21 Days in Indonesia"
+        titleLabel.text = post[kPAPPostsTitleKey] as? String
         
         dateLabel.font = UIFont(name: MegaTheme.fontName, size: 10)
         dateLabel.textColor = UIColor.whiteColor()
-        dateLabel.text = "12 mins ago"
+        let timeInterval: NSTimeInterval = post.createdAt!.timeIntervalSinceNow
+        let timestamp: String = self.timeIntervalFormatter!.stringForTimeInterval(timeInterval)
+        dateLabel?.text = timestamp
         
         dateImageView.image = UIImage(named: "clock")?.imageWithRenderingMode(.AlwaysTemplate)
         dateImageView.tintColor = UIColor.whiteColor()
         
         topImageView.image = UIImage(named: "indonesia")
         
+        let user = post[kPAPPostsUserKey] as! PFUser
         nameLabel.font = UIFont(name: MegaTheme.fontName, size: 18)
         nameLabel.textColor = UIColor.blackColor()
-        nameLabel.text = "by Rachel Cristofsson"
+        nameLabel.text = user[kPAPUserDisplayNameKey] as? String
         
-        profileImageView.image = UIImage(named: "profile-pic-2")
-        profileImageView.layer.cornerRadius = 18
-        profileImageView.clipsToBounds = true
+        let file:PFFile = (user.objectForKey(kPAPUserProfilePicMediumKey) as? PFFile)!
+        file.getDataInBackgroundWithBlock({ (photo, error) in
+            if error == nil {
+                self.profileImageView.image = UIImage(data: photo!)
+                self.profileImageView.layer.cornerRadius = 18
+                self.profileImageView.clipsToBounds = true
+            }
+        })
         
-        let backImage = UIImage(named: "back")?.imageWithRenderingMode(.AlwaysTemplate)
-        backbutton.setImage(backImage, forState: .Normal)
-        backbutton.tintColor = UIColor.whiteColor()
-        backbutton.addTarget(self, action: "backTapped:", forControlEvents: .TouchUpInside)
         
         articleLabel.font = UIFont(name: MegaTheme.fontName, size: 12)
         articleLabel.textColor = UIColor(white: 0.45, alpha: 1.0)
-        let attributedString = NSMutableAttributedString(string: "\n\nWhile technically more of a condiment, the chili-based sauce known as sambal is a staple at all Indonesian tables. Dishes are not complete unless they have a hearty dollop of the stuff, a combination of chilies, sharp fermented shrimp paste, tangy lime juice, sugar and salt all pounded up with mortar and pestle. So beloved is sambal, some restaurants have made it their main attraction, with options that include young mango, mushroom and durian.\nIndonesia remains a popular destination with travelers to Asia. Agoda.com understands that traveler want to get the best deal. That's why we offer you the best online rates at 4011 hotels nationwide. We have every main region covered, including West Java, Central Java, East Java, with lots of promotions such as early bird offers and last minute deals. Oh and whatever you do, Bali, Jakarta, Bandung are great cities to visit. With our best price guarantee, we are determined to offer you the best hotels at the best prices.")
+        let attributedString = NSMutableAttributedString(string: "\n\n\((post[kPAPPostsContentKey] as? String)!)")
         
-        let textAttachment = NSTextAttachment()
-        textAttachment.image = UIImage(named: "hotel-1")
-        let stringwithAttachment = NSAttributedString(attachment: textAttachment)
+        if post[kPAPPostsThumbnailKey] != nil {
+            let file = post[kPAPPostsThumbnailKey] as! PFFile
+            file.getDataInBackgroundWithBlock({ (data, error) in
+                let textAttachment = NSTextAttachment()
+                textAttachment.image = UIImage(data: data!)
+                let stringwithAttachment = NSAttributedString(attachment: textAttachment)
+                
+                attributedString.replaceCharactersInRange(NSMakeRange(0, 1), withAttributedString: stringwithAttachment)
+                
+                self.articleLabel.attributedText = attributedString
+            })
+        }
         
-        attributedString.replaceCharactersInRange(NSMakeRange(0, 1), withAttributedString: stringwithAttachment)
+        
         
         articleLabel.attributedText = attributedString
         
@@ -91,7 +112,12 @@ class ArticleViewController: UITableViewController, UICollectionViewDelegate, UI
         photosLayout.minimumLineSpacing = 10
         
         photos = ["photos-1", "photos-2", "photos-3"]
-
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
     }
     
     func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat{
@@ -110,8 +136,14 @@ class ArticleViewController: UITableViewController, UICollectionViewDelegate, UI
         if indexPath.row == 0{
             return 200
         }else if indexPath.row == 2{
-            return heightForView((articleLabel?.text)!, font: articleLabel.font, width: 160)
-//            return articleLabel.frame.height
+            let post:PFObject = receiveData as! PFObject
+            if post[kPAPPostsThumbnailKey] != nil {
+                return heightForView((articleLabel?.text)!, font: articleLabel.font, width: 150)
+            } else {
+                return heightForView((articleLabel?.text)!, font: articleLabel.font, width: 190)
+            }
+            
+            
         }else if indexPath.row == 3{
             return 200
         }else{

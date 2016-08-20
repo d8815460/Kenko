@@ -614,7 +614,7 @@
         <!--Article View Controller-->
         <scene sceneID="PkQ-R5-DDw">
             <objects>
-                <tableViewController id="rdX-c7-uQ9" customClass="ArticleViewController" customModule="Kenko" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="article" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rdX-c7-uQ9" customClass="ArticleViewController" customModule="Kenko" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="134" sectionHeaderHeight="22" sectionFooterHeight="22" id="GOk-q7-Xm7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -651,21 +651,10 @@
                                                         <constraint firstAttribute="width" constant="15" id="qIY-CG-ZLT"/>
                                                     </constraints>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fId-8i-Qxv">
-                                                    <rect key="frame" x="20" y="22" width="20" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="20" id="lqQ-Gi-nhv"/>
-                                                        <constraint firstAttribute="height" constant="20" id="rqy-9U-cRD"/>
-                                                    </constraints>
-                                                    <state key="normal" image="back">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="P9W-mi-nwA" firstAttribute="leading" secondItem="fhz-K4-shu" secondAttribute="leading" id="3IG-4v-UPu"/>
                                                 <constraint firstItem="fhz-K4-shu" firstAttribute="leading" secondItem="8iJ-DU-0Mv" secondAttribute="leadingMargin" constant="13" id="6Pl-Tt-Fcs"/>
-                                                <constraint firstItem="fId-8i-Qxv" firstAttribute="leading" secondItem="8iJ-DU-0Mv" secondAttribute="leadingMargin" constant="12" id="6XF-78-KwR"/>
                                                 <constraint firstItem="fhz-K4-shu" firstAttribute="top" secondItem="P9W-mi-nwA" secondAttribute="bottom" constant="1" id="DGs-jd-EE0"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="4ge-2W-WYf" secondAttribute="bottom" constant="-7" id="Gsj-qG-krl"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="4ge-2W-WYf" secondAttribute="trailing" constant="-8" id="H6c-cS-1Hr"/>
@@ -673,7 +662,6 @@
                                                 <constraint firstItem="4ge-2W-WYf" firstAttribute="leading" secondItem="8iJ-DU-0Mv" secondAttribute="leadingMargin" constant="-8" id="Pem-iq-S06"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="fhz-K4-shu" secondAttribute="bottom" constant="2.5" id="aQy-72-J5A"/>
                                                 <constraint firstItem="4ge-2W-WYf" firstAttribute="top" secondItem="8iJ-DU-0Mv" secondAttribute="topMargin" constant="-9" id="j7h-LD-lGU"/>
-                                                <constraint firstItem="fId-8i-Qxv" firstAttribute="top" secondItem="8iJ-DU-0Mv" secondAttribute="topMargin" constant="14" id="jtb-4x-xXh"/>
                                                 <constraint firstItem="hDO-qZ-lb2" firstAttribute="centerY" secondItem="fhz-K4-shu" secondAttribute="centerY" id="uVW-XX-GQD"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -806,7 +794,6 @@
                     </tableView>
                     <connections>
                         <outlet property="articleLabel" destination="OEk-Sm-rLP" id="wUp-Dk-YPC"/>
-                        <outlet property="backbutton" destination="fId-8i-Qxv" id="kX8-zt-zbv"/>
                         <outlet property="dateImageView" destination="fhz-K4-shu" id="NV9-kl-5ZF"/>
                         <outlet property="dateLabel" destination="hDO-qZ-lb2" id="LKg-QK-Kvr"/>
                         <outlet property="likeButton" destination="7W3-sZ-0Yz" id="DhI-HH-g81"/>
@@ -826,7 +813,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back" width="33" height="33"/>
         <image name="camera2" width="280" height="280"/>
     </resources>
 </document>

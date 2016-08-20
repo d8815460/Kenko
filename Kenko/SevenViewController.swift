@@ -34,9 +34,9 @@ class SevenViewController: UIViewController, MKMapViewDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        let Query7 = PFQuery.init(className: kPAPStoreClassKey)
-        Query7.whereKey(kPAPStoreLocationKey, nearGeoPoint: PFUser.currentUser()?[kPAPUserLocationKey] as! PFGeoPoint)
-        Query7.getFirstObjectInBackgroundWithBlock { (store, error) in
+        let Query711 = PFQuery.init(className: kPAPStoreClassKey)
+        Query711.whereKey(kPAPStoreLocationKey, nearGeoPoint: PFUser.currentUser()?[kPAPUserLocationKey] as! PFGeoPoint)
+        Query711.getFirstObjectInBackgroundWithBlock { (store, error) in
             
             self.thanksLabel.text = "您好，感謝您使用PiggyBank，以為您找尋離你家最近的7-11（\(store![kPAPStoreNameKey]!)），請就近領取您的救助金。"
             self.addressLabel.text = "地址：\(store![kPAPStoreAddressKey]!)"

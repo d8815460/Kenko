@@ -82,6 +82,16 @@ let kPAPAskMoneyContentKey      = "content"
 let kPAPAskMoneyLocationKey     = "location"
 let kPAPAskMoneyFromUserKey     = "fromUser"
 
+// MARK: - 愛心善款
+// Class Key
+let kPAPMoneyClassKey           = "Money"
+// Field keys
+let kPAPMoneyCountKey           = "count"
+let kPAPMoneyTotalKey           = "total"
+let kPAPMoneyGivenKey           = "givenMoney"
+let kPAPMoneyBackKey            = "backMoney"
+let kPAPMoneyCurrentKey         = "currentMoney"
+
 // MARK: - 7-11店家
 // Class Key
 let kPAPStoreClassKey           = "Store"

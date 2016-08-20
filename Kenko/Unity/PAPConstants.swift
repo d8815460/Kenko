@@ -71,12 +71,30 @@ let kPAPUserFacebookFriendsKey                      = "facebookFriends"
 let kPAPUserAlreadyAutoFollowedFacebookFriendsKey   = "userAlreadyAutoFollowedFacebookFriends"
 let kPAPUserEmailKey                                = "email"
 let kPAPUserAutoFollowKey                           = "autoFollow"
+let kPAPUserLocationKey                             = "location"
 
+// MARK: - AskMoney請求
+// Class key
+let kPAPAskMoneyClassKey        = "AskMoneys"
+// Field keys
+let kPAPAskMoneyKey             = "moeny"
+let kPAPAskMoneyContentKey      = "content"
+let kPAPAskMoneyLocationKey     = "location"
+let kPAPAskMoneyFromUserKey     = "fromUser"
+
+// MARK: - 7-11店家
+// Class Key
+let kPAPStoreClassKey           = "Store"
+// Field keys
+let kPAPStoreNumberKey          = "number"
+let kPAPStoreNameKey            = "name"
+let kPAPStoreAddressKey         = "address"
+let kPAPStoreLocationKey        = "location"
 
 // MARK:- Posts Class
 
 // Class key
-let kPAPPostsClassKey = "Posts"
+let kPAPPostsClassKey           = "Posts"
 // Field keys
 let kPAPPostsUserKey            = "user"
 let kPAPPostsTitleKey           = "title"

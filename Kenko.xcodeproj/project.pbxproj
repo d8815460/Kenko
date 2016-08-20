@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2306C52F1D6845D2003505E8 /* SevenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2306C52E1D6845D2003505E8 /* SevenViewController.swift */; };
 		235E621D1D5AB6EA00E7B099 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E621C1D5AB6EA00E7B099 /* AppDelegate.swift */; };
 		235E621F1D5AB6EA00E7B099 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E621E1D5AB6EA00E7B099 /* ViewController.swift */; };
 		235E62221D5AB6EA00E7B099 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235E62201D5AB6EA00E7B099 /* Main.storyboard */; };
@@ -56,6 +57,12 @@
 		235E62A81D5B109000E7B099 /* TimeLineCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E62A71D5B109000E7B099 /* TimeLineCustomCell.swift */; };
 		235E62A91D5B109000E7B099 /* TimeLineCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E62A71D5B109000E7B099 /* TimeLineCustomCell.swift */; };
 		235E62AA1D5B109000E7B099 /* TimeLineCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E62A71D5B109000E7B099 /* TimeLineCustomCell.swift */; };
+		2367B7481D67FB9D00185B5C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2367B7471D67FB9D00185B5C /* Profile.storyboard */; };
+		2367B74A1D68039000185B5C /* Money.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2367B7491D68039000185B5C /* Money.storyboard */; };
+		2367B74D1D680E3700185B5C /* HowMuchMoneyYouWantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2367B74C1D680E3700185B5C /* HowMuchMoneyYouWantViewController.swift */; };
+		2367B7531D681DCF00185B5C /* WhyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2367B7521D681DCF00185B5C /* WhyViewController.swift */; };
+		2367B7541D681EA600185B5C /* WhyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2367B7521D681DCF00185B5C /* WhyViewController.swift */; };
+		2367B7551D681EA600185B5C /* WhyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2367B7521D681DCF00185B5C /* WhyViewController.swift */; };
 		238E9EC41D5C09D2003FC76C /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238E9DC61D5C09D1003FC76C /* FBSDKMessengerShareKit.framework */; };
 		238E9EC61D5C09D2003FC76C /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 238E9DC81D5C09D1003FC76C /* LICENSE.txt */; };
 		238E9EC71D5C09D2003FC76C /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 238E9DC91D5C09D1003FC76C /* README.txt */; };
@@ -86,6 +93,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2306C52E1D6845D2003505E8 /* SevenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SevenViewController.swift; sourceTree = "<group>"; };
 		235E62191D5AB6EA00E7B099 /* Kenko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kenko.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		235E621C1D5AB6EA00E7B099 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		235E621E1D5AB6EA00E7B099 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +124,10 @@
 		235E629F1D5AE8AA00E7B099 /* TimelineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineCell.swift; sourceTree = "<group>"; };
 		235E62A31D5AE96200E7B099 /* MegaTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MegaTheme.swift; sourceTree = "<group>"; };
 		235E62A71D5B109000E7B099 /* TimeLineCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineCustomCell.swift; sourceTree = "<group>"; };
+		2367B7471D67FB9D00185B5C /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		2367B7491D68039000185B5C /* Money.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Money.storyboard; sourceTree = "<group>"; };
+		2367B74C1D680E3700185B5C /* HowMuchMoneyYouWantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowMuchMoneyYouWantViewController.swift; sourceTree = "<group>"; };
+		2367B7521D681DCF00185B5C /* WhyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhyViewController.swift; sourceTree = "<group>"; };
 		238E9DC61D5C09D1003FC76C /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
 		238E9DC81D5C09D1003FC76C /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		238E9DC91D5C09D1003FC76C /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
@@ -180,6 +192,7 @@
 		235E621B1D5AB6EA00E7B099 /* Kenko */ = {
 			isa = PBXGroup;
 			children = (
+				2367B74B1D680E0D00185B5C /* piggybank */,
 				235E62A31D5AE96200E7B099 /* MegaTheme.swift */,
 				235E629E1D5AE89D00E7B099 /* Cells */,
 				235E62791D5ADE7300E7B099 /* FNFoldingTabBar */,
@@ -192,6 +205,8 @@
 				235E62961D5AE50300E7B099 /* SettingTableViewController.swift */,
 				235E621E1D5AB6EA00E7B099 /* ViewController.swift */,
 				235E62201D5AB6EA00E7B099 /* Main.storyboard */,
+				2367B7491D68039000185B5C /* Money.storyboard */,
+				2367B7471D67FB9D00185B5C /* Profile.storyboard */,
 				235E62231D5AB6EA00E7B099 /* Assets.xcassets */,
 				235E62281D5AB6EA00E7B099 /* Info.plist */,
 				235E62251D5AB6EA00E7B099 /* LaunchScreen.storyboard */,
@@ -255,6 +270,16 @@
 			children = (
 			);
 			name = "Wellcom&Login&SignUp";
+			sourceTree = "<group>";
+		};
+		2367B74B1D680E0D00185B5C /* piggybank */ = {
+			isa = PBXGroup;
+			children = (
+				2367B74C1D680E3700185B5C /* HowMuchMoneyYouWantViewController.swift */,
+				2367B7521D681DCF00185B5C /* WhyViewController.swift */,
+				2306C52E1D6845D2003505E8 /* SevenViewController.swift */,
+			);
+			name = piggybank;
 			sourceTree = "<group>";
 		};
 		238E9DB81D5C09D1003FC76C /* FacebookSDKs */ = {
@@ -418,7 +443,9 @@
 				235E62271D5AB6EA00E7B099 /* LaunchScreen.storyboard in Resources */,
 				235E62241D5AB6EA00E7B099 /* Assets.xcassets in Resources */,
 				235E62221D5AB6EA00E7B099 /* Main.storyboard in Resources */,
+				2367B7481D67FB9D00185B5C /* Profile.storyboard in Resources */,
 				238E9EC71D5C09D2003FC76C /* README.txt in Resources */,
+				2367B74A1D68039000185B5C /* Money.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,18 +536,21 @@
 				235E62A81D5B109000E7B099 /* TimeLineCustomCell.swift in Sources */,
 				23B4B76E1D613405006F99D5 /* WriteTitleViewController.swift in Sources */,
 				235E62971D5AE50300E7B099 /* SettingTableViewController.swift in Sources */,
+				2367B74D1D680E3700185B5C /* HowMuchMoneyYouWantViewController.swift in Sources */,
 				235E628B1D5AE49700E7B099 /* PostBlogViewController.swift in Sources */,
 				235E62731D5AC50C00E7B099 /* PAPUtility.swift in Sources */,
 				23B4B7701D613413006F99D5 /* WriteDetailViewController.swift in Sources */,
 				235E62831D5ADE7300E7B099 /* FNFoldingTabBarController.swift in Sources */,
 				235E62A01D5AE8AA00E7B099 /* TimelineCell.swift in Sources */,
 				235E62A41D5AE96200E7B099 /* MegaTheme.swift in Sources */,
+				2306C52F1D6845D2003505E8 /* SevenViewController.swift in Sources */,
 				235E628F1D5AE4C300E7B099 /* TimeLineViewController.swift in Sources */,
 				235E621F1D5AB6EA00E7B099 /* ViewController.swift in Sources */,
 				235E62801D5ADE7300E7B099 /* FNFoldingTabBar.swift in Sources */,
 				235E62761D5AC50C00E7B099 /* Reachability.swift in Sources */,
 				235E621D1D5AB6EA00E7B099 /* AppDelegate.swift in Sources */,
 				23B4B7721D622B10006F99D5 /* ArticleViewController.swift in Sources */,
+				2367B7531D681DCF00185B5C /* WhyViewController.swift in Sources */,
 				235E626D1D5AC50C00E7B099 /* PAPCache.swift in Sources */,
 				23B218931D5F6DCC00F6C52D /* WriteTableViewController.swift in Sources */,
 				235E629B1D5AE51800E7B099 /* ChatViewController.swift in Sources */,
@@ -541,6 +571,7 @@
 				235E62711D5AC50C00E7B099 /* PAPConstants.swift in Sources */,
 				23B4B7731D622B10006F99D5 /* ArticleViewController.swift in Sources */,
 				235E626E1D5AC50C00E7B099 /* PAPCache.swift in Sources */,
+				2367B7541D681EA600185B5C /* WhyViewController.swift in Sources */,
 				235E62841D5ADE7300E7B099 /* FNFoldingTabBarController.swift in Sources */,
 				235E62771D5AC50C00E7B099 /* Reachability.swift in Sources */,
 				235E62981D5AE50300E7B099 /* SettingTableViewController.swift in Sources */,
@@ -563,6 +594,7 @@
 				235E62721D5AC50C00E7B099 /* PAPConstants.swift in Sources */,
 				23B4B7741D622B10006F99D5 /* ArticleViewController.swift in Sources */,
 				235E626F1D5AC50C00E7B099 /* PAPCache.swift in Sources */,
+				2367B7551D681EA600185B5C /* WhyViewController.swift in Sources */,
 				235E62851D5ADE7300E7B099 /* FNFoldingTabBarController.swift in Sources */,
 				235E62781D5AC50C00E7B099 /* Reachability.swift in Sources */,
 				235E62991D5AE50300E7B099 /* SettingTableViewController.swift in Sources */,
@@ -698,6 +730,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: CHUN I CHEN (C4B52A7U96)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -706,9 +739,9 @@
 				);
 				INFOPLIST_FILE = Kenko/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = today.kenko;
+				PRODUCT_BUNDLE_IDENTIFIER = tw.ayi.piggybank;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "43f44908-62cc-476f-b0de-5be2975e3779";
+				PROVISIONING_PROFILE = "66814904-5c72-4860-b341-cb65223f6b9b";
 				SWIFT_OBJC_BRIDGING_HEADER = "Kenko/Kenko-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -729,9 +762,9 @@
 				);
 				INFOPLIST_FILE = Kenko/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = today.kenko;
+				PRODUCT_BUNDLE_IDENTIFIER = tw.ayi.piggybank;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "43f44908-62cc-476f-b0de-5be2975e3779";
+				PROVISIONING_PROFILE = "66814904-5c72-4860-b341-cb65223f6b9b";
 				SWIFT_OBJC_BRIDGING_HEADER = "Kenko/Kenko-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

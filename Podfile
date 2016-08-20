@@ -22,6 +22,7 @@ pod 'UIImageEffects', '~> 0.0.1'
 pod 'UIImageAFAdditions', :git => 'https://github.com/teklabs/UIImageAFAdditions.git'
 pod 'Synchronized', '~> 2.0.0'
 pod 'Reachability', '~> 3.2'
+pod 'IQKeyboardManagerSwift', '~> 4.0'
 
 end
 

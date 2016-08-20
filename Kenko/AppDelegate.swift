@@ -13,14 +13,18 @@ import Parse
 import ParseCrashReporting
 import ParseFacebookUtils
 import MBProgressHUD
+import IQKeyboardManagerSwift
+import CoreLocation
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
     var networkStatus: Reachability.NetworkStatus?
     private var firstLaunch: Bool = true
     private var tabController: FNFoldingTabBarController?
+    private var currentLocation: CLLocation?
+    private var locationManager: CLLocationManager?
     
     func sharedInstance() -> AppDelegate{
         return UIApplication.sharedApplication().delegate as! AppDelegate
@@ -40,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // ****************************************************************************
         // Parse initialization
         ParseCrashReporting.enable()
-        Parse.setApplicationId("HvbrCuCAF3PwHACiplKeghYbeIcpPVFlSvSXmhrQ", clientKey: "NTwqjCdGPQesiN4Enox3ytfgzqWqJT89WshyL0Hx")
+        Parse.setApplicationId("5qm3p5WKN4wDmSNQ0Y1WDDV44IbrqkuWhJYbYfMs", clientKey: "322dxzdR1E13yZW7NDl98vxU3igFY9MyoR1kIiMk")
         // 設定FacebookUtilsV4
 //        PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
 //        PFFacebookUtils.initialize()
@@ -75,6 +79,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Enable public read access by default, with any newly created PFObjects belonging to the current user
         PFACL.setDefaultACL(defaultACL, withAccessForCurrentUser: true)
         
+        // IQ Keyboard Manager
+        IQKeyboardManager.sharedManager().enable = true
+        
+        // Core Location
+        locationManager = CLLocationManager.init()
+        locationManager?.delegate = self
+        locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager?.startUpdatingHeading()
+        
+        
         // 設定Theme
         // Set up our app's global UIAppearance
         self.setupAppearance()
@@ -94,30 +108,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow.init(frame: UIScreen.mainScreen().bounds)
         self.window!.backgroundColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()
-        tabController = FNFoldingTabBarController.init()
-        tabController!.title = "Kenko.Today"
-        tabController!.tabBarBgColor = UIColor.clearColor()
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc0 = storyboard.instantiateViewControllerWithIdentifier("timeline")
-        vc0.tabBarItem.title = "0";
-        vc0.tabBarItem.image = nil
+        let storyboard = UIStoryboard(name: "Money", bundle: nil)
+        let vc0 = storyboard.instantiateViewControllerWithIdentifier("howmuch")
+        vc0.title = "Piggy Bank"
         
-        let vc1 = storyboard.instantiateViewControllerWithIdentifier("post")
-        vc1.tabBarItem.title = "1";
-        vc1.tabBarItem.image = nil
-        
-        let vc2 = storyboard.instantiateViewControllerWithIdentifier("chat")
-        vc2.tabBarItem.title = "2";
-        vc2.tabBarItem.image = nil
-        
-        let vc3 = storyboard.instantiateViewControllerWithIdentifier("setting")
-        vc3.tabBarItem.title = "3";
-        vc3.tabBarItem.image = nil
-        
-        tabController!.fn_viewControllers=[vc0, vc1, vc2, vc3]
-        
-        let naviController = UINavigationController.init(rootViewController: tabController!)
+        let naviController = UINavigationController.init(rootViewController: vc0)
         self.window!.rootViewController = naviController
         self.window!.makeKeyAndVisible()
         
@@ -418,6 +414,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        tabController?.selectedIndex = index
         
 //        print(self.window!.rootViewController)
+    }
+    
+    
+    // MARK: - 設定用戶經緯度資料
+    func setCurrentLocation(aCurrentLocation:CLLocation) {
+        
+    }
+    
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("loctions = \(locations)")
     }
 }
 

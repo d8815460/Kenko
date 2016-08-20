@@ -41,6 +41,7 @@ PODS:
     - FormatterKit/Resources
   - FormatterKit/URLRequestFormatter (1.8.1):
     - FormatterKit/Resources
+  - IQKeyboardManagerSwift (4.0.4)
   - MBProgressHUD (0.9.2)
   - Parse (1.7.5.3):
     - Bolts/Tasks (>= 1.2.0)
@@ -54,6 +55,7 @@ PODS:
   - ParseUI (1.1.4):
     - Parse (~> 1.7)
   - Reachability (3.2)
+  - SwiftLocation (1.0.0)
   - Synchronized (2.0.2)
   - UIImageAFAdditions (0.1)
   - UIImageEffects (0.0.1)
@@ -65,12 +67,14 @@ DEPENDENCIES:
   - Fabric
   - FormatterKit (~> 1.8)
   - FormatterKit (~> 1.8.0)
+  - IQKeyboardManagerSwift (~> 4.0)
   - MBProgressHUD (~> 0.9.1)
   - Parse (~> 1.7.5)
   - ParseCrashReporting (~> 1.7.5)
   - ParseFacebookUtils (~> 1.7.5)
   - ParseUI (= 1.1.4)
   - Reachability (~> 3.2)
+  - SwiftLocation (~> 1.0)
   - Synchronized (~> 2.0.0)
   - UIImageAFAdditions (from `https://github.com/teklabs/UIImageAFAdditions.git`)
   - UIImageEffects (~> 0.0.1)
@@ -96,12 +100,14 @@ SPEC CHECKSUMS:
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   Facebook-iOS-SDK: 5a7c414a084708220b72d5fd016f2cf3eb6deda4
   FormatterKit: 11ad17b983200629246a5a466f6f1bfa2df823cb
+  IQKeyboardManagerSwift: e0964d04d6a29b71016fd346dca13ecb80a2823a
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   Parse: 373adbb1ad2e34d383542c3b28f678c49ebe4881
   ParseCrashReporting: 36d2e2770d7502d943b81c013acd5193946ced46
   ParseFacebookUtils: 008a24dc35884519ed6a6750648beb5149f1fad9
   ParseUI: d1228541b02a36a7354c8f47747f5f7a89cf1ff0
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  SwiftLocation: b01455c5ff67ac66b0696b70ca9d29bda646ec5a
   Synchronized: edaeea246a887b188919876723b0d447314ad11d
   UIImageAFAdditions: bdb543889f97aea5cc9a8d0c985c03bb8b4ceb96
   UIImageEffects: 37b99fa461e4965f332ca82e92f2c22a1075ee84

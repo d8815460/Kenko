@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '03CB522B56534059FC1CAE93'
+               BlueprintIdentifier = '42F4BDA30141063A0FCE1D00'
                BlueprintName = 'Canvas'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Canvas.framework'>

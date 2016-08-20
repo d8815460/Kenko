@@ -214,6 +214,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     // MARK:- AppDelegate
     
+    func setHowViewControllerAskSendFalse() {
+        let nav = self.window?.rootViewController as! UINavigationController
+        let how = nav.viewControllers[0] as! HowMuchMoneyYouWantViewController
+        how.askSend = false
+    }
+    
     func isParseReachable() -> Bool {
         return self.networkStatus != .NotReachable
     }

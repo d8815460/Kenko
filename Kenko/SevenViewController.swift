@@ -56,7 +56,12 @@ class SevenViewController: UIViewController, MKMapViewDelegate {
     }
     
     @IBAction func takeMoneButtonPressed(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true) { 
+        (UIApplication.sharedApplication().delegate as! AppDelegate).setHowViewControllerAskSendFalse()
+        
+        
+        self.dismissViewControllerAnimated(true) {
+            
+            
             
         }
     }

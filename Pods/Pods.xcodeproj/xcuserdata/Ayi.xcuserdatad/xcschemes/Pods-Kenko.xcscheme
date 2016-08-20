@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '4A8EC0D170FD7C474FB2E117'
+               BlueprintIdentifier = 'E2C232671FD08602EF9F82E9'
                BlueprintName = 'Pods-Kenko'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_Kenko.framework'>

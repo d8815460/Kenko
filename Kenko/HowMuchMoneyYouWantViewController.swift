@@ -12,7 +12,7 @@ import MBProgressHUD
 import Synchronized
 import ParseFacebookUtils
 
-class HowMuchMoneyYouWantViewController: UIViewController, UITextFieldDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate  {
+class HowMuchMoneyYouWantViewController: UIViewController, UITextFieldDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, UIScrollViewDelegate  {
 
     @IBOutlet weak var moneyTextField: UITextField!
     private var _presentedLoginViewController: Bool = false
@@ -22,6 +22,9 @@ class HowMuchMoneyYouWantViewController: UIViewController, UITextFieldDelegate, 
     private var _profilePicData: NSMutableData? = nil
     private var hud: MBProgressHUD?
     var askSend: Bool = false
+    @IBOutlet weak var totalMoneyLabel: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var top: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +32,21 @@ class HowMuchMoneyYouWantViewController: UIViewController, UITextFieldDelegate, 
         // Do any additional setup after loading the view.
         moneyTextField.delegate = self
         moneyTextField.becomeFirstResponder()
+        
+        self.scrollView.delegate = self
+        self.scrollView.scrollEnabled = true
+        
+        let appear = {
+            () -> Void in
+            self.top.constant = 0
+            self.viewDidAppear(true)
+        }
+        
+        self.scrollView.addPullToRefreshWithActionHandler {
+            appear()
+        }
     }
+    
     
     override func viewDidAppear(animated: Bool) {
         if PFUser.currentUser() == nil {
@@ -42,7 +59,19 @@ class HowMuchMoneyYouWantViewController: UIViewController, UITextFieldDelegate, 
         }
         // Refresh current user with server side data -- checks if user is still valid and so on
         _facebookResponseCount = 0
-        PFUser.currentUser()?.fetchInBackgroundWithTarget(self, selector: #selector(TimeLineViewController.refreshCurrentUserCallbackWithResult(_:error:)))
+        if (PFUser.currentUser()![kPAPUserProfilePicMediumKey] == nil) {
+            PFUser.currentUser()?.fetchInBackgroundWithTarget(self, selector: #selector(TimeLineViewController.refreshCurrentUserCallbackWithResult(_:error:)))
+        }
+        
+        
+        let queryMoney = PFQuery.init(className: kPAPMoneyClassKey)
+        queryMoney.getFirstObjectInBackgroundWithBlock { (money, error) in
+            if error == nil {
+                self.totalMoneyLabel.text = "\(money![kPAPMoneyCountKey]!)"
+            }
+        }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -423,6 +452,21 @@ class HowMuchMoneyYouWantViewController: UIViewController, UITextFieldDelegate, 
                 self.processedFacebookResponse()
             }
         }
+    }
+    
+    // MARK: - UIScrollViewDelegate
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+//        self.scrollView.scrollEnabled = true
+        self.scrollView.triggerPullToRefresh()
+//        let appear = {
+//            () -> Void in
+//            self.top.constant = 0
+//            self.viewDidAppear(true)
+//        }
+//        
+//        self.scrollView.addPullToRefreshWithActionHandler {
+//            appear()
+//        }
     }
     
     

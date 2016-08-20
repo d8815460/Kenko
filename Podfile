@@ -23,6 +23,7 @@ pod 'UIImageAFAdditions', :git => 'https://github.com/teklabs/UIImageAFAdditions
 pod 'Synchronized', '~> 2.0.0'
 pod 'Reachability', '~> 3.2'
 pod 'IQKeyboardManagerSwift', '~> 4.0'
+pod 'SVPullToRefresh', '~> 0.4'
 
 end
 

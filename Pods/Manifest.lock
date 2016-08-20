@@ -55,7 +55,7 @@ PODS:
   - ParseUI (1.1.4):
     - Parse (~> 1.7)
   - Reachability (3.2)
-  - SwiftLocation (1.0.0)
+  - SVPullToRefresh (0.4.1)
   - Synchronized (2.0.2)
   - UIImageAFAdditions (0.1)
   - UIImageEffects (0.0.1)
@@ -74,7 +74,7 @@ DEPENDENCIES:
   - ParseFacebookUtils (~> 1.7.5)
   - ParseUI (= 1.1.4)
   - Reachability (~> 3.2)
-  - SwiftLocation (~> 1.0)
+  - SVPullToRefresh (~> 0.4)
   - Synchronized (~> 2.0.0)
   - UIImageAFAdditions (from `https://github.com/teklabs/UIImageAFAdditions.git`)
   - UIImageEffects (~> 0.0.1)
@@ -107,7 +107,7 @@ SPEC CHECKSUMS:
   ParseFacebookUtils: 008a24dc35884519ed6a6750648beb5149f1fad9
   ParseUI: d1228541b02a36a7354c8f47747f5f7a89cf1ff0
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  SwiftLocation: b01455c5ff67ac66b0696b70ca9d29bda646ec5a
+  SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
   Synchronized: edaeea246a887b188919876723b0d447314ad11d
   UIImageAFAdditions: bdb543889f97aea5cc9a8d0c985c03bb8b4ceb96
   UIImageEffects: 37b99fa461e4965f332ca82e92f2c22a1075ee84

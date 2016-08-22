@@ -402,7 +402,7 @@
 				TargetAttributes = {
 					235E62181D5AB6EA00E7B099 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 8LJ7V3WEL3;
+						DevelopmentTeam = P4K46M3X9G;
 					};
 					235E622C1D5AB6EA00E7B099 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -741,7 +741,7 @@
 				);
 				INFOPLIST_FILE = Kenko/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tw.ayi.piggybank;
+				PRODUCT_BUNDLE_IDENTIFIER = today.kenko;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Kenko/Kenko-Bridging-Header.h";
@@ -765,7 +765,7 @@
 				);
 				INFOPLIST_FILE = Kenko/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tw.ayi.piggybank;
+				PRODUCT_BUNDLE_IDENTIFIER = today.kenko;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Kenko/Kenko-Bridging-Header.h";

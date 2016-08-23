@@ -84,8 +84,10 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-Kenko/AFNetworking.framework"
   install_framework "Pods-Kenko/Bolts.framework"
   install_framework "Pods-Kenko/Canvas.framework"
+  install_framework "Pods-Kenko/FBSDKMessengerShareKit.framework"
   install_framework "Pods-Kenko/FacebookSDK.framework"
   install_framework "Pods-Kenko/FormatterKit.framework"
   install_framework "Pods-Kenko/IQKeyboardManagerSwift.framework"
@@ -101,8 +103,10 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Kenko/UIImageEffects.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-Kenko/AFNetworking.framework"
   install_framework "Pods-Kenko/Bolts.framework"
   install_framework "Pods-Kenko/Canvas.framework"
+  install_framework "Pods-Kenko/FBSDKMessengerShareKit.framework"
   install_framework "Pods-Kenko/FacebookSDK.framework"
   install_framework "Pods-Kenko/FormatterKit.framework"
   install_framework "Pods-Kenko/IQKeyboardManagerSwift.framework"

@@ -72,6 +72,9 @@
 		23B4B7721D622B10006F99D5 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B4B7711D622B10006F99D5 /* ArticleViewController.swift */; };
 		23B4B7731D622B10006F99D5 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B4B7711D622B10006F99D5 /* ArticleViewController.swift */; };
 		23B4B7741D622B10006F99D5 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B4B7711D622B10006F99D5 /* ArticleViewController.swift */; };
+		7167E7C91D6C48560042FECB /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7167E7C81D6C48560042FECB /* ApiManager.swift */; };
+		7167E7CA1D6C48560042FECB /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7167E7C81D6C48560042FECB /* ApiManager.swift */; };
+		7167E7CB1D6C48560042FECB /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7167E7C81D6C48560042FECB /* ApiManager.swift */; };
 		B355BDB8D25C6F3513469132 /* Pods_Kenko.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9778FCFAEC049737939DD75 /* Pods_Kenko.framework */; };
 /* End PBXBuildFile section */
 
@@ -136,6 +139,7 @@
 		23B4B76F1D613413006F99D5 /* WriteDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteDetailViewController.swift; sourceTree = "<group>"; };
 		23B4B7711D622B10006F99D5 /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		481D719C2E9835974B33CA4A /* Pods-Kenko.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kenko.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kenko/Pods-Kenko.debug.xcconfig"; sourceTree = "<group>"; };
+		7167E7C81D6C48560042FECB /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		812C4A4D17657796E2AF0293 /* Pods-Kenko.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kenko.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kenko/Pods-Kenko.release.xcconfig"; sourceTree = "<group>"; };
 		E9778FCFAEC049737939DD75 /* Pods_Kenko.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kenko.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -192,6 +196,7 @@
 		235E621B1D5AB6EA00E7B099 /* Kenko */ = {
 			isa = PBXGroup;
 			children = (
+				7167E7C21D6C48160042FECB /* API */,
 				2367B74B1D680E0D00185B5C /* piggybank */,
 				235E62A31D5AE96200E7B099 /* MegaTheme.swift */,
 				235E629E1D5AE89D00E7B099 /* Cells */,
@@ -310,6 +315,14 @@
 				23B4B7711D622B10006F99D5 /* ArticleViewController.swift */,
 			);
 			name = Timeline;
+			sourceTree = "<group>";
+		};
+		7167E7C21D6C48160042FECB /* API */ = {
+			isa = PBXGroup;
+			children = (
+				7167E7C81D6C48560042FECB /* ApiManager.swift */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 		945513B9789E55452AAF00F6 /* Pods */ = {
@@ -554,6 +567,7 @@
 				2367B7531D681DCF00185B5C /* WhyViewController.swift in Sources */,
 				235E626D1D5AC50C00E7B099 /* PAPCache.swift in Sources */,
 				23B218931D5F6DCC00F6C52D /* WriteTableViewController.swift in Sources */,
+				7167E7C91D6C48560042FECB /* ApiManager.swift in Sources */,
 				235E629B1D5AE51800E7B099 /* ChatViewController.swift in Sources */,
 				235E62701D5AC50C00E7B099 /* PAPConstants.swift in Sources */,
 			);
@@ -577,6 +591,7 @@
 				235E62771D5AC50C00E7B099 /* Reachability.swift in Sources */,
 				235E62981D5AE50300E7B099 /* SettingTableViewController.swift in Sources */,
 				235E62A51D5AE96200E7B099 /* MegaTheme.swift in Sources */,
+				7167E7CA1D6C48560042FECB /* ApiManager.swift in Sources */,
 				235E62321D5AB6EA00E7B099 /* KenkoTests.swift in Sources */,
 				235E62901D5AE4C300E7B099 /* TimeLineViewController.swift in Sources */,
 			);
@@ -600,6 +615,7 @@
 				235E62781D5AC50C00E7B099 /* Reachability.swift in Sources */,
 				235E62991D5AE50300E7B099 /* SettingTableViewController.swift in Sources */,
 				235E62A61D5AE96200E7B099 /* MegaTheme.swift in Sources */,
+				7167E7CB1D6C48560042FECB /* ApiManager.swift in Sources */,
 				235E623D1D5AB6EA00E7B099 /* KenkoUITests.swift in Sources */,
 				235E62911D5AE4C300E7B099 /* TimeLineViewController.swift in Sources */,
 			);

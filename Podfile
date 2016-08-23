@@ -24,6 +24,8 @@ pod 'Synchronized', '~> 2.0.0'
 pod 'Reachability', '~> 3.2'
 pod 'IQKeyboardManagerSwift', '~> 4.0'
 pod 'SVPullToRefresh', '~> 0.4'
+pod 'FBSDKMessengerShareKit', '~> 1.3'
+pod 'AFNetworking', '~> 3.0.0-beta.1'
 
 end
 

@@ -124,6 +124,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         var wasHandled = false
         
+        
+        // Check if the handler knows what to do with this url
+        
         if PFFacebookUtils.session() != nil {
             wasHandled = wasHandled || FBAppCall.handleOpenURL(url, sourceApplication: sourceApplication, withSession: PFFacebookUtils.session())
         } else {

@@ -157,3 +157,10 @@ let kPAPPushPayloadPhotoObjectIdKey = "pid"
 
 
 var postObject:PFObject?
+
+// MARK: - HPE API
+let kPAPHPEAPIKEY = "apikey"
+let kPAPLANGUAGEKEY = "language"
+let kPAPTEXTKEY = "text"
+
+

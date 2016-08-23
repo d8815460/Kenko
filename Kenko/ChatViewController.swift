@@ -21,11 +21,10 @@ class ChatViewController: UIViewController {
         
         let button2 = FBSDKMessengerShareButton.rectangularButtonWithStyle(FBSDKMessengerShareButtonStyle.White)
         button2.frame = CGRectMake(8, self.view.frame.height/2, (self.view.frame.width)-16, 46)
-        
+        button2.addTarget(self, action: #selector(ChatViewController.shareButtonPressed), forControlEvents: .TouchUpInside)
         view.addSubview(button2)
         
 //        button.addTarget(self, action: #selector(ChatViewController.shareButtonPressed), forControlEvents: .TouchUpInside)
-        
 //        self.view.addSubview(button)
         
 //        UIButton *button = [FBSDKMessengerShareButton rectangularButtonWithStyle:FBSDKMessengerShareButtonStyleBlue];
@@ -40,7 +39,10 @@ class ChatViewController: UIViewController {
     
 
     func shareButtonPressed() {
+        let options = FBSDKMessengerShareOptions.init()
+        options.renderAsSticker = true
         
+        FBSDKMessengerSharer.shareImage(UIImage(named: "AppIcon"), withOptions: options)
     }
     /*
     // MARK: - Navigation

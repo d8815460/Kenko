@@ -138,14 +138,14 @@ class ArticleViewController: UITableViewController, UICollectionViewDelegate, UI
         }else if indexPath.row == 2{
             let post:PFObject = receiveData as! PFObject
             if post[kPAPPostsThumbnailKey] != nil {
-                return heightForView((articleLabel?.text)!, font: articleLabel.font, width: 150)
+                return heightForView((articleLabel?.text)!, font: articleLabel.font, width: 300) + 250
             } else {
                 return heightForView((articleLabel?.text)!, font: articleLabel.font, width: 190)
             }
             
             
         }else if indexPath.row == 3{
-            return 200
+            return 0
         }else{
             return 50
         }

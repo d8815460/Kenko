@@ -14,13 +14,14 @@ class ApiManager: NSObject {
     let baseURL = "https://api.havenondemand.com/1/api/sync/analyzesentiment/v1"
     let manager = AFHTTPSessionManager()
     
-    func postSentimentAnalysisText(text: String) -> BFTask {
+    
+    func postSentimentAnalysisText(saveObject: PFObject, language: String) -> BFTask {
         let source = BFTaskCompletionSource()
         let url = "\(baseURL)"
         
         let parameters = NSMutableDictionary()
-        parameters.setObject(text, forKey: kPAPTEXTKEY)
-        parameters.setObject("eng", forKey: kPAPLANGUAGEKEY)
+        parameters.setObject(saveObject[kPAPPostsContentKey] as! String, forKey: kPAPTEXTKEY)
+        parameters.setObject(language, forKey: kPAPLANGUAGEKEY)
         parameters.setObject("75739c75-ad38-4f35-9261-a85d2a4b08f2", forKey: kPAPHPEAPIKEY)
         
         manager.POST(url, parameters: parameters, progress: { (progress) in

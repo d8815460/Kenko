@@ -1,4 +1,4 @@
-//
+ //
 //  AppDelegate.swift
 //  Kenko
 //
@@ -15,9 +15,10 @@ import ParseFacebookUtils
 import MBProgressHUD
 import IQKeyboardManagerSwift
 import CoreLocation
+import FBSDKMessengerShareKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate, FBSDKMessengerURLHandlerDelegate {
 
     var window: UIWindow?
     var networkStatus: Reachability.NetworkStatus?
@@ -25,6 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     private var tabController: FNFoldingTabBarController?
     private var currentLocation: CLLocation?
     private var locationManager: CLLocationManager?
+    private var messengerUrlHandler: FBSDKMessengerURLHandler?
+    private var composerContext: FBSDKMessengerURLHandlerOpenFromComposerContext?
+    private var replyContext: FBSDKMessengerURLHandlerReplyContext?
+    
     
     func sharedInstance() -> AppDelegate{
         return UIApplication.sharedApplication().delegate as! AppDelegate
@@ -44,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         // ****************************************************************************
         // Parse initialization
         ParseCrashReporting.enable()
-        Parse.setApplicationId("5qm3p5WKN4wDmSNQ0Y1WDDV44IbrqkuWhJYbYfMs", clientKey: "322dxzdR1E13yZW7NDl98vxU3igFY9MyoR1kIiMk")
+        Parse.setApplicationId("HvbrCuCAF3PwHACiplKeghYbeIcpPVFlSvSXmhrQ", clientKey: "NTwqjCdGPQesiN4Enox3ytfgzqWqJT89WshyL0Hx")
         // 設定FacebookUtilsV4
 //        PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
 //        PFFacebookUtils.initialize()
@@ -98,6 +103,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         self.handlePush(launchOptions)
         
+        // Handler Messenger Bot
+        messengerUrlHandler = FBSDKMessengerURLHandler.init()
+        messengerUrlHandler?.delegate = self
+        
+        
         // Register for Push Notitications （不一定要在這裡實作） iOS9 的做法
         let userNotificationTypes: UIUserNotificationType = [UIUserNotificationType.Alert, UIUserNotificationType.Badge, UIUserNotificationType.Sound]
         let settings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
@@ -108,12 +118,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         self.window = UIWindow.init(frame: UIScreen.mainScreen().bounds)
         self.window!.backgroundColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()
+        tabController = FNFoldingTabBarController.init()
+        tabController!.title = "Kenko.Today"
+        tabController!.tabBarBgColor = UIColor.clearColor()
         
-        let storyboard = UIStoryboard(name: "Money", bundle: nil)
-        let vc0 = storyboard.instantiateViewControllerWithIdentifier("howmuch")
-        vc0.title = "Piggy Bank"
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc0 = storyboard.instantiateViewControllerWithIdentifier("timeline")
+        vc0.tabBarItem.title = "0";
+        vc0.tabBarItem.image = nil
         
-        let naviController = UINavigationController.init(rootViewController: vc0)
+        let vc1 = storyboard.instantiateViewControllerWithIdentifier("post")
+        vc1.tabBarItem.title = "1";
+        vc1.tabBarItem.image = nil
+        
+        let vc2 = storyboard.instantiateViewControllerWithIdentifier("chat")
+        vc2.tabBarItem.title = "2";
+        vc2.tabBarItem.image = nil
+        
+        let vc3 = storyboard.instantiateViewControllerWithIdentifier("setting")
+        vc3.tabBarItem.title = "3";
+        vc3.tabBarItem.image = nil
+        
+        tabController!.fn_viewControllers=[vc0, vc1, vc2, vc3]
+        
+        let naviController = UINavigationController.init(rootViewController: tabController!)
         self.window!.rootViewController = naviController
         self.window!.makeKeyAndVisible()
         
@@ -214,6 +242,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
     }
     
+    
+    /*
+     * When people enter your app through the composer in Messenger,
+     * this delegate function will be called.
+     */
+    func messengerURLHandler(messengerURLHandler: FBSDKMessengerURLHandler!, didHandleOpenFromComposerWithContext context: FBSDKMessengerURLHandlerOpenFromComposerContext!) {
+        composerContext = context
+    }
+    
+    /*
+     * When people enter your app through the "Reply" button on content
+     * this delegate function will be called.
+     */
+    func messengerURLHandler(messengerURLHandler: FBSDKMessengerURLHandler!, didHandleReplyWithContext context: FBSDKMessengerURLHandlerReplyContext!) {
+        replyContext = context
+    }
     
     // MARK:- AppDelegate
     

@@ -19,6 +19,8 @@ class WriteTableViewController: UITableViewController, UIImagePickerControllerDe
     private var fileMeiumImage:PFFile?
     private var fileSmallRoundedImage:PFFile?
     
+    let operationQueue = NSOperationQueue()
+    var operation = ApiOperation(manager: ApiManager(), saveObject: PFObject.init(className: kPAPPostsClassKey), language: "eng")
     
     @IBOutlet weak var postTitle: UILabel!
     @IBOutlet weak var postSubTitle: UILabel!
@@ -306,19 +308,33 @@ class WriteTableViewController: UITableViewController, UIImagePickerControllerDe
         ACL.setPublicWriteAccess(true)
         saveObject.ACL = ACL
         
-        saveObject[kPAPPostsUserKey] = PFUser.currentUser()
-        saveObject.saveEventually { (successed, error) in
-            self.hud?.hide(true)
-            if successed {
-                print("Posts uploaded.")
-                postObject = nil
-                self.dismissViewControllerAnimated(true, completion: nil)
+        
+        //送API解析
+        
+        operation = ApiOperation(manager: ApiManager(), saveObject: saveObject, language: "eng")
+        
+//        operation = ApiOperation(manager: ApiManager(), text: (saveObject[kPAPPostsContentKey] as? String)!, language: "eng")
+        operationQueue.addOperation(operation)
+        
+        operation.completionBlock = { [weak self] in
+            if self!.operation.cancelled {
+                print("cancel")
             } else {
-                print("error upload post: \(error.debugDescription)")
-                postObject = nil
-                self.dismissViewControllerAnimated(true, completion: nil)
+                saveObject[kPAPPostsUserKey] = PFUser.currentUser()
+                saveObject.saveEventually { (successed, error) in
+                    self!.hud?.hide(true)
+                    if successed {
+                        print("Posts uploaded.")
+                        postObject = nil
+                        self!.dismissViewControllerAnimated(true, completion: nil)
+                    } else {
+                        print("error upload post: \(error.debugDescription)")
+                        postObject = nil
+                        self!.dismissViewControllerAnimated(true, completion: nil)
+                    }
+                    (UIApplication.sharedApplication().delegate as! AppDelegate).presentToTabbarIndex(0)
+                }
             }
-            (UIApplication.sharedApplication().delegate as! AppDelegate).presentToTabbarIndex(0)
         }
     }
     

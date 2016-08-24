@@ -39,10 +39,21 @@ class ChatViewController: UIViewController {
     
 
     func shareButtonPressed() {
-        let options = FBSDKMessengerShareOptions.init()
-        options.renderAsSticker = true
+        let fbUrl: NSURL = NSURL(string: "http://m.me/149502088796502")!
+        if UIApplication.sharedApplication().canOpenURL(fbUrl) {
+            UIApplication.sharedApplication().openURL(fbUrl)
+        }
         
-        FBSDKMessengerSharer.shareImage(UIImage(named: "AppIcon"), withOptions: options)
+        
+//        let metadata = "image:pedro"
+//        let image = UIImage(named: "AppIcon")
+//        
+//        let options = FBSDKMessengerShareOptions.init()
+//        options.metadata = metadata
+//        options.renderAsSticker = true
+//        
+//        FBSDKMessengerSharer.shareImage(image, withOptions: options)
+//        FBSDKMessengerSharer.openMessenger()
     }
     /*
     // MARK: - Navigation

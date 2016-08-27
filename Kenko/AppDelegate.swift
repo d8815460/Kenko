@@ -135,7 +135,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         vc2.tabBarItem.title = "2";
         vc2.tabBarItem.image = nil
         
-        let vc3 = storyboard.instantiateViewControllerWithIdentifier("setting")
+        let vc3 = storyboard.instantiateViewControllerWithIdentifier("account")
         vc3.tabBarItem.title = "3";
         vc3.tabBarItem.image = nil
         

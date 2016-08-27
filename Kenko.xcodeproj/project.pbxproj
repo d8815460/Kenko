@@ -76,6 +76,9 @@
 		7167E7CA1D6C48560042FECB /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7167E7C81D6C48560042FECB /* ApiManager.swift */; };
 		7167E7CB1D6C48560042FECB /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7167E7C81D6C48560042FECB /* ApiManager.swift */; };
 		71F9B1861D6CAFA1004C0772 /* ApiOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F9B1851D6CAFA1004C0772 /* ApiOperation.swift */; };
+		71F9B1911D6F16DE004C0772 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F9B1901D6F16DE004C0772 /* AccountViewController.swift */; };
+		71F9B1921D6F16DE004C0772 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F9B1901D6F16DE004C0772 /* AccountViewController.swift */; };
+		71F9B1931D6F16DE004C0772 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F9B1901D6F16DE004C0772 /* AccountViewController.swift */; };
 		B355BDB8D25C6F3513469132 /* Pods_Kenko.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9778FCFAEC049737939DD75 /* Pods_Kenko.framework */; };
 /* End PBXBuildFile section */
 
@@ -142,6 +145,7 @@
 		481D719C2E9835974B33CA4A /* Pods-Kenko.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kenko.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kenko/Pods-Kenko.debug.xcconfig"; sourceTree = "<group>"; };
 		7167E7C81D6C48560042FECB /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		71F9B1851D6CAFA1004C0772 /* ApiOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiOperation.swift; sourceTree = "<group>"; };
+		71F9B1901D6F16DE004C0772 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		812C4A4D17657796E2AF0293 /* Pods-Kenko.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kenko.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kenko/Pods-Kenko.release.xcconfig"; sourceTree = "<group>"; };
 		E9778FCFAEC049737939DD75 /* Pods_Kenko.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kenko.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -209,6 +213,7 @@
 				23BAC7E51D6323BE00EA7365 /* Timeline */,
 				23B218941D5F70BB00F6C52D /* Post */,
 				235E629A1D5AE51800E7B099 /* ChatViewController.swift */,
+				71F9B1901D6F16DE004C0772 /* AccountViewController.swift */,
 				235E62961D5AE50300E7B099 /* SettingTableViewController.swift */,
 				235E621E1D5AB6EA00E7B099 /* ViewController.swift */,
 				235E62201D5AB6EA00E7B099 /* Main.storyboard */,
@@ -551,6 +556,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				235E62A81D5B109000E7B099 /* TimeLineCustomCell.swift in Sources */,
+				71F9B1911D6F16DE004C0772 /* AccountViewController.swift in Sources */,
 				23B4B76E1D613405006F99D5 /* WriteTitleViewController.swift in Sources */,
 				235E62971D5AE50300E7B099 /* SettingTableViewController.swift in Sources */,
 				2367B74D1D680E3700185B5C /* HowMuchMoneyYouWantViewController.swift in Sources */,
@@ -589,6 +595,7 @@
 				235E62A91D5B109000E7B099 /* TimeLineCustomCell.swift in Sources */,
 				235E62711D5AC50C00E7B099 /* PAPConstants.swift in Sources */,
 				23B4B7731D622B10006F99D5 /* ArticleViewController.swift in Sources */,
+				71F9B1921D6F16DE004C0772 /* AccountViewController.swift in Sources */,
 				235E626E1D5AC50C00E7B099 /* PAPCache.swift in Sources */,
 				2367B7541D681EA600185B5C /* WhyViewController.swift in Sources */,
 				235E62841D5ADE7300E7B099 /* FNFoldingTabBarController.swift in Sources */,
@@ -613,6 +620,7 @@
 				235E62AA1D5B109000E7B099 /* TimeLineCustomCell.swift in Sources */,
 				235E62721D5AC50C00E7B099 /* PAPConstants.swift in Sources */,
 				23B4B7741D622B10006F99D5 /* ArticleViewController.swift in Sources */,
+				71F9B1931D6F16DE004C0772 /* AccountViewController.swift in Sources */,
 				235E626F1D5AC50C00E7B099 /* PAPCache.swift in Sources */,
 				2367B7551D681EA600185B5C /* WhyViewController.swift in Sources */,
 				235E62851D5ADE7300E7B099 /* FNFoldingTabBarController.swift in Sources */,

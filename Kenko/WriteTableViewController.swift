@@ -66,7 +66,7 @@ class WriteTableViewController: UITableViewController, UIImagePickerControllerDe
                 index = NSIndexPath.init(forRow: 0, inSection: 0)
                 cell = self.tableView.cellForRowAtIndexPath(index)!
                 
-                self.postTitle.text = "標題：\(postObject!.objectForKey(kPAPPostsTitleKey)!)"
+                self.postTitle.text = "Title：\(postObject!.objectForKey(kPAPPostsTitleKey)!)"
                 self.postTitle.textColor = UIColor.blackColor()
                 self.postSubTitle.text = nil
                 self.postTitleCheckMark.hidden = false
@@ -77,7 +77,7 @@ class WriteTableViewController: UITableViewController, UIImagePickerControllerDe
                 index = NSIndexPath.init(forRow: 1, inSection: 0)
                 cell = self.tableView.cellForRowAtIndexPath(index)!
                 
-                self.postDetail.text = "內容：\(postObject!.objectForKey(kPAPPostsContentKey)!)"
+                self.postDetail.text = "Content：\(postObject!.objectForKey(kPAPPostsContentKey)!)"
                 self.postDetail.textColor = UIColor.blackColor()
                 self.postSubTitle.text = nil
                 self.postDetailCheckMark.hidden = false
@@ -103,13 +103,13 @@ class WriteTableViewController: UITableViewController, UIImagePickerControllerDe
         
         
         if coundownNumber == 3 {
-            self.titleLabel?.text = "還有三步便可以發布"
+            self.titleLabel?.text = "There more step to post."
         } else if coundownNumber == 2 {
-            self.titleLabel?.text = "還有兩步便可以發布"
+            self.titleLabel?.text = "Two more step to post."
         } else if coundownNumber == 1 {
-            self.titleLabel?.text = "還有一步便可以發布"
+            self.titleLabel?.text = "One more step to post."
         } else if coundownNumber == 0 {
-            self.titleLabel?.text = "準備發布！"
+            self.titleLabel?.text = "ready to post！"
         }
     }
     
@@ -278,7 +278,7 @@ class WriteTableViewController: UITableViewController, UIImagePickerControllerDe
         if coundownNumber == 0 {
             return 3
         } else if coundownNumber == 1 && hasPhoto == false {
-            self.titleLabel?.text = "準備發布！"
+            self.titleLabel?.text = "ready to post！"
             return 3
         }
         return 2

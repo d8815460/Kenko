@@ -310,32 +310,37 @@ class WriteTableViewController: UITableViewController, UIImagePickerControllerDe
         
         
         //送API解析
-        
-        operation = ApiOperation(manager: ApiManager(), saveObject: saveObject, language: "eng")
-        
-//        operation = ApiOperation(manager: ApiManager(), text: (saveObject[kPAPPostsContentKey] as? String)!, language: "eng")
-        operationQueue.addOperation(operation)
-        
-        operation.completionBlock = { [weak self] in
-            if self!.operation.cancelled {
-                print("cancel")
+        var manager: ApiManager?
+        manager?.postSentimentAnalysisText(saveObject, language: "eng").continueWithBlock({ (task) -> AnyObject! in
+            if task.cancelled {
+                // the save was cancelled.
+            } else if task.error != nil {
+                // the save failed.
             } else {
+                // the object was saved successfully.
+                task.result
+                //收到分析結果：
+                
                 saveObject[kPAPPostsUserKey] = PFUser.currentUser()
                 saveObject.saveEventually { (successed, error) in
-                    self!.hud?.hide(true)
+                    self.hud?.hide(true)
                     if successed {
                         print("Posts uploaded.")
                         postObject = nil
-                        self!.dismissViewControllerAnimated(true, completion: nil)
+                        self.dismissViewControllerAnimated(true, completion: nil)
                     } else {
                         print("error upload post: \(error.debugDescription)")
-                        postObject = nil
-                        self!.dismissViewControllerAnimated(true, completion: nil)
+                        self.hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                        self.hud?.labelText = "Save post Error:\(error.debugDescription)"
+                        self.hud?.dimBackground = true
+                        
+                        self.hud?.hide(true, afterDelay: 3)
                     }
                     (UIApplication.sharedApplication().delegate as! AppDelegate).presentToTabbarIndex(0)
                 }
             }
-        }
+            return nil
+        })
     }
     
     @IBAction func cancelButtonPressed(sender: AnyObject) {

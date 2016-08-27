@@ -19,8 +19,8 @@ class WriteTableViewController: UITableViewController, UIImagePickerControllerDe
     private var fileMeiumImage:PFFile?
     private var fileSmallRoundedImage:PFFile?
     
-    let operationQueue = NSOperationQueue()
-    var operation = ApiOperation(manager: ApiManager(), saveObject: PFObject.init(className: kPAPPostsClassKey), language: "eng")
+//    let operationQueue = NSOperationQueue()
+//    var operation = ApiOperation(manager: ApiManager(), saveObject: PFObject.init(className: kPAPPostsClassKey), language: "eng")
     
     @IBOutlet weak var postTitle: UILabel!
     @IBOutlet weak var postSubTitle: UILabel!
@@ -310,7 +310,7 @@ class WriteTableViewController: UITableViewController, UIImagePickerControllerDe
         
         
         //送API解析
-        var manager: ApiManager?
+        var manager: ApiManager? = ApiManager()
         manager?.postSentimentAnalysisText(saveObject, language: "eng").continueWithBlock({ (task) -> AnyObject! in
             if task.cancelled {
                 // the save was cancelled.
@@ -318,15 +318,41 @@ class WriteTableViewController: UITableViewController, UIImagePickerControllerDe
                 // the save failed.
             } else {
                 // the object was saved successfully.
-                task.result
+                var allNegativ = 0.0
+                var allNegativeWords = 0.0
+                var allPositive = 0.0
+                var allPositiveWords = 0.0
                 //收到分析結果：
+                // task.result.objectForKey("aggregate")?.objectForKey("sentiment") 某個情緒
+                // task.result.objectForKey("aggregate")?.objectForKey("score")     分數
+                // 負面情緒累加
+                let Result:NSDictionary = task.result! as! NSDictionary
+                let negativeArray:NSArray! = Result.objectForKey("negative") as! NSArray
+                for negative in negativeArray {
+                    allNegativ = allNegativ + (negative.objectForKey("score")! as! Double)
+                    allNegativeWords = allNegativeWords + (negative.objectForKey("normalized_length")! as! Double)
+                }
+                // 正面情緒累加
+                let positiveArray:NSArray! = Result.objectForKey("positive") as! NSArray
+                for positive in positiveArray {
+                    allPositive = allPositive + (positive.objectForKey("score")! as! Double)
+                    allPositiveWords = allPositiveWords + (positive.objectForKey("normalized_length")! as! Double)
+                }
                 
                 saveObject[kPAPPostsUserKey] = PFUser.currentUser()
+                saveObject[kPAPUserNegativeKey] = allNegativ / Double(negativeArray.count)
+                saveObject[kPAPUserPositiveKey] = allPositive / Double(positiveArray.count)
                 saveObject.saveEventually { (successed, error) in
                     self.hud?.hide(true)
                     if successed {
                         print("Posts uploaded.")
                         postObject = nil
+                        
+                        PFUser.currentUser()![kPAPUserNegativeKey] = allNegativ / Double(negativeArray.count)
+                        PFUser.currentUser()![kPAPUserPositiveKey] = allPositive / Double(positiveArray.count)
+                        PFUser.currentUser()?.saveEventually({ (success, error) in
+                            
+                        })
                         self.dismissViewControllerAnimated(true, completion: nil)
                     } else {
                         print("error upload post: \(error.debugDescription)")

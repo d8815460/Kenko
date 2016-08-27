@@ -15,7 +15,7 @@ import FormatterKit
 
 class TimeLineViewController: PFQueryTableViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
 
-    private var _presentedLoginViewController: Bool = false
+    var presentedLoginViewControllerBool: Bool = false
     private var _facebookResponseCount: Int = 0
     private var _expectedFacebookResponseCount: Int = 0
     private var delegate: PFLogInViewControllerDelegate?
@@ -182,11 +182,11 @@ class TimeLineViewController: PFQueryTableViewController, PFLogInViewControllerD
  
 
     func presentLoginViewController(animated: Bool) {
-        if _presentedLoginViewController {
+        if presentedLoginViewControllerBool {
             return
         }
         
-        _presentedLoginViewController = true
+        presentedLoginViewControllerBool = true
         
         let loginViewController = PFLogInViewController()
         loginViewController.delegate = self
@@ -198,8 +198,8 @@ class TimeLineViewController: PFQueryTableViewController, PFLogInViewControllerD
     
     // MARK:- PAPLoginViewControllerDelegate
     func logInViewControllerDidLogUserIn(logInViewController: PFLogInViewController) {
-        if _presentedLoginViewController {
-            _presentedLoginViewController = false
+        if presentedLoginViewControllerBool {
+            presentedLoginViewControllerBool = false
             self.dismissViewControllerAnimated(true, completion: nil)
         }
     }
@@ -381,6 +381,8 @@ class TimeLineViewController: PFQueryTableViewController, PFLogInViewControllerD
             // set the parse user's FBID
             currentParseUser.setObject(session.accessTokenData.userID, forKey: kPAPUserFacebookIDKey)
         }
+        
+        
         
         if PAPUtility.userHasValidFacebookData(currentParseUser) == false {
             print("User does not have valid facebook ID. PFUser's FBID: \(currentParseUser.objectForKey(kPAPUserFacebookIDKey)), FBSessions FBID: \(session.accessTokenData.userID). logout")

@@ -59,14 +59,19 @@ class AccountViewController : UITableViewController, UITextFieldDelegate {
         themeTextFieldWithText(nameTextField, text: (PFUser.currentUser()?.objectForKey(kPAPUserDisplayNameKey) as? String)!)
         
         themeLabelWithText(locationLabel, text: "EMAIL")
-        themeTextFieldWithText(locationTextField, text: (PFUser.currentUser()?.objectForKey(kPAPUserEmailKey) as? String)!)
-
-        themeLabelWithText(emailLabel, text: "POSITIVE")
-        themeTextFieldWithText(emailTextField, text: "75%")
+        if PFUser.currentUser()?.objectForKey(kPAPUserEmailKey) != nil {
+            themeTextFieldWithText(locationTextField, text: (PFUser.currentUser()?.objectForKey(kPAPUserEmailKey) as? String)!)
+        } else {
+            themeTextFieldWithText(locationTextField, text: "None")
+        }
         
+        let positive = NSString(format: "%.2f", (PFUser.currentUser()?.objectForKey(kPAPUserPositiveKey) as! Double)*100)
+        themeLabelWithText(emailLabel, text: "POSITIVE")
+        themeTextFieldWithText(emailTextField, text: "\(positive.doubleValue)%")
+        
+        let negative = NSString(format: "%.2f", (PFUser.currentUser()?.objectForKey(kPAPUserNegativeKey) as! Double)*100)
         themeLabelWithText(passwordLabel, text: "NEGATIVE")
-        themeTextFieldWithText(passwordTextField, text: "25%")
-        passwordTextField.secureTextEntry = true
+        themeTextFieldWithText(passwordTextField, text: "\(negative.doubleValue)%")
         
         themeLabelWithText(pushLabel, text: "PUSH NOTIFICATIONS")
         themeLabelWithText(facebookLabel, text: "LOGGED IN WITH FACEBOOK")
@@ -204,5 +209,8 @@ class AccountViewController : UITableViewController, UITextFieldDelegate {
     override func viewDidLayoutSubviews() {
         tableView.separatorInset = UIEdgeInsetsZero
         tableView.layoutMargins = UIEdgeInsetsZero
+    }
+    @IBAction func facebookbuttonPressed(sender: AnyObject) {
+        (UIApplication.sharedApplication().delegate as! AppDelegate).logOut()
     }
 }

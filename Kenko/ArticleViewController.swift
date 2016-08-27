@@ -140,7 +140,7 @@ class ArticleViewController: UITableViewController, UICollectionViewDelegate, UI
             if post[kPAPPostsThumbnailKey] != nil {
                 return heightForView((articleLabel?.text)!, font: articleLabel.font, width: 300) + 250
             } else {
-                return heightForView((articleLabel?.text)!, font: articleLabel.font, width: 190)
+                return heightForView((articleLabel?.text)!, font: articleLabel.font, width: 190) + 150
             }
             
             

@@ -72,6 +72,8 @@ let kPAPUserAlreadyAutoFollowedFacebookFriendsKey   = "userAlreadyAutoFollowedFa
 let kPAPUserEmailKey                                = "email"
 let kPAPUserAutoFollowKey                           = "autoFollow"
 let kPAPUserLocationKey                             = "location"
+let kPAPUserNegativeKey                             = "negative"
+let kPAPUserPositiveKey                             = "positiive"
 
 // MARK: - AskMoney請求
 // Class key
@@ -111,6 +113,7 @@ let kPAPPostsTitleKey           = "title"
 let kPAPPostsContentKey         = "content"
 let kPAPPostsPhotoKey           = "photo"
 let kPAPPostsThumbnailKey       = "thumbnail"
+
 
 // MARK:- Photo Class
 

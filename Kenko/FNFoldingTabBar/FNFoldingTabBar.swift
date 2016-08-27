@@ -103,6 +103,15 @@ public class FNFoldingTabBar: UIView{
         changeState(false)
     }
     
+    func presentTabIndex(index: Int) {
+        tabIndicator.removeFromSuperview()
+        isExpend = false
+        currentIndex = index
+        delegate?.tabTappedAtIndex(index)
+        changeState(false)
+    }
+    
+    
     func changeState(expending:Bool) {
         UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 1.0, options: .CurveEaseOut, animations: {
             if expending {

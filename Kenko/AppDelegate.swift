@@ -274,6 +274,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     // 跳出登入畫面
     func presentLoginViewController(animated: Bool = true) {
         //        self.welcomeViewController!.presentLoginViewController(animated)
+        self.presentToTabbarIndex(0)
+        let navigate = self.window?.rootViewController as! UINavigationController
+        let tab = navigate.viewControllers[0] as! FNFoldingTabBarController
+        
+        let vc0 = tab.viewControllers![0] as! TimeLineViewController
+        vc0.presentedLoginViewControllerBool = false
+        vc0.presentLoginViewController(true)
     }
     
     // 跳出首頁Tabbar頁面
@@ -453,17 +460,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func presentToTabbarIndex(index:NSInteger) {
         if index == 0 {
             // TimeLine頁面
-            tabController?.selectedIndex = 0
-            
+//            tabController?.selectedIndex = 0
+            tabController?.foldingTabBar.presentTabIndex(Int(index))
         } else if index == 1 {
             // Post 頁面
             let Post:PostBlogViewController = tabController?.viewControllers![1] as! PostBlogViewController
             Post.prepareToWrite()
         } else if index == 2 {
             // Chatbot 頁面
+            tabController?.foldingTabBar.presentTabIndex(Int(index))
         } else if index == 3 {
             // Setting 頁面
+            tabController?.foldingTabBar.presentTabIndex(Int(index))
         }
+       
+        
+        
 //        tabController?.selectedIndex = index
         
 //        print(self.window!.rootViewController)

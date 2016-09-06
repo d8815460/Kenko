@@ -1,24 +1,34 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
-      "filename" : "BackgroundLogin.png",
+      "idiom" : "iphone"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "Default.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "universal",
-      "filename" : "BackgroundLogin@2x.png",
+      "idiom" : "iphone",
+      "filename" : "Default-568h@2x.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "universal",
+      "idiom" : "iphone",
+      "filename" : "Default-iPhone6Plus.png",
       "scale" : "3x"
     },
     {
-      "idiom" : "universal",
-      "filename" : "BackgroundLogin-568h@2x.png",
-      "subtype" : "retina4",
+      "idiom" : "iphone",
+      "filename" : "Default@2x.png",
+      "unassigned" : true,
       "scale" : "2x"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "Default-iPhone6.png",
+      "unassigned" : true,
+      "scale" : "3x"
     }
   ],
   "info" : {

@@ -64,7 +64,7 @@ class TimeLineViewController: PFQueryTableViewController, PFLogInViewControllerD
     
     override func viewDidAppear(animated: Bool) {
         if PFUser.currentUser() == nil {
-            presentLoginViewController(false)
+            presentLoginViewController(true)
             return
         }
         
@@ -186,13 +186,22 @@ class TimeLineViewController: PFQueryTableViewController, PFLogInViewControllerD
             return
         }
         
-        presentedLoginViewControllerBool = true
-        
         let loginViewController = PFLogInViewController()
         loginViewController.delegate = self
         loginViewController.facebookPermissions = ["public_profile", "user_friends", "email", "user_photos"]
         loginViewController.fields = [PFLogInFields.Facebook,
                                       PFLogInFields.DismissButton]
+        loginViewController.logInView?.backgroundColor = UIColor(patternImage: UIImage(named: "BackgroundLogin")!)
+        
+        let label = UILabel(frame: CGRectMake(0, 0, 200, 35))
+        label.textAlignment = NSTextAlignment.Center
+        label.textColor = UIColor.whiteColor()
+        label.center = CGPointMake(160, 154)
+        label.font = label.font.fontWithSize(28)
+        label.text = "Kenko.Today"
+        
+        loginViewController.logInView?.logo = nil
+        loginViewController.logInView?.addSubview(label)
         presentViewController(loginViewController, animated: animated, completion: nil)
     }
     
@@ -232,6 +241,11 @@ class TimeLineViewController: PFQueryTableViewController, PFLogInViewControllerD
     // PFLoginViewDelegate
     
     func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
+        if PFUser.currentUser() != nil {
+            presentedLoginViewControllerBool = false
+        }else{
+            presentedLoginViewControllerBool = true
+        }
         logInController.dismissViewControllerAnimated(true) {
             
         }

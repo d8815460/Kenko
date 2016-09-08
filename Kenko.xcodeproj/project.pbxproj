@@ -8,21 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2306C52F1D6845D2003505E8 /* SevenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2306C52E1D6845D2003505E8 /* SevenViewController.swift */; };
-		23357DAB1D7F7F2B007A29C2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23357DA61D7F7F2B007A29C2 /* Default-568h@2x.png */; };
-		23357DAC1D7F7F2B007A29C2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23357DA61D7F7F2B007A29C2 /* Default-568h@2x.png */; };
-		23357DAD1D7F7F2B007A29C2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23357DA61D7F7F2B007A29C2 /* Default-568h@2x.png */; };
-		23357DAE1D7F7F2B007A29C2 /* Default-iPhone6.png in Resources */ = {isa = PBXBuildFile; fileRef = 23357DA71D7F7F2B007A29C2 /* Default-iPhone6.png */; };
-		23357DAF1D7F7F2B007A29C2 /* Default-iPhone6.png in Resources */ = {isa = PBXBuildFile; fileRef = 23357DA71D7F7F2B007A29C2 /* Default-iPhone6.png */; };
-		23357DB01D7F7F2B007A29C2 /* Default-iPhone6.png in Resources */ = {isa = PBXBuildFile; fileRef = 23357DA71D7F7F2B007A29C2 /* Default-iPhone6.png */; };
-		23357DB11D7F7F2B007A29C2 /* Default-iPhone6Plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 23357DA81D7F7F2B007A29C2 /* Default-iPhone6Plus.png */; };
-		23357DB21D7F7F2B007A29C2 /* Default-iPhone6Plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 23357DA81D7F7F2B007A29C2 /* Default-iPhone6Plus.png */; };
-		23357DB31D7F7F2B007A29C2 /* Default-iPhone6Plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 23357DA81D7F7F2B007A29C2 /* Default-iPhone6Plus.png */; };
-		23357DB41D7F7F2B007A29C2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 23357DA91D7F7F2B007A29C2 /* Default.png */; };
-		23357DB51D7F7F2B007A29C2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 23357DA91D7F7F2B007A29C2 /* Default.png */; };
-		23357DB61D7F7F2B007A29C2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 23357DA91D7F7F2B007A29C2 /* Default.png */; };
-		23357DB71D7F7F2B007A29C2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23357DAA1D7F7F2B007A29C2 /* Default@2x.png */; };
-		23357DB81D7F7F2B007A29C2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23357DAA1D7F7F2B007A29C2 /* Default@2x.png */; };
-		23357DB91D7F7F2B007A29C2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23357DAA1D7F7F2B007A29C2 /* Default@2x.png */; };
 		235E621D1D5AB6EA00E7B099 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E621C1D5AB6EA00E7B099 /* AppDelegate.swift */; };
 		235E621F1D5AB6EA00E7B099 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E621E1D5AB6EA00E7B099 /* ViewController.swift */; };
 		235E62221D5AB6EA00E7B099 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235E62201D5AB6EA00E7B099 /* Main.storyboard */; };
@@ -94,9 +79,7 @@
 		71F9B1911D6F16DE004C0772 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F9B1901D6F16DE004C0772 /* AccountViewController.swift */; };
 		71F9B1921D6F16DE004C0772 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F9B1901D6F16DE004C0772 /* AccountViewController.swift */; };
 		71F9B1931D6F16DE004C0772 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F9B1901D6F16DE004C0772 /* AccountViewController.swift */; };
-		782149526133078CD504974C /* libPods-KenkoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF2997B3FC27D6B411C1BE4 /* libPods-KenkoTests.a */; };
-		80F6DCAEB10BD30B1CA2D37E /* libPods-KenkoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 909C1642BBA72575481ECE1B /* libPods-KenkoUITests.a */; };
-		A26D6BB3CFFF3F9399557894 /* Pods_Kenko.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113CEE79EAF694CA95EEED01 /* Pods_Kenko.framework */; };
+		B355BDB8D25C6F3513469132 /* Pods_Kenko.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9778FCFAEC049737939DD75 /* Pods_Kenko.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,14 +100,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		113CEE79EAF694CA95EEED01 /* Pods_Kenko.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kenko.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1FF2997B3FC27D6B411C1BE4 /* libPods-KenkoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KenkoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2306C52E1D6845D2003505E8 /* SevenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SevenViewController.swift; sourceTree = "<group>"; };
-		23357DA61D7F7F2B007A29C2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		23357DA71D7F7F2B007A29C2 /* Default-iPhone6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-iPhone6.png"; sourceTree = "<group>"; };
-		23357DA81D7F7F2B007A29C2 /* Default-iPhone6Plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-iPhone6Plus.png"; sourceTree = "<group>"; };
-		23357DA91D7F7F2B007A29C2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		23357DAA1D7F7F2B007A29C2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		235E62191D5AB6EA00E7B099 /* Kenko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kenko.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		235E621C1D5AB6EA00E7B099 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		235E621E1D5AB6EA00E7B099 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -166,16 +142,12 @@
 		23B4B76D1D613405006F99D5 /* WriteTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteTitleViewController.swift; sourceTree = "<group>"; };
 		23B4B76F1D613413006F99D5 /* WriteDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteDetailViewController.swift; sourceTree = "<group>"; };
 		23B4B7711D622B10006F99D5 /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
-		2FFA7EAC8F4D9839194879D4 /* Pods-Kenko.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kenko.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kenko/Pods-Kenko.debug.xcconfig"; sourceTree = "<group>"; };
-		33452B3E6F6E3EB493EE5ACE /* Pods-KenkoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KenkoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KenkoTests/Pods-KenkoTests.release.xcconfig"; sourceTree = "<group>"; };
-		6C866CAD479AC0DA7E39649D /* Pods-KenkoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KenkoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KenkoTests/Pods-KenkoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		481D719C2E9835974B33CA4A /* Pods-Kenko.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kenko.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kenko/Pods-Kenko.debug.xcconfig"; sourceTree = "<group>"; };
 		7167E7C81D6C48560042FECB /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		71F9B1851D6CAFA1004C0772 /* ApiOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiOperation.swift; sourceTree = "<group>"; };
 		71F9B1901D6F16DE004C0772 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
-		909C1642BBA72575481ECE1B /* libPods-KenkoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KenkoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B73B827873EDA04387571FA3 /* Pods-Kenko.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kenko.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kenko/Pods-Kenko.release.xcconfig"; sourceTree = "<group>"; };
-		D30F9BF621A52D1A586E1818 /* Pods-KenkoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KenkoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KenkoUITests/Pods-KenkoUITests.release.xcconfig"; sourceTree = "<group>"; };
-		DD3FE81CEC837E94D5B5F570 /* Pods-KenkoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KenkoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KenkoUITests/Pods-KenkoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		812C4A4D17657796E2AF0293 /* Pods-Kenko.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kenko.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kenko/Pods-Kenko.release.xcconfig"; sourceTree = "<group>"; };
+		E9778FCFAEC049737939DD75 /* Pods_Kenko.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kenko.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,8 +155,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B355BDB8D25C6F3513469132 /* Pods_Kenko.framework in Frameworks */,
 				238E9EC41D5C09D2003FC76C /* FBSDKMessengerShareKit.framework in Frameworks */,
-				A26D6BB3CFFF3F9399557894 /* Pods_Kenko.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,7 +164,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				782149526133078CD504974C /* libPods-KenkoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,25 +171,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80F6DCAEB10BD30B1CA2D37E /* libPods-KenkoUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		23357DA51D7F7F11007A29C2 /* LaunchImage */ = {
-			isa = PBXGroup;
-			children = (
-				23357DA61D7F7F2B007A29C2 /* Default-568h@2x.png */,
-				23357DA71D7F7F2B007A29C2 /* Default-iPhone6.png */,
-				23357DA81D7F7F2B007A29C2 /* Default-iPhone6Plus.png */,
-				23357DA91D7F7F2B007A29C2 /* Default.png */,
-				23357DAA1D7F7F2B007A29C2 /* Default@2x.png */,
-			);
-			name = LaunchImage;
-			sourceTree = "<group>";
-		};
 		235E62101D5AB6EA00E7B099 = {
 			isa = PBXGroup;
 			children = (
@@ -226,8 +184,8 @@
 				235E62301D5AB6EA00E7B099 /* KenkoTests */,
 				235E623B1D5AB6EA00E7B099 /* KenkoUITests */,
 				235E621A1D5AB6EA00E7B099 /* Products */,
+				945513B9789E55452AAF00F6 /* Pods */,
 				FC6278DFC8A37669D21C1B8C /* Frameworks */,
-				D1573A6584829FFB38967BE9 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -262,7 +220,6 @@
 				2367B7491D68039000185B5C /* Money.storyboard */,
 				2367B7471D67FB9D00185B5C /* Profile.storyboard */,
 				235E62231D5AB6EA00E7B099 /* Assets.xcassets */,
-				23357DA51D7F7F11007A29C2 /* LaunchImage */,
 				235E62281D5AB6EA00E7B099 /* Info.plist */,
 				235E62251D5AB6EA00E7B099 /* LaunchScreen.storyboard */,
 				235E625C1D5AC0E000E7B099 /* Kenko-Bridging-Header.h */,
@@ -376,15 +333,11 @@
 			name = API;
 			sourceTree = "<group>";
 		};
-		D1573A6584829FFB38967BE9 /* Pods */ = {
+		945513B9789E55452AAF00F6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2FFA7EAC8F4D9839194879D4 /* Pods-Kenko.debug.xcconfig */,
-				B73B827873EDA04387571FA3 /* Pods-Kenko.release.xcconfig */,
-				6C866CAD479AC0DA7E39649D /* Pods-KenkoTests.debug.xcconfig */,
-				33452B3E6F6E3EB493EE5ACE /* Pods-KenkoTests.release.xcconfig */,
-				DD3FE81CEC837E94D5B5F570 /* Pods-KenkoUITests.debug.xcconfig */,
-				D30F9BF621A52D1A586E1818 /* Pods-KenkoUITests.release.xcconfig */,
+				481D719C2E9835974B33CA4A /* Pods-Kenko.debug.xcconfig */,
+				812C4A4D17657796E2AF0293 /* Pods-Kenko.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -393,9 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				238E9DB81D5C09D1003FC76C /* FacebookSDKs */,
-				113CEE79EAF694CA95EEED01 /* Pods_Kenko.framework */,
-				1FF2997B3FC27D6B411C1BE4 /* libPods-KenkoTests.a */,
-				909C1642BBA72575481ECE1B /* libPods-KenkoUITests.a */,
+				E9778FCFAEC049737939DD75 /* Pods_Kenko.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -407,13 +358,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 235E62411D5AB6EA00E7B099 /* Build configuration list for PBXNativeTarget "Kenko" */;
 			buildPhases = (
-				0FAFCF5A70F6683FFAFFDB96 /* [CP] Check Pods Manifest.lock */,
+				0ADA6E4E9D3B46CDC87ABC0B /* Check Pods Manifest.lock */,
 				235E62151D5AB6EA00E7B099 /* Sources */,
 				235E62161D5AB6EA00E7B099 /* Frameworks */,
 				235E62171D5AB6EA00E7B099 /* Resources */,
+				17E225D623FDBE6AF2F8D23D /* Embed Pods Frameworks */,
+				96F1B9144944E97ACC1BE541 /* Copy Pods Resources */,
 				235E624A1D5ABE5500E7B099 /* ShellScript */,
-				C0936A2489865EC78A1A9A07 /* [CP] Embed Pods Frameworks */,
-				605C596F68F3B8C80AE3A70C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -428,12 +379,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 235E62441D5AB6EA00E7B099 /* Build configuration list for PBXNativeTarget "KenkoTests" */;
 			buildPhases = (
-				5815D878F6B64F998FDA8FDC /* [CP] Check Pods Manifest.lock */,
 				235E62291D5AB6EA00E7B099 /* Sources */,
 				235E622A1D5AB6EA00E7B099 /* Frameworks */,
 				235E622B1D5AB6EA00E7B099 /* Resources */,
-				80385AE83D1BC9D482E15BBC /* [CP] Embed Pods Frameworks */,
-				689D7FB8709EA6DB2085F04E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -449,11 +397,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 235E62471D5AB6EA00E7B099 /* Build configuration list for PBXNativeTarget "KenkoUITests" */;
 			buildPhases = (
-				D7A805DE970BFD52331FAC7C /* [CP] Check Pods Manifest.lock */,
 				235E62341D5AB6EA00E7B099 /* Sources */,
 				235E62351D5AB6EA00E7B099 /* Frameworks */,
 				235E62361D5AB6EA00E7B099 /* Resources */,
-				E31B3CCEBCB72ED1401CE951 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -478,11 +424,6 @@
 					235E62181D5AB6EA00E7B099 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 8LJ7V3WEL3;
-						SystemCapabilities = {
-							com.apple.Push = {
-								enabled = 1;
-							};
-						};
 					};
 					235E622C1D5AB6EA00E7B099 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -521,13 +462,8 @@
 			files = (
 				238E9EC61D5C09D2003FC76C /* LICENSE.txt in Resources */,
 				235E627D1D5ADE7300E7B099 /* FNAssets.xcassets in Resources */,
-				23357DAB1D7F7F2B007A29C2 /* Default-568h@2x.png in Resources */,
-				23357DAE1D7F7F2B007A29C2 /* Default-iPhone6.png in Resources */,
-				23357DB71D7F7F2B007A29C2 /* Default@2x.png in Resources */,
-				23357DB11D7F7F2B007A29C2 /* Default-iPhone6Plus.png in Resources */,
 				235E62271D5AB6EA00E7B099 /* LaunchScreen.storyboard in Resources */,
 				235E62241D5AB6EA00E7B099 /* Assets.xcassets in Resources */,
-				23357DB41D7F7F2B007A29C2 /* Default.png in Resources */,
 				235E62221D5AB6EA00E7B099 /* Main.storyboard in Resources */,
 				2367B7481D67FB9D00185B5C /* Profile.storyboard in Resources */,
 				238E9EC71D5C09D2003FC76C /* README.txt in Resources */,
@@ -539,12 +475,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23357DB81D7F7F2B007A29C2 /* Default@2x.png in Resources */,
-				23357DAF1D7F7F2B007A29C2 /* Default-iPhone6.png in Resources */,
-				23357DB21D7F7F2B007A29C2 /* Default-iPhone6Plus.png in Resources */,
 				235E627E1D5ADE7300E7B099 /* FNAssets.xcassets in Resources */,
-				23357DAC1D7F7F2B007A29C2 /* Default-568h@2x.png in Resources */,
-				23357DB51D7F7F2B007A29C2 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,31 +483,41 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23357DB91D7F7F2B007A29C2 /* Default@2x.png in Resources */,
-				23357DB01D7F7F2B007A29C2 /* Default-iPhone6.png in Resources */,
-				23357DB31D7F7F2B007A29C2 /* Default-iPhone6Plus.png in Resources */,
 				235E627F1D5ADE7300E7B099 /* FNAssets.xcassets in Resources */,
-				23357DAD1D7F7F2B007A29C2 /* Default-568h@2x.png in Resources */,
-				23357DB61D7F7F2B007A29C2 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0FAFCF5A70F6683FFAFFDB96 /* [CP] Check Pods Manifest.lock */ = {
+		0ADA6E4E9D3B46CDC87ABC0B /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		17E225D623FDBE6AF2F8D23D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kenko/Pods-Kenko-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		235E624A1D5ABE5500E7B099 /* ShellScript */ = {
@@ -592,109 +533,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 641c1af9675270dbed145fbc8437b990ae01237a 817691a09ef5ec9a26cedafb581f15f2f9056201c4415d3a4f0187215cd7f21c";
 		};
-		5815D878F6B64F998FDA8FDC /* [CP] Check Pods Manifest.lock */ = {
+		96F1B9144944E97ACC1BE541 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		605C596F68F3B8C80AE3A70C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
+			name = "Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kenko/Pods-Kenko-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		689D7FB8709EA6DB2085F04E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KenkoTests/Pods-KenkoTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		80385AE83D1BC9D482E15BBC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KenkoTests/Pods-KenkoTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C0936A2489865EC78A1A9A07 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kenko/Pods-Kenko-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D7A805DE970BFD52331FAC7C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		E31B3CCEBCB72ED1401CE951 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KenkoUITests/Pods-KenkoUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -904,13 +755,12 @@
 		};
 		235E62421D5AB6EA00E7B099 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2FFA7EAC8F4D9839194879D4 /* Pods-Kenko.debug.xcconfig */;
+			baseConfigurationReference = 481D719C2E9835974B33CA4A /* Pods-Kenko.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: CHUN I CHEN (C4B52A7U96)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -921,7 +771,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.today.kenko;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "0c27f080-b581-451a-84e5-5a0997f7e83a";
 				SWIFT_OBJC_BRIDGING_HEADER = "Kenko/Kenko-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -930,13 +780,12 @@
 		};
 		235E62431D5AB6EA00E7B099 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B73B827873EDA04387571FA3 /* Pods-Kenko.release.xcconfig */;
+			baseConfigurationReference = 812C4A4D17657796E2AF0293 /* Pods-Kenko.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: CHUN I CHEN (8LJ7V3WEL3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: CHUN I CHEN (8LJ7V3WEL3)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -946,7 +795,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.today.kenko;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "0c27f080-b581-451a-84e5-5a0997f7e83a";
 				SWIFT_OBJC_BRIDGING_HEADER = "Kenko/Kenko-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -954,7 +803,6 @@
 		};
 		235E62451D5AB6EA00E7B099 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C866CAD479AC0DA7E39649D /* Pods-KenkoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -970,7 +818,6 @@
 		};
 		235E62461D5AB6EA00E7B099 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 33452B3E6F6E3EB493EE5ACE /* Pods-KenkoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
@@ -985,7 +832,6 @@
 		};
 		235E62481D5AB6EA00E7B099 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD3FE81CEC837E94D5B5F570 /* Pods-KenkoUITests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = KenkoUITests/Info.plist;
@@ -1000,7 +846,6 @@
 		};
 		235E62491D5AB6EA00E7B099 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D30F9BF621A52D1A586E1818 /* Pods-KenkoUITests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = KenkoUITests/Info.plist;

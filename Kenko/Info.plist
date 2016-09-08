@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.0.6</string>
+	<string>0.0.8</string>
 	<key>CFBundleSignature</key>
 	<string></string>
 	<key>CFBundleURLTypes</key>
@@ -30,7 +30,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>20160827</string>
+	<string>20160902</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -49,6 +49,8 @@
 	<string>1557733224536391</string>
 	<key>FacebookDisplayName</key>
 	<string>Kenko</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>LSApplicationCategoryType</key>
 	<string>fbauth2</string>
 	<key>LSApplicationQueriesSchemes</key>

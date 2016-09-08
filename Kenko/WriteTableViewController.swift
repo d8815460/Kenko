@@ -340,16 +340,36 @@ class WriteTableViewController: UITableViewController, UIImagePickerControllerDe
                 }
                 
                 saveObject[kPAPPostsUserKey] = PFUser.currentUser()
-                saveObject[kPAPUserNegativeKey] = allNegativ / Double(negativeArray.count)
-                saveObject[kPAPUserPositiveKey] = allPositive / Double(positiveArray.count)
+                if negativeArray.count == 0 {
+                    saveObject[kPAPUserNegativeKey] = 0
+                } else {
+                    saveObject[kPAPUserNegativeKey] = allNegativ / Double(negativeArray.count)
+                }
+                
+                if positiveArray.count == 0 {
+                    saveObject[kPAPUserPositiveKey] = 0
+                } else {
+                    saveObject[kPAPUserPositiveKey] = allPositive / Double(positiveArray.count)
+                }
+                
+                
                 saveObject.saveEventually { (successed, error) in
                     self.hud?.hide(true)
                     if successed {
                         print("Posts uploaded.")
                         postObject = nil
                         
-                        PFUser.currentUser()![kPAPUserNegativeKey] = allNegativ / Double(negativeArray.count)
-                        PFUser.currentUser()![kPAPUserPositiveKey] = allPositive / Double(positiveArray.count)
+                        if negativeArray.count == 0 {
+                            PFUser.currentUser()![kPAPUserNegativeKey] = 0
+                        } else {
+                            PFUser.currentUser()![kPAPUserNegativeKey] = allNegativ / Double(negativeArray.count)
+                        }
+                        
+                        if positiveArray.count == 0 {
+                            PFUser.currentUser()![kPAPUserPositiveKey] = 0
+                        } else {
+                            PFUser.currentUser()![kPAPUserPositiveKey] = allPositive / Double(positiveArray.count)
+                        }
                         PFUser.currentUser()?.saveEventually({ (success, error) in
                             
                         })

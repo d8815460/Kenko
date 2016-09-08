@@ -384,6 +384,7 @@ class TimeLineViewController: PFQueryTableViewController, PFLogInViewControllerD
             return
         }
         
+        
         guard let currentParseUser: PFUser = PFUser.currentUser() else {
             print("Current Parse user does not exist, logout")
             (UIApplication.sharedApplication().delegate as! AppDelegate).logOut()
@@ -396,7 +397,13 @@ class TimeLineViewController: PFQueryTableViewController, PFLogInViewControllerD
             currentParseUser.setObject(session.accessTokenData.userID, forKey: kPAPUserFacebookIDKey)
         }
         
+        if currentParseUser.objectForKey(kPAPUserPositiveKey) == nil {
+            currentParseUser[kPAPUserPositiveKey] = 0
+        }
         
+        if currentParseUser.objectForKey(kPAPUserNegativeKey) == nil {
+            currentParseUser[kPAPUserNegativeKey] = 0
+        }
         
         if PAPUtility.userHasValidFacebookData(currentParseUser) == false {
             print("User does not have valid facebook ID. PFUser's FBID: \(currentParseUser.objectForKey(kPAPUserFacebookIDKey)), FBSessions FBID: \(session.accessTokenData.userID). logout")

@@ -39,14 +39,6 @@ class AccountViewController : UITableViewController, UITextFieldDelegate {
         
         tableView.separatorColor = UIColor(white: 0.92, alpha: 1.0)
         
-        self.profileImageView.image = UIImage(named: "profile-pic-2")
-        let file:PFFile = (PFUser.currentUser()?.objectForKey(kPAPUserProfilePicMediumKey) as? PFFile)!
-        file.getDataInBackgroundWithBlock({ (photo, error) in
-            if error == nil {
-                self.profileImageView.image = UIImage(data: photo!)
-            }
-        })
-        bgImageView.image = UIImage(named: "profile-bg")
         
         profileImageView.layer.cornerRadius = 35
         profileImageView.clipsToBounds = true
@@ -58,20 +50,6 @@ class AccountViewController : UITableViewController, UITextFieldDelegate {
         
         themeTextFieldWithText(nameTextField, text: (PFUser.currentUser()?.objectForKey(kPAPUserDisplayNameKey) as? String)!)
         
-        themeLabelWithText(locationLabel, text: "EMAIL")
-        if PFUser.currentUser()?.objectForKey(kPAPUserEmailKey) != nil {
-            themeTextFieldWithText(locationTextField, text: (PFUser.currentUser()?.objectForKey(kPAPUserEmailKey) as? String)!)
-        } else {
-            themeTextFieldWithText(locationTextField, text: "None")
-        }
-        
-        let positive = NSString(format: "%.2f", (PFUser.currentUser()?.objectForKey(kPAPUserPositiveKey) as! Double)*100)
-        themeLabelWithText(emailLabel, text: "POSITIVE")
-        themeTextFieldWithText(emailTextField, text: "\(positive.doubleValue)%")
-        
-        let negative = NSString(format: "%.2f", (PFUser.currentUser()?.objectForKey(kPAPUserNegativeKey) as! Double)*100)
-        themeLabelWithText(passwordLabel, text: "NEGATIVE")
-        themeTextFieldWithText(passwordTextField, text: "\(negative.doubleValue)%")
         
         themeLabelWithText(pushLabel, text: "PUSH NOTIFICATIONS")
         themeLabelWithText(facebookLabel, text: "LOGGED IN WITH FACEBOOK")
@@ -83,6 +61,7 @@ class AccountViewController : UITableViewController, UITextFieldDelegate {
         
         addBlurView()
     }
+    
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
@@ -151,6 +130,48 @@ class AccountViewController : UITableViewController, UITextFieldDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.registerForKeyboardNotifications()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        PFUser.currentUser()?.fetchInBackgroundWithBlock({ (user, error) in
+            print("user=\(user)")
+        })
+        
+        self.profileImageView.image = UIImage(named: "profile-pic-2")
+        let file:PFFile = (PFUser.currentUser()?.objectForKey(kPAPUserProfilePicMediumKey) as? PFFile)!
+        file.getDataInBackgroundWithBlock({ (photo, error) in
+            if error == nil {
+                self.profileImageView.image = UIImage(data: photo!)
+            }
+        })
+        bgImageView.image = UIImage(named: "profile-bg")
+        
+        themeLabelWithText(locationLabel, text: "EMAIL")
+        if PFUser.currentUser()?.objectForKey(kPAPUserEmailKey) != nil {
+            themeTextFieldWithText(locationTextField, text: (PFUser.currentUser()?.objectForKey(kPAPUserEmailKey) as? String)!)
+        } else {
+            themeTextFieldWithText(locationTextField, text: "None")
+        }
+        
+        if PFUser.currentUser()?.objectForKey(kPAPUserPositiveKey) != nil {
+            let positive = NSString(format: "%.2f", (PFUser.currentUser()?.objectForKey(kPAPUserPositiveKey) as! Double)*100)
+            themeLabelWithText(emailLabel, text: "POSITIVE")
+            themeTextFieldWithText(emailTextField, text: "\(positive.doubleValue)%")
+        } else {
+            themeTextFieldWithText(emailTextField, text: "0%")
+        }
+        
+        
+        if PFUser.currentUser()?.objectForKey(kPAPUserNegativeKey) != nil {
+            let negative = NSString(format: "%.2f", (PFUser.currentUser()?.objectForKey(kPAPUserNegativeKey) as! Double)*100)
+            themeLabelWithText(passwordLabel, text: "NEGATIVE")
+            themeTextFieldWithText(passwordTextField, text: "\(negative.doubleValue)%")
+        } else {
+            themeTextFieldWithText(passwordTextField, text: "0%")
+        }
+        
+        
     }
     
     override func viewWillDisappear(animated: Bool) {

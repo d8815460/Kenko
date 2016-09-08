@@ -58,7 +58,6 @@
 		235E62A91D5B109000E7B099 /* TimeLineCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E62A71D5B109000E7B099 /* TimeLineCustomCell.swift */; };
 		235E62AA1D5B109000E7B099 /* TimeLineCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E62A71D5B109000E7B099 /* TimeLineCustomCell.swift */; };
 		2367B7481D67FB9D00185B5C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2367B7471D67FB9D00185B5C /* Profile.storyboard */; };
-		2367B74A1D68039000185B5C /* Money.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2367B7491D68039000185B5C /* Money.storyboard */; };
 		2367B74D1D680E3700185B5C /* HowMuchMoneyYouWantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2367B74C1D680E3700185B5C /* HowMuchMoneyYouWantViewController.swift */; };
 		2367B7531D681DCF00185B5C /* WhyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2367B7521D681DCF00185B5C /* WhyViewController.swift */; };
 		2367B7541D681EA600185B5C /* WhyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2367B7521D681DCF00185B5C /* WhyViewController.swift */; };
@@ -132,7 +131,6 @@
 		235E62A31D5AE96200E7B099 /* MegaTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MegaTheme.swift; sourceTree = "<group>"; };
 		235E62A71D5B109000E7B099 /* TimeLineCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineCustomCell.swift; sourceTree = "<group>"; };
 		2367B7471D67FB9D00185B5C /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
-		2367B7491D68039000185B5C /* Money.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Money.storyboard; sourceTree = "<group>"; };
 		2367B74C1D680E3700185B5C /* HowMuchMoneyYouWantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowMuchMoneyYouWantViewController.swift; sourceTree = "<group>"; };
 		2367B7521D681DCF00185B5C /* WhyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhyViewController.swift; sourceTree = "<group>"; };
 		238E9DC61D5C09D1003FC76C /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
@@ -217,7 +215,6 @@
 				235E62961D5AE50300E7B099 /* SettingTableViewController.swift */,
 				235E621E1D5AB6EA00E7B099 /* ViewController.swift */,
 				235E62201D5AB6EA00E7B099 /* Main.storyboard */,
-				2367B7491D68039000185B5C /* Money.storyboard */,
 				2367B7471D67FB9D00185B5C /* Profile.storyboard */,
 				235E62231D5AB6EA00E7B099 /* Assets.xcassets */,
 				235E62281D5AB6EA00E7B099 /* Info.plist */,
@@ -467,7 +464,6 @@
 				235E62221D5AB6EA00E7B099 /* Main.storyboard in Resources */,
 				2367B7481D67FB9D00185B5C /* Profile.storyboard in Resources */,
 				238E9EC71D5C09D2003FC76C /* README.txt in Resources */,
-				2367B74A1D68039000185B5C /* Money.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -771,7 +767,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.today.kenko;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0c27f080-b581-451a-84e5-5a0997f7e83a";
+				PROVISIONING_PROFILE = "739f8662-0cd9-48ac-8fad-353b52492553";
 				SWIFT_OBJC_BRIDGING_HEADER = "Kenko/Kenko-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -795,7 +791,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.today.kenko;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0c27f080-b581-451a-84e5-5a0997f7e83a";
+				PROVISIONING_PROFILE = "739f8662-0cd9-48ac-8fad-353b52492553";
 				SWIFT_OBJC_BRIDGING_HEADER = "Kenko/Kenko-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

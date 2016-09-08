@@ -1,0 +1,1 @@
+../../../UIImageAFAdditions/Pod/Classes/UIImageAFAdditions.h

@@ -1,0 +1,6 @@
+framework module TweenController {
+  umbrella header "TweenController-umbrella.h"
+
+  export *
+  module * { export * }
+}

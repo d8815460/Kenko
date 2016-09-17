@@ -67,6 +67,7 @@ let kPAPActivityTypeJoined     = "joined"
 // Field keys
 let kPAPUserDisplayNameKey                          = "displayName"
 let kPAPUserFacebookIDKey                           = "facebookId"
+let kPAPUserChatBotIDKey                            = "botId"
 let kPAPUserPhotoIDKey                              = "photoId"
 let kPAPUserProfilePicSmallKey                      = "profilePictureSmall"
 let kPAPUserProfilePicMediumKey                     = "profilePictureMedium"

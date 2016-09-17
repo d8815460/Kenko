@@ -66,13 +66,13 @@ class StartViewController: UIViewController, TutorialViewController, PFLogInView
         super.viewDidAppear(animated)
         
         
-//        let messangerQuery: PFQuery = PFQuery(className: "messages")
-//        messangerQuery.findObjectsInBackgroundWithBlock { (objects, error) in
-//            if error != nil {
-//                print("error = \(error)")
-//            }
-//            print("objects = \(objects)")
-//        }
+        let messangerQuery: PFQuery = PFQuery(className: "match")
+        messangerQuery.findObjectsInBackgroundWithBlock { (objects, error) in
+            if error != nil {
+                print("error = \(error)")
+            }
+            print("objects = \(objects)")
+        }
         
         
         dispatch_once(&appearanceToken) {

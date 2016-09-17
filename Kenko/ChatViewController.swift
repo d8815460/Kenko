@@ -8,12 +8,14 @@
 
 import UIKit
 import FBSDKMessengerShareKit
+import MBProgressHUD
 
-class ChatViewController: UIViewController {
+class ChatViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var webView: UIWebView!
-    
+    private var timer: NSTimer!
+    private var hud: MBProgressHUD!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,11 +24,17 @@ class ChatViewController: UIViewController {
         view.backgroundColor = UIColor.init(red: 33/255.0, green: 128/255.0, blue: 189/255.0, alpha: 1)
         
         
+        self.webView.delegate = self
         
-        let button2 = FBSDKMessengerShareButton.rectangularButtonWithStyle(FBSDKMessengerShareButtonStyle.White)
-        button2.frame = CGRectMake(8, self.view.frame.height/2, (self.view.frame.width)-16, 46)
-        button2.addTarget(self, action: #selector(ChatViewController.shareButtonPressed), forControlEvents: .TouchUpInside)
-        view.addSubview(button2)
+        self.hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        self.hud.mode = MBProgressHUDMode.Indeterminate
+        self.hud.labelText = "Checking Messenger Login..."
+        
+        self.button = FBSDKMessengerShareButton.rectangularButtonWithStyle(FBSDKMessengerShareButtonStyle.White)
+        self.button.frame = CGRectMake(8, self.view.frame.height/2, (self.view.frame.width)-16, 46)
+        self.button.addTarget(self, action: #selector(ChatViewController.shareButtonPressed), forControlEvents: .TouchUpInside)
+        self.button.hidden = true
+        view.addSubview(self.button)
         
 //        button.addTarget(self, action: #selector(ChatViewController.shareButtonPressed), forControlEvents: .TouchUpInside)
 //        self.view.addSubview(button)
@@ -38,6 +46,23 @@ class ChatViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+
+//        button = FBSDKMessengerShareButton.rectangularButtonWithStyle(FBSDKMessengerShareButtonStyle.White)
+        
+        
+        
+        PFUser.currentUser()!.fetchInBackgroundWithBlock { (currentUser, error) in
+            if (currentUser!.objectForKey(kPAPUserChatBotIDKey) != nil) {
+                self.webView.hidden = true
+                self.button.hidden = false
+            } else {
+                self.webView.hidden = false
+                self.button.hidden = true
+            }
+        }
+        
+        
+        
         if PFUser.currentUser()?.objectForKey(kPAPUserFacebookIDKey) != nil {
             let url = NSURL (string: "http://enigmatic-meadow-46041.herokuapp.com/button/\(PFUser.currentUser()?.objectForKey(kPAPUserFacebookIDKey)! as! String)");
             let requestObj = NSURLRequest(URL: url!);
@@ -51,7 +76,69 @@ class ChatViewController: UIViewController {
         
     }
     
+    func webViewDidStartLoad(webView: UIWebView) {
+//        print("webView did start Load:\(webView.request?.URL?.absoluteString)")
+        
+    }
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+        print("webView did finish load: \(webView.request?.URL?.absoluteString)")
+        let urlString = webView.request?.URL?.absoluteString
+        if let hasPrefix = urlString?.hasPrefix("http://www.messenger.com/?refsrc") {
+            if hasPrefix {
+                self.webView.hidden = true
+                self.button.hidden = false
+                NSLog("has hasPrefix")
+            } else {
+                NSLog("no hasPrefix")
+            }
+        }
+        if let hasPrefix = urlString?.hasPrefix("https://www.facebook.com/v2.6/plugins/send_to_messenger.php") {
+            if hasPrefix {
+                self.hud.hide(true)
+                NSLog("has hasPrefix")
+            } else {
+                NSLog("no hasPrefix")
+            }
+        }
+        
+    }
+    
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
+//        print("webview did fail load with error: \(error)")
+    }
+    
+    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        print("should start load with request \(request.URL?.absoluteString)")
+        let urlString = request.URL?.absoluteString
+        if let hasPrefix = urlString?.hasPrefix("https://m.facebook.com/plugins/close_popup.php?") {
+            if hasPrefix{
+                NSLog("prefix")
+                self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(ChatViewController.checkWebView), userInfo: nil, repeats: false)
+                
+            }
+            else {
+                
+                NSLog("no hasPrefix")
+            }
+        }
+        else {
+            
+            NSLog("nil value")
+        }
+        
+        return true
+    }
 
+    
+    func checkWebView() {
+        let url = NSURL (string: "http://enigmatic-meadow-46041.herokuapp.com/button/\(PFUser.currentUser()?.objectForKey(kPAPUserFacebookIDKey)! as! String)");
+        let requestObj = NSURLRequest(URL: url!);
+        self.webView.loadRequest(requestObj);
+        self.timer.invalidate()
+    }
+    
+    
     func shareButtonPressed() {
         let fbUrl: NSURL = NSURL(string: "http://m.me/149502088796502")!
         if UIApplication.sharedApplication().canOpenURL(fbUrl) {

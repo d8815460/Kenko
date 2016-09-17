@@ -8,23 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		2306C52F1D6845D2003505E8 /* SevenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2306C52E1D6845D2003505E8 /* SevenViewController.swift */; };
+		230EB4401D8A70F3000A54A7 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230EB43F1D8A70F3000A54A7 /* StartViewController.swift */; };
+		230EB4421D8A7130000A54A7 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230EB4411D8A7130000A54A7 /* Tutorial.storyboard */; };
+		230EB4441D8A715C000A54A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230EB4431D8A715C000A54A7 /* ViewController.swift */; };
+		230EB45B1D8A72FC000A54A7 /* TweenControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230EB45A1D8A72FC000A54A7 /* TweenControllerTests.swift */; };
+		230EB4731D8A9BE4000A54A7 /* TutorialBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230EB4721D8A9BE4000A54A7 /* TutorialBuilder.swift */; };
 		23357DAB1D7F7F2B007A29C2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23357DA61D7F7F2B007A29C2 /* Default-568h@2x.png */; };
 		23357DAC1D7F7F2B007A29C2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23357DA61D7F7F2B007A29C2 /* Default-568h@2x.png */; };
 		23357DAD1D7F7F2B007A29C2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23357DA61D7F7F2B007A29C2 /* Default-568h@2x.png */; };
-		23357DAE1D7F7F2B007A29C2 /* Default-iPhone6.png in Resources */ = {isa = PBXBuildFile; fileRef = 23357DA71D7F7F2B007A29C2 /* Default-iPhone6.png */; };
-		23357DAF1D7F7F2B007A29C2 /* Default-iPhone6.png in Resources */ = {isa = PBXBuildFile; fileRef = 23357DA71D7F7F2B007A29C2 /* Default-iPhone6.png */; };
-		23357DB01D7F7F2B007A29C2 /* Default-iPhone6.png in Resources */ = {isa = PBXBuildFile; fileRef = 23357DA71D7F7F2B007A29C2 /* Default-iPhone6.png */; };
 		23357DB11D7F7F2B007A29C2 /* Default-iPhone6Plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 23357DA81D7F7F2B007A29C2 /* Default-iPhone6Plus.png */; };
 		23357DB21D7F7F2B007A29C2 /* Default-iPhone6Plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 23357DA81D7F7F2B007A29C2 /* Default-iPhone6Plus.png */; };
 		23357DB31D7F7F2B007A29C2 /* Default-iPhone6Plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 23357DA81D7F7F2B007A29C2 /* Default-iPhone6Plus.png */; };
 		23357DB41D7F7F2B007A29C2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 23357DA91D7F7F2B007A29C2 /* Default.png */; };
 		23357DB51D7F7F2B007A29C2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 23357DA91D7F7F2B007A29C2 /* Default.png */; };
 		23357DB61D7F7F2B007A29C2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 23357DA91D7F7F2B007A29C2 /* Default.png */; };
-		23357DB71D7F7F2B007A29C2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23357DAA1D7F7F2B007A29C2 /* Default@2x.png */; };
-		23357DB81D7F7F2B007A29C2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23357DAA1D7F7F2B007A29C2 /* Default@2x.png */; };
-		23357DB91D7F7F2B007A29C2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23357DAA1D7F7F2B007A29C2 /* Default@2x.png */; };
 		235E621D1D5AB6EA00E7B099 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E621C1D5AB6EA00E7B099 /* AppDelegate.swift */; };
-		235E621F1D5AB6EA00E7B099 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E621E1D5AB6EA00E7B099 /* ViewController.swift */; };
 		235E62221D5AB6EA00E7B099 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235E62201D5AB6EA00E7B099 /* Main.storyboard */; };
 		235E62241D5AB6EA00E7B099 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 235E62231D5AB6EA00E7B099 /* Assets.xcassets */; };
 		235E62271D5AB6EA00E7B099 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235E62251D5AB6EA00E7B099 /* LaunchScreen.storyboard */; };
@@ -100,6 +98,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		230EB4571D8A72FC000A54A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 235E62111D5AB6EA00E7B099 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 235E62181D5AB6EA00E7B099;
+			remoteInfo = Kenko;
+		};
 		235E622E1D5AB6EA00E7B099 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 235E62111D5AB6EA00E7B099 /* Project object */;
@@ -116,18 +121,37 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		230EB4641D8A72FD000A54A7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		113CEE79EAF694CA95EEED01 /* Pods_Kenko.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kenko.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FF2997B3FC27D6B411C1BE4 /* libPods-KenkoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KenkoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2306C52E1D6845D2003505E8 /* SevenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SevenViewController.swift; sourceTree = "<group>"; };
+		230EB43F1D8A70F3000A54A7 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		230EB4411D8A7130000A54A7 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
+		230EB4431D8A715C000A54A7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		230EB44C1D8A72FC000A54A7 /* TweenController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TweenController.h; sourceTree = "<group>"; };
+		230EB44E1D8A72FC000A54A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		230EB4531D8A72FC000A54A7 /* TweenControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TweenControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		230EB45A1D8A72FC000A54A7 /* TweenControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweenControllerTests.swift; sourceTree = "<group>"; };
+		230EB45C1D8A72FC000A54A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		230EB4721D8A9BE4000A54A7 /* TutorialBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialBuilder.swift; sourceTree = "<group>"; };
 		23357DA61D7F7F2B007A29C2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		23357DA71D7F7F2B007A29C2 /* Default-iPhone6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-iPhone6.png"; sourceTree = "<group>"; };
 		23357DA81D7F7F2B007A29C2 /* Default-iPhone6Plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-iPhone6Plus.png"; sourceTree = "<group>"; };
 		23357DA91D7F7F2B007A29C2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		23357DAA1D7F7F2B007A29C2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		235E62191D5AB6EA00E7B099 /* Kenko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kenko.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		235E621C1D5AB6EA00E7B099 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		235E621E1D5AB6EA00E7B099 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		235E62211D5AB6EA00E7B099 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		235E62231D5AB6EA00E7B099 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		235E62261D5AB6EA00E7B099 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -159,6 +183,7 @@
 		2367B7491D68039000185B5C /* Money.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Money.storyboard; sourceTree = "<group>"; };
 		2367B74C1D680E3700185B5C /* HowMuchMoneyYouWantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowMuchMoneyYouWantViewController.swift; sourceTree = "<group>"; };
 		2367B7521D681DCF00185B5C /* WhyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhyViewController.swift; sourceTree = "<group>"; };
+		236D2F5C1D8A3B63002D756A /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "../../Library/Developer/Xcode/DerivedData/Kenko-aldtbkywhsjarhbmehnmzelvpglo/Build/Products/Debug-iphoneos/ParseUI/ParseUI.framework"; sourceTree = "<group>"; };
 		238E9DC61D5C09D1003FC76C /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
 		238E9DC81D5C09D1003FC76C /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		238E9DC91D5C09D1003FC76C /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
@@ -179,6 +204,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		230EB4501D8A72FC000A54A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		235E62161D5AB6EA00E7B099 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -207,14 +239,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		230EB43C1D8A70D7000A54A7 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				230EB4431D8A715C000A54A7 /* ViewController.swift */,
+			);
+			name = Tutorial;
+			sourceTree = "<group>";
+		};
+		230EB44B1D8A72FC000A54A7 /* TweenController */ = {
+			isa = PBXGroup;
+			children = (
+				230EB44C1D8A72FC000A54A7 /* TweenController.h */,
+				230EB44E1D8A72FC000A54A7 /* Info.plist */,
+			);
+			path = TweenController;
+			sourceTree = "<group>";
+		};
+		230EB4591D8A72FC000A54A7 /* TweenControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				230EB45A1D8A72FC000A54A7 /* TweenControllerTests.swift */,
+				230EB45C1D8A72FC000A54A7 /* Info.plist */,
+			);
+			path = TweenControllerTests;
+			sourceTree = "<group>";
+		};
 		23357DA51D7F7F11007A29C2 /* LaunchImage */ = {
 			isa = PBXGroup;
 			children = (
 				23357DA61D7F7F2B007A29C2 /* Default-568h@2x.png */,
-				23357DA71D7F7F2B007A29C2 /* Default-iPhone6.png */,
 				23357DA81D7F7F2B007A29C2 /* Default-iPhone6Plus.png */,
 				23357DA91D7F7F2B007A29C2 /* Default.png */,
-				23357DAA1D7F7F2B007A29C2 /* Default@2x.png */,
 			);
 			name = LaunchImage;
 			sourceTree = "<group>";
@@ -225,6 +281,8 @@
 				235E621B1D5AB6EA00E7B099 /* Kenko */,
 				235E62301D5AB6EA00E7B099 /* KenkoTests */,
 				235E623B1D5AB6EA00E7B099 /* KenkoUITests */,
+				230EB44B1D8A72FC000A54A7 /* TweenController */,
+				230EB4591D8A72FC000A54A7 /* TweenControllerTests */,
 				235E621A1D5AB6EA00E7B099 /* Products */,
 				FC6278DFC8A37669D21C1B8C /* Frameworks */,
 				D1573A6584829FFB38967BE9 /* Pods */,
@@ -237,6 +295,7 @@
 				235E62191D5AB6EA00E7B099 /* Kenko.app */,
 				235E622D1D5AB6EA00E7B099 /* KenkoTests.xctest */,
 				235E62381D5AB6EA00E7B099 /* KenkoUITests.xctest */,
+				230EB4531D8A72FC000A54A7 /* TweenControllerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -251,16 +310,17 @@
 				235E62791D5ADE7300E7B099 /* FNFoldingTabBar */,
 				235E62681D5AC50C00E7B099 /* Unity */,
 				235E62AB1D5B22CD00E7B099 /* Wellcom&Login&SignUp */,
-				235E621C1D5AB6EA00E7B099 /* AppDelegate.swift */,
+				230EB43C1D8A70D7000A54A7 /* Tutorial */,
 				23BAC7E51D6323BE00EA7365 /* Timeline */,
 				23B218941D5F70BB00F6C52D /* Post */,
 				235E629A1D5AE51800E7B099 /* ChatViewController.swift */,
 				71F9B1901D6F16DE004C0772 /* AccountViewController.swift */,
 				235E62961D5AE50300E7B099 /* SettingTableViewController.swift */,
-				235E621E1D5AB6EA00E7B099 /* ViewController.swift */,
+				235E621C1D5AB6EA00E7B099 /* AppDelegate.swift */,
 				235E62201D5AB6EA00E7B099 /* Main.storyboard */,
 				2367B7491D68039000185B5C /* Money.storyboard */,
 				2367B7471D67FB9D00185B5C /* Profile.storyboard */,
+				230EB4411D8A7130000A54A7 /* Tutorial.storyboard */,
 				235E62231D5AB6EA00E7B099 /* Assets.xcassets */,
 				23357DA51D7F7F11007A29C2 /* LaunchImage */,
 				235E62281D5AB6EA00E7B099 /* Info.plist */,
@@ -323,6 +383,8 @@
 		235E62AB1D5B22CD00E7B099 /* Wellcom&Login&SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				230EB4721D8A9BE4000A54A7 /* TutorialBuilder.swift */,
+				230EB43F1D8A70F3000A54A7 /* StartViewController.swift */,
 			);
 			name = "Wellcom&Login&SignUp";
 			sourceTree = "<group>";
@@ -392,6 +454,7 @@
 		FC6278DFC8A37669D21C1B8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				236D2F5C1D8A3B63002D756A /* ParseUI.framework */,
 				238E9DB81D5C09D1003FC76C /* FacebookSDKs */,
 				113CEE79EAF694CA95EEED01 /* Pods_Kenko.framework */,
 				1FF2997B3FC27D6B411C1BE4 /* libPods-KenkoTests.a */,
@@ -403,6 +466,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		230EB4521D8A72FC000A54A7 /* TweenControllerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 230EB4651D8A72FD000A54A7 /* Build configuration list for PBXNativeTarget "TweenControllerTests" */;
+			buildPhases = (
+				230EB44F1D8A72FC000A54A7 /* Sources */,
+				230EB4501D8A72FC000A54A7 /* Frameworks */,
+				230EB4511D8A72FC000A54A7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				230EB4581D8A72FC000A54A7 /* PBXTargetDependency */,
+			);
+			name = TweenControllerTests;
+			productName = TweenControllerTests;
+			productReference = 230EB4531D8A72FC000A54A7 /* TweenControllerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		235E62181D5AB6EA00E7B099 /* Kenko */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 235E62411D5AB6EA00E7B099 /* Build configuration list for PBXNativeTarget "Kenko" */;
@@ -414,6 +495,8 @@
 				235E624A1D5ABE5500E7B099 /* ShellScript */,
 				C0936A2489865EC78A1A9A07 /* [CP] Embed Pods Frameworks */,
 				605C596F68F3B8C80AE3A70C /* [CP] Copy Pods Resources */,
+				6D42993469FD631EC2D366F5 /* Embed Pods Frameworks */,
+				230EB4641D8A72FD000A54A7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -475,6 +558,10 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "駿逸 陳";
 				TargetAttributes = {
+					230EB4521D8A72FC000A54A7 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 235E62181D5AB6EA00E7B099;
+					};
 					235E62181D5AB6EA00E7B099 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 8LJ7V3WEL3;
@@ -510,11 +597,19 @@
 				235E62181D5AB6EA00E7B099 /* Kenko */,
 				235E622C1D5AB6EA00E7B099 /* KenkoTests */,
 				235E62371D5AB6EA00E7B099 /* KenkoUITests */,
+				230EB4521D8A72FC000A54A7 /* TweenControllerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		230EB4511D8A72FC000A54A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		235E62171D5AB6EA00E7B099 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -522,8 +617,6 @@
 				238E9EC61D5C09D2003FC76C /* LICENSE.txt in Resources */,
 				235E627D1D5ADE7300E7B099 /* FNAssets.xcassets in Resources */,
 				23357DAB1D7F7F2B007A29C2 /* Default-568h@2x.png in Resources */,
-				23357DAE1D7F7F2B007A29C2 /* Default-iPhone6.png in Resources */,
-				23357DB71D7F7F2B007A29C2 /* Default@2x.png in Resources */,
 				23357DB11D7F7F2B007A29C2 /* Default-iPhone6Plus.png in Resources */,
 				235E62271D5AB6EA00E7B099 /* LaunchScreen.storyboard in Resources */,
 				235E62241D5AB6EA00E7B099 /* Assets.xcassets in Resources */,
@@ -531,6 +624,7 @@
 				235E62221D5AB6EA00E7B099 /* Main.storyboard in Resources */,
 				2367B7481D67FB9D00185B5C /* Profile.storyboard in Resources */,
 				238E9EC71D5C09D2003FC76C /* README.txt in Resources */,
+				230EB4421D8A7130000A54A7 /* Tutorial.storyboard in Resources */,
 				2367B74A1D68039000185B5C /* Money.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -539,8 +633,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23357DB81D7F7F2B007A29C2 /* Default@2x.png in Resources */,
-				23357DAF1D7F7F2B007A29C2 /* Default-iPhone6.png in Resources */,
 				23357DB21D7F7F2B007A29C2 /* Default-iPhone6Plus.png in Resources */,
 				235E627E1D5ADE7300E7B099 /* FNAssets.xcassets in Resources */,
 				23357DAC1D7F7F2B007A29C2 /* Default-568h@2x.png in Resources */,
@@ -552,8 +644,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23357DB91D7F7F2B007A29C2 /* Default@2x.png in Resources */,
-				23357DB01D7F7F2B007A29C2 /* Default-iPhone6.png in Resources */,
 				23357DB31D7F7F2B007A29C2 /* Default-iPhone6Plus.png in Resources */,
 				235E627F1D5ADE7300E7B099 /* FNAssets.xcassets in Resources */,
 				23357DAD1D7F7F2B007A29C2 /* Default-568h@2x.png in Resources */,
@@ -637,6 +727,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KenkoTests/Pods-KenkoTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		6D42993469FD631EC2D366F5 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kenko/Pods-Kenko-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		80385AE83D1BC9D482E15BBC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -700,11 +805,20 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		230EB44F1D8A72FC000A54A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				230EB45B1D8A72FC000A54A7 /* TweenControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		235E62151D5AB6EA00E7B099 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				235E62A81D5B109000E7B099 /* TimeLineCustomCell.swift in Sources */,
+				230EB4731D8A9BE4000A54A7 /* TutorialBuilder.swift in Sources */,
 				71F9B1911D6F16DE004C0772 /* AccountViewController.swift in Sources */,
 				23B4B76E1D613405006F99D5 /* WriteTitleViewController.swift in Sources */,
 				235E62971D5AE50300E7B099 /* SettingTableViewController.swift in Sources */,
@@ -715,10 +829,11 @@
 				235E62831D5ADE7300E7B099 /* FNFoldingTabBarController.swift in Sources */,
 				71F9B1861D6CAFA1004C0772 /* ApiOperation.swift in Sources */,
 				235E62A01D5AE8AA00E7B099 /* TimelineCell.swift in Sources */,
+				230EB4401D8A70F3000A54A7 /* StartViewController.swift in Sources */,
 				235E62A41D5AE96200E7B099 /* MegaTheme.swift in Sources */,
 				2306C52F1D6845D2003505E8 /* SevenViewController.swift in Sources */,
 				235E628F1D5AE4C300E7B099 /* TimeLineViewController.swift in Sources */,
-				235E621F1D5AB6EA00E7B099 /* ViewController.swift in Sources */,
+				230EB4441D8A715C000A54A7 /* ViewController.swift in Sources */,
 				235E62801D5ADE7300E7B099 /* FNFoldingTabBar.swift in Sources */,
 				235E62761D5AC50C00E7B099 /* Reachability.swift in Sources */,
 				235E621D1D5AB6EA00E7B099 /* AppDelegate.swift in Sources */,
@@ -785,6 +900,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		230EB4581D8A72FC000A54A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 235E62181D5AB6EA00E7B099 /* Kenko */;
+			targetProxy = 230EB4571D8A72FC000A54A7 /* PBXContainerItemProxy */;
+		};
 		235E622F1D5AB6EA00E7B099 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 235E62181D5AB6EA00E7B099 /* Kenko */;
@@ -817,6 +937,28 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		230EB4661D8A72FD000A54A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TweenControllerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = today.kenko.TweenControllerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kenko.app/Kenko";
+			};
+			name = Debug;
+		};
+		230EB4671D8A72FD000A54A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TweenControllerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = today.kenko.TweenControllerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kenko.app/Kenko";
+			};
+			name = Release;
+		};
 		235E623F1D5AB6EA00E7B099 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -909,9 +1051,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: CHUN I CHEN (8LJ7V3WEL3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -921,7 +1064,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.today.kenko;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "739f8662-0cd9-48ac-8fad-353b52492553";
 				SWIFT_OBJC_BRIDGING_HEADER = "Kenko/Kenko-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -937,6 +1080,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -946,7 +1090,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.today.kenko;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "739f8662-0cd9-48ac-8fad-353b52492553";
 				SWIFT_OBJC_BRIDGING_HEADER = "Kenko/Kenko-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1015,6 +1159,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		230EB4651D8A72FD000A54A7 /* Build configuration list for PBXNativeTarget "TweenControllerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				230EB4661D8A72FD000A54A7 /* Debug */,
+				230EB4671D8A72FD000A54A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		235E62141D5AB6EA00E7B099 /* Build configuration list for PBXProject "Kenko" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

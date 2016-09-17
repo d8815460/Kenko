@@ -16,6 +16,7 @@ import MBProgressHUD
 import IQKeyboardManagerSwift
 import CoreLocation
 import FBSDKMessengerShareKit
+import Stripe
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate, FBSDKMessengerURLHandlerDelegate {
@@ -42,6 +43,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // 設定Stripe
+        STPPaymentConfiguration.sharedConfiguration().publishableKey = "pk_test_oCaXRnNN88e5zk5A5BCzkY5z"
+        
         // 設定Fabric
         Fabric.with([Crashlytics.self])
         
@@ -279,7 +284,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         let tab = navigate.viewControllers[0] as! FNFoldingTabBarController
         
         let vc0 = tab.viewControllers![0] as! TimeLineViewController
-        vc0.presentedLoginViewControllerBool = false
+//        vc0.presentedLoginViewControllerBool = false
         vc0.presentLoginViewController(true)
     }
     
@@ -346,12 +351,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     // Set up appearance parameters to achieve Anypic's custom look and feel
     func setupAppearance() {
-        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
-        
-        UINavigationBar.appearance().tintColor = UIColor(red: 254.0/255.0, green: 149.0/255.0, blue: 50.0/255.0, alpha: 1.0)
-        UINavigationBar.appearance().barTintColor = UIColor(red: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
-        
-        UINavigationBar.appearance().titleTextAttributes = [ NSForegroundColorAttributeName: UIColor.whiteColor()]
+//        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+//        
+//        UINavigationBar.appearance().tintColor = UIColor(red: 254.0/255.0, green: 149.0/255.0, blue: 50.0/255.0, alpha: 1.0)
+//        UINavigationBar.appearance().barTintColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+//        
+//        UINavigationBar.appearance().titleTextAttributes = [ NSForegroundColorAttributeName: UIColor.blackColor()]
         
         //        UIButton.appearanceWhenContainedInInstancesOfClasses([UINavigationBar.self]).setTitleColor(UIColor(red: 254.0/255.0, green: 149.0/255.0, blue: 50.0/255.0, alpha: 1.0), forState: [])
         

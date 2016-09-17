@@ -39,6 +39,31 @@ class PAPUtility {
                 if completionBlock != nil {
                     completionBlock!(succeeded: succeeded.boolValue, error: error)
                 }
+                
+                // PUSH
+                let userID = photo.objectForKey("user")?.objectId!
+                let myID = PFUser.currentUser()?.objectId!
+                if (succeeded == true && userID != myID) {
+                    let privateChannelName = "user_\(userID!)"
+                    if (privateChannelName.characters.count > 0) {
+                        
+                        let data: [NSObject : AnyObject]! = [
+                            "\(PAPUtility.firstNameForDisplayName(PFUser.currentUser()?.objectForKey(kPAPUserDisplayNameKey) as? String)) like your post": kAPNSAlertKey,
+                            kPAPPushPayloadPayloadTypeActivityKey: kPAPPushPayloadPayloadTypeKey,
+                            kPAPPushPayloadActivityLikeKey: kPAPPushPayloadActivityTypeKey,
+                            (PFUser.currentUser()?.objectId)!: kPAPPushPayloadFromUserObjectIdKey,
+                            photo.objectId!: kPAPPushPayloadPhotoObjectIdKey,
+                            "Increment": kAPNSBadgeKey,
+                            "action": "tw.today.kenko.CUSTOM_BROADCAST"
+                        ]
+                    
+                        
+                        let push = PFPush.init()
+                        push.setChannel(privateChannelName)
+                        push.setData(data)
+                        push.sendPushInBackground()
+                    }
+                }
 
                 // refresh cache
                 let query = PAPUtility.queryForActivitiesOnPhoto(photo, cachePolicy: PFCachePolicy.NetworkOnly)

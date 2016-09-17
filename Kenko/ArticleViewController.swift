@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import FormatterKit
+import Synchronized
 
 class ArticleViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -34,6 +35,9 @@ class ArticleViewController: UITableViewController, UICollectionViewDelegate, UI
     var photos : [String]!
     
     var receiveData: AnyObject!
+    
+    /// Array of the users that liked the post
+    var likerUsers: [PFUser]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,7 +121,48 @@ class ArticleViewController: UITableViewController, UICollectionViewDelegate, UI
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        let post:PFObject = receiveData as! PFObject
+        likerUsers = PAPCache.sharedCache.likersForPhoto(post)
         
+        synchronized(self) {
+            // check if we can update the cache
+            let query: PFQuery = PAPUtility.queryForActivitiesOnPhoto(post, cachePolicy: PFCachePolicy.NetworkOnly)
+            query.findObjectsInBackgroundWithBlock { (objects, error) in
+                synchronized(self) {
+                    
+                    if error != nil {
+                        return
+                    }
+                    
+                    var likers = [PFUser]()
+                    var commenters = [PFUser]()
+                    
+                    var isLikedByCurrentUser = false
+                    
+                    for activity in objects as! [PFObject] {
+                        if (activity.objectForKey(kPAPActivityTypeKey) as! String) == kPAPActivityTypeLike && activity.objectForKey(kPAPActivityFromUserKey) != nil {
+                            likers.append(activity.objectForKey(kPAPActivityFromUserKey) as! PFUser)
+                        } else if (activity.objectForKey(kPAPActivityTypeKey) as! String) == kPAPActivityTypeComment && activity.objectForKey(kPAPActivityFromUserKey) != nil {
+                            commenters.append(activity.objectForKey(kPAPActivityFromUserKey) as! PFUser)
+                        }
+                        
+                        if (activity.objectForKey(kPAPActivityFromUserKey) as? PFUser)?.objectId == PFUser.currentUser()!.objectId {
+                            if (activity.objectForKey(kPAPActivityTypeKey) as! String) == kPAPActivityTypeLike {
+                                isLikedByCurrentUser = true
+                                let likeImage = UIImage(named: "unlike")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+                                self.likeButton.setImage(likeImage, forState: .Normal)
+                            }
+                        }
+                    }
+                    
+                    PAPCache.sharedCache.setAttributesForPhoto(post, likers: likers, commenters: commenters, likedByCurrentUser: isLikedByCurrentUser)
+                    
+                    self.setLikeStatus(PAPCache.sharedCache.isPhotoLikedByCurrentUser(post))
+                    self.likeButton!.setTitle(PAPCache.sharedCache.likeCountForPhoto(post).description, forState: UIControlState.Normal)
+                    
+                }
+            }
+        }
     }
     
     func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat{
@@ -184,5 +229,79 @@ class ArticleViewController: UITableViewController, UICollectionViewDelegate, UI
     
     func backTapped(sender: AnyObject?){
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func shouldEnableLikeButton(enable: Bool) {
+        if enable {
+            let unlikeImage = UIImage(named: "unlike")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+            self.likeButton.setImage(unlikeImage, forState: .Normal)
+            self.likeButton!.removeTarget(self, action: #selector(ArticleViewController.likeButtonPressed(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        } else {
+            let likeImage = UIImage(named: "like")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+            self.likeButton.setImage(likeImage, forState: .Normal)
+            self.likeButton!.addTarget(self, action: #selector(ArticleViewController.likeButtonPressed(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        }
+    }
+    
+    func setLikeStatus(liked: Bool) {
+        self.likeButton!.selected = liked
+        
+        // FIXME: both are just the same???
+        if (liked) {
+            self.likeButton!.titleEdgeInsets = UIEdgeInsetsMake(-3.0, 0.0, 0.0, 0.0)
+        } else {
+            self.likeButton!.titleEdgeInsets = UIEdgeInsetsMake(-3.0, 0.0, 0.0, 0.0)
+        }
+    }
+    
+    @IBAction func likeButtonPressed(sender: AnyObject) {
+        
+        let post:PFObject = receiveData as! PFObject
+        
+        self.shouldEnableLikeButton(false)
+        
+        let liked: Bool = !self.likeButton.selected
+        self.setLikeStatus(liked)
+        
+//        let originalButtonTitle = self.likeButton.titleLabel!.text
+        
+//        var likeCount: Int = Int(self.likeButton.titleLabel!.text!)!
+//        if (liked) {
+//            likeCount += 1
+//            PAPCache.sharedCache.incrementLikerCountForPhoto(post)
+//        } else {
+//            if likeCount > 0 {
+//                likeCount -= 1
+//            }
+//            PAPCache.sharedCache.decrementLikerCountForPhoto(post)
+//        }
+        
+        PAPCache.sharedCache.setPhotoIsLikedByCurrentUser(post, liked: liked)
+        
+//        self.likeButton.setTitle(String(likeCount), forState: UIControlState.Normal)
+        
+        if liked {
+            PAPUtility.likePhotoInBackground(post, block: { (succeeded, error) in
+                // FIXME: nil??? same as the original AnyPic. Dead code?
+//                let actualHeaderView: PAPPhotoHeaderView? = self.tableView(self.tableView, viewForHeaderInSection: button.tag) as? PAPPhotoHeaderView
+                self.shouldEnableLikeButton(true)
+                self.setLikeStatus(succeeded)
+                
+//                if !succeeded {
+//                    self.likeButton!.setTitle(originalButtonTitle, forState: UIControlState.Normal)
+//                }
+            })
+        } else {
+            PAPUtility.unlikePhotoInBackground(post, block: { (succeeded, error) in
+                // FIXME: nil??? same as the original AnyPic. Dead code?
+//                let actualHeaderView: PAPPhotoHeaderView? = self.tableView(self.tableView, viewForHeaderInSection: button.tag) as? PAPPhotoHeaderView
+                self.shouldEnableLikeButton(false)
+                self.setLikeStatus(!succeeded)
+                
+//                if !succeeded {
+//                    self.likeButton!.setTitle(originalButtonTitle, forState: UIControlState.Normal)
+//                }
+            })
+        }
     }
 }

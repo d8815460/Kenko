@@ -60,7 +60,7 @@ class HowMuchMoneyYouWantViewController: UIViewController, UITextFieldDelegate, 
         // Refresh current user with server side data -- checks if user is still valid and so on
         _facebookResponseCount = 0
         if (PFUser.currentUser()![kPAPUserProfilePicMediumKey] == nil) {
-            PFUser.currentUser()?.fetchInBackgroundWithTarget(self, selector: #selector(TimeLineViewController.refreshCurrentUserCallbackWithResult(_:error:)))
+            PFUser.currentUser()?.fetchInBackgroundWithTarget(self, selector: #selector(StartViewController.refreshCurrentUserCallbackWithResult(_:error:)))
         }
         
         
@@ -209,8 +209,8 @@ class HowMuchMoneyYouWantViewController: UIViewController, UITextFieldDelegate, 
     
     func handleFacebookSession() {
         if PFUser.currentUser() != nil {
-            if self.delegate != nil && self.delegate!.respondsToSelector(#selector(TimeLineViewController.logInViewControllerDidLogUserIn(_:))) {
-                self.delegate!.performSelector(#selector(TimeLineViewController.logInViewControllerDidLogUserIn(_:)), withObject: PFUser.currentUser()!)
+            if self.delegate != nil && self.delegate!.respondsToSelector(#selector(StartViewController.logInViewControllerDidLogUserIn(_:))) {
+                self.delegate!.performSelector(#selector(StartViewController.logInViewControllerDidLogUserIn(_:)), withObject: PFUser.currentUser()!)
             }
             return
         }
@@ -243,8 +243,8 @@ class HowMuchMoneyYouWantViewController: UIViewController, UITextFieldDelegate, 
                 if error == nil {
                     self.hud!.removeFromSuperview()
                     if self.delegate != nil {
-                        if self.delegate!.respondsToSelector(#selector(TimeLineViewController.logInViewControllerDidLogUserIn(_:))) {
-                            self.delegate!.performSelector(#selector(TimeLineViewController.logInViewControllerDidLogUserIn(_:)), withObject: user)
+                        if self.delegate!.respondsToSelector(#selector(StartViewController.logInViewControllerDidLogUserIn(_:))) {
+                            self.delegate!.performSelector(#selector(StartViewController.logInViewControllerDidLogUserIn(_:)), withObject: user)
                         }
                     }
                 } else {

@@ -26,7 +26,8 @@ pod 'IQKeyboardManagerSwift', '~> 4.0'
 pod 'SVPullToRefresh', '~> 0.4'
 pod 'FBSDKMessengerShareKit', '~> 1.3'
 pod 'AFNetworking', '~> 3.0.0-beta.1'
-
+pod 'Stripe', '~> 8.0'
+pod 'TweenController'
 end
 
 target 'KenkoTests' do

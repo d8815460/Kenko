@@ -7,11 +7,21 @@
 		<key>Kenko.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>0</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>230EB4491D8A72FB000A54A7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>230EB4521D8A72FC000A54A7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>235E62181D5AB6EA00E7B099</key>
 		<dict>
 			<key>primary</key>

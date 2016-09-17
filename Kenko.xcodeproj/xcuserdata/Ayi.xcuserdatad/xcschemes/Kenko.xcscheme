@@ -48,6 +48,16 @@
                ReferencedContainer = "container:Kenko.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "230EB4521D8A72FC000A54A7"
+               BuildableName = "TweenControllerTests.xctest"
+               BlueprintName = "TweenControllerTests"
+               ReferencedContainer = "container:Kenko.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

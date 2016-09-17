@@ -52,7 +52,7 @@ let kPAPActivityTypeKey        = "type"
 let kPAPActivityFromUserKey    = "fromUser"
 let kPAPActivityToUserKey      = "toUser"
 let kPAPActivityContentKey     = "content"
-let kPAPActivityPhotoKey       = "photo"
+let kPAPActivityPhotoKey       = "post"
 
 // Type values
 let kPAPActivityTypeLike       = "like"

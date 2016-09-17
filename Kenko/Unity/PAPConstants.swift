@@ -53,12 +53,15 @@ let kPAPActivityFromUserKey    = "fromUser"
 let kPAPActivityToUserKey      = "toUser"
 let kPAPActivityContentKey     = "content"
 let kPAPActivityPhotoKey       = "post"
+let kPAPActivityTypeBuyKey     = "buy"
+let kPAPActivityEmojiKey       = "emoji"
 
 // Type values
 let kPAPActivityTypeLike       = "like"
 let kPAPActivityTypeFollow     = "follow"
 let kPAPActivityTypeComment    = "comment"
 let kPAPActivityTypeJoined     = "joined"
+
 
 // MARK:- User Class
 // Field keys

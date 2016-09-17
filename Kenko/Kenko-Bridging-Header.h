@@ -8,3 +8,4 @@
 //#import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 #import <SVPullToRefresh/SVPullToRefresh.h>
+#import "SpanTableViewController.h"

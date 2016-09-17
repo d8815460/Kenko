@@ -85,6 +85,14 @@
 		23B4B7721D622B10006F99D5 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B4B7711D622B10006F99D5 /* ArticleViewController.swift */; };
 		23B4B7731D622B10006F99D5 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B4B7711D622B10006F99D5 /* ArticleViewController.swift */; };
 		23B4B7741D622B10006F99D5 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B4B7711D622B10006F99D5 /* ArticleViewController.swift */; };
+		23D734A01D8CDA21000FC54E /* MyAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D734991D8CDA21000FC54E /* MyAPIClient.swift */; };
+		23D734A11D8CDA21000FC54E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D7349A1D8CDA21000FC54E /* SettingsViewController.swift */; };
+		23D734A21D8CDA21000FC54E /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D7349B1D8CDA21000FC54E /* CheckoutViewController.swift */; };
+		23D734A31D8CDA21000FC54E /* BrowseProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D7349C1D8CDA21000FC54E /* BrowseProductsViewController.swift */; };
+		23D734A41D8CDA21000FC54E /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D7349D1D8CDA21000FC54E /* Networking.swift */; };
+		23D734A51D8CDA21000FC54E /* CheckoutRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D7349E1D8CDA21000FC54E /* CheckoutRowView.swift */; };
+		23D734A61D8CDA21000FC54E /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D7349F1D8CDA21000FC54E /* Buttons.swift */; };
+		23D734AA1D8CE392000FC54E /* SpanTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D734A91D8CE392000FC54E /* SpanTableViewController.m */; };
 		7167E7C91D6C48560042FECB /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7167E7C81D6C48560042FECB /* ApiManager.swift */; };
 		7167E7CA1D6C48560042FECB /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7167E7C81D6C48560042FECB /* ApiManager.swift */; };
 		7167E7CB1D6C48560042FECB /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7167E7C81D6C48560042FECB /* ApiManager.swift */; };
@@ -191,6 +199,15 @@
 		23B4B76D1D613405006F99D5 /* WriteTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteTitleViewController.swift; sourceTree = "<group>"; };
 		23B4B76F1D613413006F99D5 /* WriteDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteDetailViewController.swift; sourceTree = "<group>"; };
 		23B4B7711D622B10006F99D5 /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		23D734991D8CDA21000FC54E /* MyAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAPIClient.swift; sourceTree = "<group>"; };
+		23D7349A1D8CDA21000FC54E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		23D7349B1D8CDA21000FC54E /* CheckoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
+		23D7349C1D8CDA21000FC54E /* BrowseProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseProductsViewController.swift; sourceTree = "<group>"; };
+		23D7349D1D8CDA21000FC54E /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		23D7349E1D8CDA21000FC54E /* CheckoutRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutRowView.swift; sourceTree = "<group>"; };
+		23D7349F1D8CDA21000FC54E /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		23D734A81D8CE392000FC54E /* SpanTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpanTableViewController.h; sourceTree = "<group>"; };
+		23D734A91D8CE392000FC54E /* SpanTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpanTableViewController.m; sourceTree = "<group>"; };
 		2FFA7EAC8F4D9839194879D4 /* Pods-Kenko.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kenko.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kenko/Pods-Kenko.debug.xcconfig"; sourceTree = "<group>"; };
 		33452B3E6F6E3EB493EE5ACE /* Pods-KenkoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KenkoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KenkoTests/Pods-KenkoTests.release.xcconfig"; sourceTree = "<group>"; };
 		6C866CAD479AC0DA7E39649D /* Pods-KenkoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KenkoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KenkoTests/Pods-KenkoTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -313,8 +330,8 @@
 				230EB43C1D8A70D7000A54A7 /* Tutorial */,
 				23BAC7E51D6323BE00EA7365 /* Timeline */,
 				23B218941D5F70BB00F6C52D /* Post */,
+				23D734981D8CDA0C000FC54E /* Setting */,
 				235E629A1D5AE51800E7B099 /* ChatViewController.swift */,
-				71F9B1901D6F16DE004C0772 /* AccountViewController.swift */,
 				235E62961D5AE50300E7B099 /* SettingTableViewController.swift */,
 				235E621C1D5AB6EA00E7B099 /* AppDelegate.swift */,
 				235E62201D5AB6EA00E7B099 /* Main.storyboard */,
@@ -423,10 +440,35 @@
 		23BAC7E51D6323BE00EA7365 /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
+				23D734A71D8CE36D000FC54E /* Span */,
 				235E628E1D5AE4C300E7B099 /* TimeLineViewController.swift */,
 				23B4B7711D622B10006F99D5 /* ArticleViewController.swift */,
 			);
 			name = Timeline;
+			sourceTree = "<group>";
+		};
+		23D734981D8CDA0C000FC54E /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				23D734991D8CDA21000FC54E /* MyAPIClient.swift */,
+				23D7349A1D8CDA21000FC54E /* SettingsViewController.swift */,
+				23D7349B1D8CDA21000FC54E /* CheckoutViewController.swift */,
+				23D7349C1D8CDA21000FC54E /* BrowseProductsViewController.swift */,
+				23D7349D1D8CDA21000FC54E /* Networking.swift */,
+				23D7349E1D8CDA21000FC54E /* CheckoutRowView.swift */,
+				23D7349F1D8CDA21000FC54E /* Buttons.swift */,
+				71F9B1901D6F16DE004C0772 /* AccountViewController.swift */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
+		23D734A71D8CE36D000FC54E /* Span */ = {
+			isa = PBXGroup;
+			children = (
+				23D734A81D8CE392000FC54E /* SpanTableViewController.h */,
+				23D734A91D8CE392000FC54E /* SpanTableViewController.m */,
+			);
+			name = Span;
 			sourceTree = "<group>";
 		};
 		7167E7C21D6C48160042FECB /* API */ = {
@@ -820,6 +862,7 @@
 				235E62A81D5B109000E7B099 /* TimeLineCustomCell.swift in Sources */,
 				230EB4731D8A9BE4000A54A7 /* TutorialBuilder.swift in Sources */,
 				71F9B1911D6F16DE004C0772 /* AccountViewController.swift in Sources */,
+				23D734A01D8CDA21000FC54E /* MyAPIClient.swift in Sources */,
 				23B4B76E1D613405006F99D5 /* WriteTitleViewController.swift in Sources */,
 				235E62971D5AE50300E7B099 /* SettingTableViewController.swift in Sources */,
 				2367B74D1D680E3700185B5C /* HowMuchMoneyYouWantViewController.swift in Sources */,
@@ -835,14 +878,21 @@
 				235E628F1D5AE4C300E7B099 /* TimeLineViewController.swift in Sources */,
 				230EB4441D8A715C000A54A7 /* ViewController.swift in Sources */,
 				235E62801D5ADE7300E7B099 /* FNFoldingTabBar.swift in Sources */,
+				23D734A41D8CDA21000FC54E /* Networking.swift in Sources */,
 				235E62761D5AC50C00E7B099 /* Reachability.swift in Sources */,
 				235E621D1D5AB6EA00E7B099 /* AppDelegate.swift in Sources */,
+				23D734A51D8CDA21000FC54E /* CheckoutRowView.swift in Sources */,
+				23D734A61D8CDA21000FC54E /* Buttons.swift in Sources */,
 				23B4B7721D622B10006F99D5 /* ArticleViewController.swift in Sources */,
 				2367B7531D681DCF00185B5C /* WhyViewController.swift in Sources */,
+				23D734A11D8CDA21000FC54E /* SettingsViewController.swift in Sources */,
 				235E626D1D5AC50C00E7B099 /* PAPCache.swift in Sources */,
 				23B218931D5F6DCC00F6C52D /* WriteTableViewController.swift in Sources */,
+				23D734AA1D8CE392000FC54E /* SpanTableViewController.m in Sources */,
+				23D734A31D8CDA21000FC54E /* BrowseProductsViewController.swift in Sources */,
 				7167E7C91D6C48560042FECB /* ApiManager.swift in Sources */,
 				235E629B1D5AE51800E7B099 /* ChatViewController.swift in Sources */,
+				23D734A21D8CDA21000FC54E /* CheckoutViewController.swift in Sources */,
 				235E62701D5AC50C00E7B099 /* PAPConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

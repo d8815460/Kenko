@@ -33,6 +33,10 @@ class AccountViewController : UITableViewController, UITextFieldDelegate {
     @IBOutlet var facebookLabel : UILabel!
     @IBOutlet var facebookImageView : UIImageView!
     @IBOutlet var facebookButton : UIButton!
+    @IBOutlet weak var setYourEmojiLabel: UILabel!
+    @IBOutlet weak var emojiApparelLabel: UILabel!
+    
+    var isBuy:Bool! = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,7 +85,38 @@ class AccountViewController : UITableViewController, UITextFieldDelegate {
         
         facebookImageView.image = UIImage(named: "fb")
         
+        themeLabelWithText(setYourEmojiLabel, text: "SET YOUR CHATBOT EMOJI")
+        themeLabelWithText(emojiApparelLabel, text: "NONE")
+        
         addBlurView()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if ((PFUser.currentUser()?.objectForKey(kPAPActivityEmojiKey)) != nil) {
+            themeLabelWithText(emojiApparelLabel, text: PFUser.currentUser()?.objectForKey(kPAPActivityEmojiKey) as! String)
+        }
+        
+        let query: PFQuery = PFQuery(className: "Payment")
+        query.getFirstObjectInBackgroundWithBlock { (isBuyObject, error) in
+            if error == nil {
+                if isBuyObject?.objectForKey("isBuy") as! Bool {
+                    self.isBuy = true
+                    self.tableView.reloadData()
+                } else {
+                    self.isBuy = false
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
+    
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if (isBuy == true) {
+            return 9
+        } else {
+            return 8
+        }
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -206,10 +241,19 @@ class AccountViewController : UITableViewController, UITextFieldDelegate {
         cell.selectionStyle = .None
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == 8 {
+            let rootVC = BrowseProductsViewController()
+            self.navigationController?.pushViewController(rootVC, animated: true)
+        }
+    }
+    
     override func viewDidLayoutSubviews() {
         tableView.separatorInset = UIEdgeInsetsZero
         tableView.layoutMargins = UIEdgeInsetsZero
     }
+    
+    
     @IBAction func facebookbuttonPressed(sender: AnyObject) {
         (UIApplication.sharedApplication().delegate as! AppDelegate).logOut()
     }

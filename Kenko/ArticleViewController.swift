@@ -304,4 +304,26 @@ class ArticleViewController: UITableViewController, UICollectionViewDelegate, UI
             })
         }
     }
+    
+    
+    @IBAction func spamButtonPressed(sender: AnyObject) {
+        let post:PFObject = receiveData as! PFObject
+        self.performSegueWithIdentifier("spam", sender: post)
+    }
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        let sendObject:PFObject = sender as! PFObject
+        
+        if segue.identifier == "spam" {
+            let articleView = segue.destinationViewController as! SpanTableViewController
+            articleView.taskItem = sendObject
+            let backItem = UIBarButtonItem()
+            backItem.title = "Back"
+            navigationItem.backBarButtonItem = backItem
+        }
+    }
+    
 }

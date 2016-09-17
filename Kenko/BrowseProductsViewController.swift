@@ -11,22 +11,22 @@ import UIKit
 class BrowseProductsViewController: UITableViewController {
 
     let productsAndPrices = [
-        "👕": 2000,
-        "👖": 4000,
-        "👗": 3000,
-        "👞": 700,
-        "👟": 600,
-        "👠": 1000,
-        "👡": 2000,
-        "👢": 2500,
-        "👒": 800,
-        "👙": 3000,
-        "💄": 2000,
-        "🎩": 5000,
-        "👛": 5500,
-        "👜": 6000,
-        "🕶": 2000,
-        "👚": 2500,
+        "Guy👕": 200,
+        "Cool👖": 400,
+        "Beauty👗": 300,
+        "Gentleman👞": 700,
+        "Ordinary👟": 100,
+        "Lady👠": 1000,
+        "Girl👡": 2000,
+        "Fashion👢": 2500,
+        "Robot👒": 800,
+        "Sexy👙": 3000,
+        "Makeup💄": 200,
+        "Gentleman🎩": 500,
+        "Fragrance👛": 550,
+        "Bag👜": 6000,
+        "BlackMan🕶": 2000,
+        "Dresses👚": 2500,
     ]
 
     let settingsVC = SettingsViewController()

@@ -12,11 +12,15 @@ import FBSDKMessengerShareKit
 class ChatViewController: UIViewController {
 
     @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var webView: UIWebView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         view.backgroundColor = UIColor.init(red: 33/255.0, green: 128/255.0, blue: 189/255.0, alpha: 1)
+        
         
         
         let button2 = FBSDKMessengerShareButton.rectangularButtonWithStyle(FBSDKMessengerShareButtonStyle.White)
@@ -31,10 +35,20 @@ class ChatViewController: UIViewController {
 //        [button addTarget:self action:@selector(_shareButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
 //        [self.view addSubview:button];
     }
-
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if PFUser.currentUser()?.objectForKey(kPAPUserFacebookIDKey) != nil {
+            let url = NSURL (string: "http://enigmatic-meadow-46041.herokuapp.com/button/\(PFUser.currentUser()?.objectForKey(kPAPUserFacebookIDKey)! as! String)");
+            let requestObj = NSURLRequest(URL: url!);
+            self.webView.loadRequest(requestObj);
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
     }
     
 

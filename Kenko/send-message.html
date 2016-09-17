@@ -1,0 +1,35 @@
+<script>
+
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: "288773521483517",
+        xfbml: true,
+        version: "v2.6"
+      });
+
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) { return; }
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    
+    function reloadData(sBinaryParam) {
+        // This 'atob' decodes the Base64 encoded data sent by swift
+        var sDecodedParam = window.atob(sBinaryParam);
+        var userFacebookId = JSON.parse(sDecodedParam);
+        // This 'oData' is your js object (dictionary)
+        return true;
+    }
+</script>
+
+<div class="fb-send-to-messenger"
+  messenger_app_id="288773521483517" 
+  page_id="149502088796502" 
+  data-ref="{FACEBOOK_ID}" 
+  color="blue" 
+  size="standard">
+</div>

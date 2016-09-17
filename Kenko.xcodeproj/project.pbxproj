@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2306C52F1D6845D2003505E8 /* SevenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2306C52E1D6845D2003505E8 /* SevenViewController.swift */; };
+		23091BBC1D8D3AA20047C56F /* send-message.html in Resources */ = {isa = PBXBuildFile; fileRef = 23091BBB1D8D3AA20047C56F /* send-message.html */; };
 		230EB4401D8A70F3000A54A7 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230EB43F1D8A70F3000A54A7 /* StartViewController.swift */; };
 		230EB4421D8A7130000A54A7 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 230EB4411D8A7130000A54A7 /* Tutorial.storyboard */; };
 		230EB4441D8A715C000A54A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230EB4431D8A715C000A54A7 /* ViewController.swift */; };
@@ -146,6 +147,7 @@
 		113CEE79EAF694CA95EEED01 /* Pods_Kenko.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kenko.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FF2997B3FC27D6B411C1BE4 /* libPods-KenkoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KenkoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2306C52E1D6845D2003505E8 /* SevenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SevenViewController.swift; sourceTree = "<group>"; };
+		23091BBB1D8D3AA20047C56F /* send-message.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "send-message.html"; sourceTree = "<group>"; };
 		230EB43F1D8A70F3000A54A7 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		230EB4411D8A7130000A54A7 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		230EB4431D8A715C000A54A7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 				235E62231D5AB6EA00E7B099 /* Assets.xcassets */,
 				23357DA51D7F7F11007A29C2 /* LaunchImage */,
 				235E62281D5AB6EA00E7B099 /* Info.plist */,
+				23091BBB1D8D3AA20047C56F /* send-message.html */,
 				235E62251D5AB6EA00E7B099 /* LaunchScreen.storyboard */,
 				235E625C1D5AC0E000E7B099 /* Kenko-Bridging-Header.h */,
 				235E625D1D5AC0E100E7B099 /* KenkoTests-Bridging-Header.h */,
@@ -666,6 +669,7 @@
 				235E62221D5AB6EA00E7B099 /* Main.storyboard in Resources */,
 				2367B7481D67FB9D00185B5C /* Profile.storyboard in Resources */,
 				238E9EC71D5C09D2003FC76C /* README.txt in Resources */,
+				23091BBC1D8D3AA20047C56F /* send-message.html in Resources */,
 				230EB4421D8A7130000A54A7 /* Tutorial.storyboard in Resources */,
 				2367B74A1D68039000185B5C /* Money.storyboard in Resources */,
 			);
@@ -1101,8 +1105,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: CHUN I CHEN (8LJ7V3WEL3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: CHUN I CHEN (C4B52A7U96)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: CHUN I CHEN (C4B52A7U96)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_BITCODE = NO;
@@ -1114,7 +1118,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.today.kenko;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "739f8662-0cd9-48ac-8fad-353b52492553";
+				PROVISIONING_PROFILE = "7c4d0699-1a7d-4d0e-a6a8-70daffa0a40a";
 				SWIFT_OBJC_BRIDGING_HEADER = "Kenko/Kenko-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1128,8 +1132,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: CHUN I CHEN (C4B52A7U96)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: CHUN I CHEN (8LJ7V3WEL3)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1140,7 +1144,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.today.kenko;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "739f8662-0cd9-48ac-8fad-353b52492553";
+				PROVISIONING_PROFILE = "7c4d0699-1a7d-4d0e-a6a8-70daffa0a40a";
 				SWIFT_OBJC_BRIDGING_HEADER = "Kenko/Kenko-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

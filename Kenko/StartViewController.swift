@@ -64,6 +64,17 @@ class StartViewController: UIViewController, TutorialViewController, PFLogInView
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
+        
+//        let messangerQuery: PFQuery = PFQuery(className: "messages")
+//        messangerQuery.findObjectsInBackgroundWithBlock { (objects, error) in
+//            if error != nil {
+//                print("error = \(error)")
+//            }
+//            print("objects = \(objects)")
+//        }
+        
+        
         dispatch_once(&appearanceToken) {
             let (tc, scrollView) = TutorialBuilder.buildWithContainerViewController(self)
             self.tweenController = tc
@@ -104,6 +115,18 @@ class StartViewController: UIViewController, TutorialViewController, PFLogInView
         }
         _facebookResponseCount = 0;
         print("done processing all Facebook requests")
+        
+        if (PFUser.currentUser()!.objectForKey(kPAPUserPositiveKey) != nil)  {
+            
+        } else {
+            PFUser.currentUser()!.setObject(0, forKey: kPAPUserPositiveKey)
+        }
+        
+        if (PFUser.currentUser()!.objectForKey(kPAPUserNegativeKey) != nil) {
+            
+        } else {
+            PFUser.currentUser()!.setObject(0, forKey: kPAPUserNegativeKey)
+        }
         
         PFUser.currentUser()!.saveInBackgroundWithBlock { (succeeded, error) in
             if !succeeded {

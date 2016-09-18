@@ -14,9 +14,12 @@ class ChatViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var contentView: UIView!
+    
     private var timer: NSTimer!
     private var hud: MBProgressHUD!
-    
+    private var applications: Application!
+    private var detailViewController: DetailViewController!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,10 +34,18 @@ class ChatViewController: UIViewController, UIWebViewDelegate {
         self.hud.labelText = "Checking Messenger Login..."
         
         self.button = FBSDKMessengerShareButton.rectangularButtonWithStyle(FBSDKMessengerShareButtonStyle.White)
-        self.button.frame = CGRectMake(8, self.view.frame.height/2, (self.view.frame.width)-16, 46)
+        self.button.frame = CGRectMake(8, self.view.frame.height-120, (self.view.frame.width)-16, 46)
         self.button.addTarget(self, action: #selector(ChatViewController.shareButtonPressed), forControlEvents: .TouchUpInside)
         self.button.hidden = true
         view.addSubview(self.button)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        self.detailViewController = storyboard.instantiateViewControllerWithIdentifier("chatDetail") as! DetailViewController
+//        let detailViewController = DetailViewController.init()
+        
+//        detailViewController.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 120)
+//        self.contentView = detailViewController.tableView
+//        self.contentView.addSubview(detailViewController.tableView)
         
 //        button.addTarget(self, action: #selector(ChatViewController.shareButtonPressed), forControlEvents: .TouchUpInside)
 //        self.view.addSubview(button)
@@ -42,6 +53,14 @@ class ChatViewController: UIViewController, UIWebViewDelegate {
 //        UIButton *button = [FBSDKMessengerShareButton rectangularButtonWithStyle:FBSDKMessengerShareButtonStyleBlue];
 //        [button addTarget:self action:@selector(_shareButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
 //        [self.view addSubview:button];
+        
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        detailViewController.tableView.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height - 194)
+        
+        self.contentView.addSubview(self.detailViewController.tableView)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -49,12 +68,23 @@ class ChatViewController: UIViewController, UIWebViewDelegate {
 
 //        button = FBSDKMessengerShareButton.rectangularButtonWithStyle(FBSDKMessengerShareButtonStyle.White)
         
-        
-        
-        PFUser.currentUser()!.fetchInBackgroundWithBlock { (currentUser, error) in
-            if (currentUser!.objectForKey(kPAPUserChatBotIDKey) != nil) {
+        let queryUser = PFUser.query()
+        queryUser!.getObjectInBackgroundWithId((PFUser.currentUser()?.objectId)!) { (user, error) in
+            if (user!.objectForKey(kPAPUserChatBotIDKey) != nil) {
                 self.webView.hidden = true
                 self.button.hidden = false
+                if PFUser.currentUser()!.objectForKey(kPAPUserChatBotIDKey) == nil {
+                    PFUser.currentUser()?.setObject(user!.objectForKey(kPAPUserChatBotIDKey)!, forKey: kPAPUserChatBotIDKey)
+                    PFUser.currentUser()!.saveInBackgroundWithBlock { (succeeded, error) in
+                        if !succeeded {
+                            print("Failed save in background of user, \(error)")
+                        } else {
+                            print("saved current parse user")
+                        }
+                    }
+                }
+                
+                
             } else {
                 self.webView.hidden = false
                 self.button.hidden = true
@@ -84,7 +114,7 @@ class ChatViewController: UIViewController, UIWebViewDelegate {
     func webViewDidFinishLoad(webView: UIWebView) {
         print("webView did finish load: \(webView.request?.URL?.absoluteString)")
         let urlString = webView.request?.URL?.absoluteString
-        if let hasPrefix = urlString?.hasPrefix("http://www.messenger.com/?refsrc") {
+        if let hasPrefix = urlString?.hasPrefix("https://www.messenger.com/?refsrc") {
             if hasPrefix {
                 self.webView.hidden = true
                 self.button.hidden = false
@@ -93,14 +123,7 @@ class ChatViewController: UIViewController, UIWebViewDelegate {
                 NSLog("no hasPrefix")
             }
         }
-        if let hasPrefix = urlString?.hasPrefix("https://www.facebook.com/v2.6/plugins/send_to_messenger.php") {
-            if hasPrefix {
-                self.hud.hide(true)
-                NSLog("has hasPrefix")
-            } else {
-                NSLog("no hasPrefix")
-            }
-        }
+        
         
     }
     
@@ -125,6 +148,14 @@ class ChatViewController: UIViewController, UIWebViewDelegate {
         else {
             
             NSLog("nil value")
+        }
+        if let hasPrefix = urlString?.hasPrefix("https://www.facebook.com/v2.6/plugins/send_to_messenger.php") {
+            if hasPrefix {
+                self.hud.hide(true)
+                NSLog("has hasPrefix")
+            } else {
+                NSLog("no hasPrefix")
+            }
         }
         
         return true

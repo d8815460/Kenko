@@ -94,6 +94,12 @@
 		23D734A51D8CDA21000FC54E /* CheckoutRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D7349E1D8CDA21000FC54E /* CheckoutRowView.swift */; };
 		23D734A61D8CDA21000FC54E /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D7349F1D8CDA21000FC54E /* Buttons.swift */; };
 		23D734AA1D8CE392000FC54E /* SpanTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D734A91D8CE392000FC54E /* SpanTableViewController.m */; };
+		23FE70B41D8D9EE000E32DCD /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FE70B11D8D9EE000E32DCD /* DetailViewController.m */; };
+		23FE70B51D8D9EE000E32DCD /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FE70B31D8D9EE000E32DCD /* Application.m */; };
+		23FE70B81D8D9EF300E32DCD /* UIColor+Hexadecimal.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FE70B71D8D9EF300E32DCD /* UIColor+Hexadecimal.m */; };
+		23FE70BA1D8D9EFB00E32DCD /* applications.json in Resources */ = {isa = PBXBuildFile; fileRef = 23FE70B91D8D9EFB00E32DCD /* applications.json */; };
+		23FE70BD1D8D9F7200E32DCD /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FE70BC1D8D9F7200E32DCD /* UIScrollView+EmptyDataSet.m */; };
+		23FE70C01D8E10AA00E32DCD /* PAPLoadMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FE70BF1D8E10AA00E32DCD /* PAPLoadMoreCell.m */; };
 		7167E7C91D6C48560042FECB /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7167E7C81D6C48560042FECB /* ApiManager.swift */; };
 		7167E7CA1D6C48560042FECB /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7167E7C81D6C48560042FECB /* ApiManager.swift */; };
 		7167E7CB1D6C48560042FECB /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7167E7C81D6C48560042FECB /* ApiManager.swift */; };
@@ -210,6 +216,17 @@
 		23D7349F1D8CDA21000FC54E /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		23D734A81D8CE392000FC54E /* SpanTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpanTableViewController.h; sourceTree = "<group>"; };
 		23D734A91D8CE392000FC54E /* SpanTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpanTableViewController.m; sourceTree = "<group>"; };
+		23FE70B01D8D9EE000E32DCD /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		23FE70B11D8D9EE000E32DCD /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		23FE70B21D8D9EE000E32DCD /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
+		23FE70B31D8D9EE000E32DCD /* Application.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
+		23FE70B61D8D9EF300E32DCD /* UIColor+Hexadecimal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hexadecimal.h"; sourceTree = "<group>"; };
+		23FE70B71D8D9EF300E32DCD /* UIColor+Hexadecimal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hexadecimal.m"; sourceTree = "<group>"; };
+		23FE70B91D8D9EFB00E32DCD /* applications.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = applications.json; sourceTree = "<group>"; };
+		23FE70BB1D8D9F7200E32DCD /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
+		23FE70BC1D8D9F7200E32DCD /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
+		23FE70BE1D8E10AA00E32DCD /* PAPLoadMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAPLoadMoreCell.h; sourceTree = "<group>"; };
+		23FE70BF1D8E10AA00E32DCD /* PAPLoadMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAPLoadMoreCell.m; sourceTree = "<group>"; };
 		2FFA7EAC8F4D9839194879D4 /* Pods-Kenko.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kenko.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kenko/Pods-Kenko.debug.xcconfig"; sourceTree = "<group>"; };
 		33452B3E6F6E3EB493EE5ACE /* Pods-KenkoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KenkoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KenkoTests/Pods-KenkoTests.release.xcconfig"; sourceTree = "<group>"; };
 		6C866CAD479AC0DA7E39649D /* Pods-KenkoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KenkoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KenkoTests/Pods-KenkoTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -332,8 +349,8 @@
 				230EB43C1D8A70D7000A54A7 /* Tutorial */,
 				23BAC7E51D6323BE00EA7365 /* Timeline */,
 				23B218941D5F70BB00F6C52D /* Post */,
+				23FE70AF1D8D9ECB00E32DCD /* 聊天 */,
 				23D734981D8CDA0C000FC54E /* Setting */,
-				235E629A1D5AE51800E7B099 /* ChatViewController.swift */,
 				235E62961D5AE50300E7B099 /* SettingTableViewController.swift */,
 				235E621C1D5AB6EA00E7B099 /* AppDelegate.swift */,
 				235E62201D5AB6EA00E7B099 /* Main.storyboard */,
@@ -472,6 +489,25 @@
 				23D734A91D8CE392000FC54E /* SpanTableViewController.m */,
 			);
 			name = Span;
+			sourceTree = "<group>";
+		};
+		23FE70AF1D8D9ECB00E32DCD /* 聊天 */ = {
+			isa = PBXGroup;
+			children = (
+				23FE70BE1D8E10AA00E32DCD /* PAPLoadMoreCell.h */,
+				23FE70BF1D8E10AA00E32DCD /* PAPLoadMoreCell.m */,
+				23FE70BB1D8D9F7200E32DCD /* UIScrollView+EmptyDataSet.h */,
+				23FE70BC1D8D9F7200E32DCD /* UIScrollView+EmptyDataSet.m */,
+				23FE70B91D8D9EFB00E32DCD /* applications.json */,
+				23FE70B61D8D9EF300E32DCD /* UIColor+Hexadecimal.h */,
+				23FE70B71D8D9EF300E32DCD /* UIColor+Hexadecimal.m */,
+				23FE70B01D8D9EE000E32DCD /* DetailViewController.h */,
+				23FE70B11D8D9EE000E32DCD /* DetailViewController.m */,
+				23FE70B21D8D9EE000E32DCD /* Application.h */,
+				23FE70B31D8D9EE000E32DCD /* Application.m */,
+				235E629A1D5AE51800E7B099 /* ChatViewController.swift */,
+			);
+			name = "聊天";
 			sourceTree = "<group>";
 		};
 		7167E7C21D6C48160042FECB /* API */ = {
@@ -671,6 +707,7 @@
 				238E9EC71D5C09D2003FC76C /* README.txt in Resources */,
 				23091BBC1D8D3AA20047C56F /* send-message.html in Resources */,
 				230EB4421D8A7130000A54A7 /* Tutorial.storyboard in Resources */,
+				23FE70BA1D8D9EFB00E32DCD /* applications.json in Resources */,
 				2367B74A1D68039000185B5C /* Money.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -863,6 +900,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23FE70B51D8D9EE000E32DCD /* Application.m in Sources */,
 				235E62A81D5B109000E7B099 /* TimeLineCustomCell.swift in Sources */,
 				230EB4731D8A9BE4000A54A7 /* TutorialBuilder.swift in Sources */,
 				71F9B1911D6F16DE004C0772 /* AccountViewController.swift in Sources */,
@@ -871,9 +909,11 @@
 				235E62971D5AE50300E7B099 /* SettingTableViewController.swift in Sources */,
 				2367B74D1D680E3700185B5C /* HowMuchMoneyYouWantViewController.swift in Sources */,
 				235E628B1D5AE49700E7B099 /* PostBlogViewController.swift in Sources */,
+				23FE70B81D8D9EF300E32DCD /* UIColor+Hexadecimal.m in Sources */,
 				235E62731D5AC50C00E7B099 /* PAPUtility.swift in Sources */,
 				23B4B7701D613413006F99D5 /* WriteDetailViewController.swift in Sources */,
 				235E62831D5ADE7300E7B099 /* FNFoldingTabBarController.swift in Sources */,
+				23FE70B41D8D9EE000E32DCD /* DetailViewController.m in Sources */,
 				71F9B1861D6CAFA1004C0772 /* ApiOperation.swift in Sources */,
 				235E62A01D5AE8AA00E7B099 /* TimelineCell.swift in Sources */,
 				230EB4401D8A70F3000A54A7 /* StartViewController.swift in Sources */,
@@ -884,7 +924,9 @@
 				235E62801D5ADE7300E7B099 /* FNFoldingTabBar.swift in Sources */,
 				23D734A41D8CDA21000FC54E /* Networking.swift in Sources */,
 				235E62761D5AC50C00E7B099 /* Reachability.swift in Sources */,
+				23FE70C01D8E10AA00E32DCD /* PAPLoadMoreCell.m in Sources */,
 				235E621D1D5AB6EA00E7B099 /* AppDelegate.swift in Sources */,
+				23FE70BD1D8D9F7200E32DCD /* UIScrollView+EmptyDataSet.m in Sources */,
 				23D734A51D8CDA21000FC54E /* CheckoutRowView.swift in Sources */,
 				23D734A61D8CDA21000FC54E /* Buttons.swift in Sources */,
 				23B4B7721D622B10006F99D5 /* ArticleViewController.swift in Sources */,
@@ -1118,7 +1160,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.today.kenko;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c3dbf577-58b1-447e-a591-6488b3a5f766";
+				PROVISIONING_PROFILE = "1a086805-d18d-43b8-8992-4a4e6ec33b92";
 				SWIFT_OBJC_BRIDGING_HEADER = "Kenko/Kenko-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1144,7 +1186,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.today.kenko;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c3dbf577-58b1-447e-a591-6488b3a5f766";
+				PROVISIONING_PROFILE = "1a086805-d18d-43b8-8992-4a4e6ec33b92";
 				SWIFT_OBJC_BRIDGING_HEADER = "Kenko/Kenko-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

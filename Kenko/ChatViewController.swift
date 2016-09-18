@@ -13,7 +13,7 @@ import MBProgressHUD
 class ChatViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet weak var button: UIButton!
-    @IBOutlet weak var webView: UIWebView!
+//    @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var contentView: UIView!
     
     private var timer: NSTimer!
@@ -27,17 +27,17 @@ class ChatViewController: UIViewController, UIWebViewDelegate {
         view.backgroundColor = UIColor.init(red: 33/255.0, green: 128/255.0, blue: 189/255.0, alpha: 1)
         
         
-        self.webView.delegate = self
+//        self.webView.delegate = self
         
-        self.hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        self.hud.mode = MBProgressHUDMode.Indeterminate
-        self.hud.labelText = "Checking Messenger Login..."
+//        self.hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+//        self.hud.mode = MBProgressHUDMode.Indeterminate
+//        self.hud.labelText = "Checking Messenger Login..."
         
         if let btn = FBSDKMessengerShareButton.rectangularButtonWithStyle(FBSDKMessengerShareButtonStyle.White) {
             self.button = btn
             self.button.frame = CGRectMake(8, self.view.frame.height-120, (self.view.frame.width)-16, 46)
             self.button.addTarget(self, action: #selector(ChatViewController.shareButtonPressed), forControlEvents: .TouchUpInside)
-            self.button.hidden = true
+//            self.button.hidden = true
             view.addSubview(self.button)
         }
         
@@ -75,8 +75,8 @@ class ChatViewController: UIViewController, UIWebViewDelegate {
         let queryUser = PFUser.query()
         queryUser!.getObjectInBackgroundWithId((PFUser.currentUser()?.objectId)!) { (user, error) in
             if (user!.objectForKey(kPAPUserChatBotIDKey) != nil) {
-                self.webView.hidden = true
-                self.button.hidden = false
+//                self.webView.hidden = true
+//                self.button.hidden = false
                 if PFUser.currentUser()!.objectForKey(kPAPUserChatBotIDKey) == nil {
                     PFUser.currentUser()?.setObject(user!.objectForKey(kPAPUserChatBotIDKey)!, forKey: kPAPUserChatBotIDKey)
                     PFUser.currentUser()!.saveInBackgroundWithBlock { (succeeded, error) in
@@ -90,17 +90,17 @@ class ChatViewController: UIViewController, UIWebViewDelegate {
                 
                 
             } else {
-                self.webView.hidden = false
-                self.button.hidden = true
+//                self.webView.hidden = false
+//                self.button.hidden = true
             }
         }
         
         
         
         if PFUser.currentUser()?.objectForKey(kPAPUserFacebookIDKey) != nil {
-            let url = NSURL (string: "http://enigmatic-meadow-46041.herokuapp.com/button/\(PFUser.currentUser()?.objectForKey(kPAPUserFacebookIDKey)! as! String)");
-            let requestObj = NSURLRequest(URL: url!);
-            self.webView.loadRequest(requestObj);
+//            let url = NSURL (string: "http://enigmatic-meadow-46041.herokuapp.com/button/\(PFUser.currentUser()?.objectForKey(kPAPUserFacebookIDKey)! as! String)");
+//            let requestObj = NSURLRequest(URL: url!);
+//            self.webView.loadRequest(requestObj);
         }
     }
     
@@ -110,30 +110,30 @@ class ChatViewController: UIViewController, UIWebViewDelegate {
         
     }
     
-    func webViewDidStartLoad(webView: UIWebView) {
-//        print("webView did start Load:\(webView.request?.URL?.absoluteString)")
-        
-    }
-    
-    func webViewDidFinishLoad(webView: UIWebView) {
-        print("webView did finish load: \(webView.request?.URL?.absoluteString)")
-        let urlString = webView.request?.URL?.absoluteString
-        if let hasPrefix = urlString?.hasPrefix("https://www.messenger.com/?refsrc") {
-            if hasPrefix {
-                self.webView.hidden = true
-                self.button.hidden = false
-                NSLog("has hasPrefix")
-            } else {
-                NSLog("no hasPrefix")
-            }
-        }
-        
-        
-    }
-    
-    func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
-//        print("webview did fail load with error: \(error)")
-    }
+//    func webViewDidStartLoad(webView: UIWebView) {
+////        print("webView did start Load:\(webView.request?.URL?.absoluteString)")
+//        
+//    }
+//    
+//    func webViewDidFinishLoad(webView: UIWebView) {
+//        print("webView did finish load: \(webView.request?.URL?.absoluteString)")
+//        let urlString = webView.request?.URL?.absoluteString
+//        if let hasPrefix = urlString?.hasPrefix("https://www.messenger.com/?refsrc") {
+//            if hasPrefix {
+////                self.webView.hidden = true
+////                self.button.hidden = false
+//                NSLog("has hasPrefix")
+//            } else {
+//                NSLog("no hasPrefix")
+//            }
+//        }
+//        
+//        
+//    }
+//    
+//    func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
+////        print("webview did fail load with error: \(error)")
+//    }
     
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         print("should start load with request \(request.URL?.absoluteString)")
@@ -141,7 +141,7 @@ class ChatViewController: UIViewController, UIWebViewDelegate {
         if let hasPrefix = urlString?.hasPrefix("https://m.facebook.com/plugins/close_popup.php?") {
             if hasPrefix{
                 NSLog("prefix")
-                self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(ChatViewController.checkWebView), userInfo: nil, repeats: false)
+//                self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(ChatViewController.checkWebView), userInfo: nil, repeats: false)
                 
             }
             else {
@@ -166,12 +166,12 @@ class ChatViewController: UIViewController, UIWebViewDelegate {
     }
 
     
-    func checkWebView() {
-        let url = NSURL (string: "http://enigmatic-meadow-46041.herokuapp.com/button/\(PFUser.currentUser()?.objectForKey(kPAPUserFacebookIDKey)! as! String)");
-        let requestObj = NSURLRequest(URL: url!);
-        self.webView.loadRequest(requestObj);
-        self.timer.invalidate()
-    }
+//    func checkWebView() {
+//        let url = NSURL (string: "http://enigmatic-meadow-46041.herokuapp.com/button/\(PFUser.currentUser()?.objectForKey(kPAPUserFacebookIDKey)! as! String)");
+//        let requestObj = NSURLRequest(URL: url!);
+//        self.webView.loadRequest(requestObj);
+//        self.timer.invalidate()
+//    }
     
     
     func shareButtonPressed() {

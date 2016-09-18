@@ -512,7 +512,7 @@ static TTTTimeIntervalFormatter *timeFormatter;
         {
             text = @"No Matched";
             font = [UIFont fontWithName:@"HelveticaNeue-Light" size:22.0];
-            textColor = [UIColor colorWithHex:@"c9c9c9"];
+            textColor = [UIColor whiteColor];
             break;
         }
         case ApplicationTypeCamera:
@@ -693,7 +693,7 @@ static TTTTimeIntervalFormatter *timeFormatter;
         {
             text = @"When you have matched, you’ll see them here.";
             font = [UIFont systemFontOfSize:13.0];
-            textColor = [UIColor colorWithHex:@"cfcfcf"];
+            textColor = [UIColor whiteColor];
             paragraph.lineSpacing = 4.0;
             break;
         }
@@ -909,7 +909,8 @@ static TTTTimeIntervalFormatter *timeFormatter;
         {
             text = @"Start Browsing";
             font = [UIFont boldSystemFontOfSize:16.0];
-            textColor = [UIColor colorWithHex:(state == UIControlStateNormal) ? @"05adff" : @"6bceff"];
+            textColor = [UIColor colorWithRed:187.0/255.0 green:213.0/255.0 blue:255.0/255.0 alpha:1.0];
+//            textColor = [UIColor colorWithHex:(state == UIControlStateNormal) ? @"05adff" : @"6bceff"];
             break;
         }
         case ApplicationTypeCamera:
@@ -1002,7 +1003,7 @@ static TTTTimeIntervalFormatter *timeFormatter;
 {
     switch (self.application.type) {
         case ApplicationType500px:      return [UIColor blackColor];
-        case ApplicationTypeAirbnb:     return [UIColor whiteColor];
+        case ApplicationTypeAirbnb:     return [UIColor colorWithRed:33.0/255.0 green:128.0/255.0 blue:189.0/255.0 alpha:1.0];
         case ApplicationTypeDropbox:    return [UIColor colorWithHex:@"f0f3f5"];
         case ApplicationTypeFacebook:   return [UIColor colorWithHex:@"eceef7"];
         case ApplicationTypeFancy:      return [UIColor colorWithHex:@"f0f0f0"];

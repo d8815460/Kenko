@@ -1149,6 +1149,7 @@
 					"$(PROJECT_DIR)/FacebookSDKs",
 				);
 				INFOPLIST_FILE = Kenko/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.today.kenko;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1175,6 +1176,7 @@
 					"$(PROJECT_DIR)/FacebookSDKs",
 				);
 				INFOPLIST_FILE = Kenko/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.today.kenko;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -352,11 +352,37 @@ class StartViewController: UIViewController, TutorialViewController, PFLogInView
                         //                        // Now add the data to the UI elements
                         //                        let profilePictureURLRequest: NSURLRequest = NSURLRequest(URL: profilePictureURL!, cachePolicy: NSURLRequestCachePolicy.UseProtocolCachePolicy, timeoutInterval: 10.0) // Facebook profile picture cache policy: Expires in 2 weeks
                         //                        NSURLConnection(request: profilePictureURLRequest, delegate: self)
+                        
+                        
+                        
                         if let userData = result as? [NSObject: AnyObject] {
                             if let picture = userData["picture"] as? [NSObject: AnyObject] {
                                 if let data = picture["data"] as? [NSObject: AnyObject] {
                                     if let profilePictureURL = data["url"] as? String {
                                         // Now add the data to the UI elements
+                                        let strArray = profilePictureURL.componentsSeparatedByString("/")
+                                        
+                                        for str in strArray {
+                                            if str.rangeOfString("?") != nil {
+                                                print("exists")
+                                                let aaaStrArray = str.componentsSeparatedByString("?")
+                                                for str2 in aaaStrArray {
+                                                    if str2.hasSuffix(".jpg") {
+                                                        PFUser.currentUser()?.setObject(str2, forKey: kPAPUserPhotoURLKey)
+                                                    }
+                                                }
+                                                
+                                            } else {
+                                                if str.hasSuffix(".jpg") {
+                                                    PFUser.currentUser()?.setObject(str, forKey: kPAPUserPhotoURLKey)
+                                                }
+                                            }
+                                        }
+                                        
+                                        
+                                        
+                                        
+                                        
                                         let profilePictureURLRequest: NSURLRequest = NSURLRequest(URL: NSURL(string: profilePictureURL)!, cachePolicy: NSURLRequestCachePolicy.UseProtocolCachePolicy, timeoutInterval: 10.0) // Facebook profile picture cache policy: Expires in 2 weeks
                                         NSURLConnection(request: profilePictureURLRequest, delegate: self)
                                     }

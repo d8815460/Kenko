@@ -507,12 +507,20 @@ static char const * const kEmptyDataSetView =       "emptyDataSetView";
             if (buttonImage) {
                 [view.button setImage:buttonImage forState:UIControlStateNormal];
                 [view.button setImage:[self dzn_buttonImageForState:UIControlStateHighlighted] forState:UIControlStateHighlighted];
+                view.button.layer.cornerRadius = 5.0;
+                view.button.layer.borderWidth = 1.0;
+                view.button.layer.borderColor = [UIColor whiteColor].CGColor;
+
             }
             else if (buttonTitle) {
                 [view.button setAttributedTitle:buttonTitle forState:UIControlStateNormal];
                 [view.button setAttributedTitle:[self dzn_buttonTitleForState:UIControlStateHighlighted] forState:UIControlStateHighlighted];
                 [view.button setBackgroundImage:[self dzn_buttonBackgroundImageForState:UIControlStateNormal] forState:UIControlStateNormal];
                 [view.button setBackgroundImage:[self dzn_buttonBackgroundImageForState:UIControlStateHighlighted] forState:UIControlStateHighlighted];
+                
+                view.button.layer.cornerRadius = 5.0;
+                view.button.layer.borderWidth = 1.0;
+                view.button.layer.borderColor = [UIColor whiteColor].CGColor;
             }
         }
         
@@ -831,6 +839,10 @@ Class dzn_baseClassToSwizzleForTarget(id target)
         _button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
         _button.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
         _button.accessibilityIdentifier = @"empty set button";
+        
+        _button.layer.cornerRadius = 5.0;
+        _button.layer.borderWidth = 1.0;
+        _button.layer.borderColor = [UIColor whiteColor].CGColor;
         
         [_button addTarget:self action:@selector(didTapButton:) forControlEvents:UIControlEventTouchUpInside];
         

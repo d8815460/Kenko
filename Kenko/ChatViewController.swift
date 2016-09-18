@@ -33,11 +33,15 @@ class ChatViewController: UIViewController, UIWebViewDelegate {
         self.hud.mode = MBProgressHUDMode.Indeterminate
         self.hud.labelText = "Checking Messenger Login..."
         
-        self.button = FBSDKMessengerShareButton.rectangularButtonWithStyle(FBSDKMessengerShareButtonStyle.White)
-        self.button.frame = CGRectMake(8, self.view.frame.height-120, (self.view.frame.width)-16, 46)
-        self.button.addTarget(self, action: #selector(ChatViewController.shareButtonPressed), forControlEvents: .TouchUpInside)
-        self.button.hidden = true
-        view.addSubview(self.button)
+        if let btn = FBSDKMessengerShareButton.rectangularButtonWithStyle(FBSDKMessengerShareButtonStyle.White) {
+            self.button = btn
+            self.button.frame = CGRectMake(8, self.view.frame.height-120, (self.view.frame.width)-16, 46)
+            self.button.addTarget(self, action: #selector(ChatViewController.shareButtonPressed), forControlEvents: .TouchUpInside)
+            self.button.hidden = true
+            view.addSubview(self.button)
+        }
+        
+        
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         self.detailViewController = storyboard.instantiateViewControllerWithIdentifier("chatDetail") as! DetailViewController

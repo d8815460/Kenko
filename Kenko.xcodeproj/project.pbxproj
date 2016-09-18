@@ -56,9 +56,6 @@
 		235E628F1D5AE4C300E7B099 /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E628E1D5AE4C300E7B099 /* TimeLineViewController.swift */; };
 		235E62901D5AE4C300E7B099 /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E628E1D5AE4C300E7B099 /* TimeLineViewController.swift */; };
 		235E62911D5AE4C300E7B099 /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E628E1D5AE4C300E7B099 /* TimeLineViewController.swift */; };
-		235E62971D5AE50300E7B099 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E62961D5AE50300E7B099 /* SettingTableViewController.swift */; };
-		235E62981D5AE50300E7B099 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E62961D5AE50300E7B099 /* SettingTableViewController.swift */; };
-		235E62991D5AE50300E7B099 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E62961D5AE50300E7B099 /* SettingTableViewController.swift */; };
 		235E629B1D5AE51800E7B099 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E629A1D5AE51800E7B099 /* ChatViewController.swift */; };
 		235E629C1D5AE51800E7B099 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E629A1D5AE51800E7B099 /* ChatViewController.swift */; };
 		235E629D1D5AE51800E7B099 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235E629A1D5AE51800E7B099 /* ChatViewController.swift */; };
@@ -190,7 +187,6 @@
 		235E627C1D5ADE7300E7B099 /* FNFoldingTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FNFoldingTabBarController.swift; sourceTree = "<group>"; };
 		235E628A1D5AE49700E7B099 /* PostBlogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostBlogViewController.swift; sourceTree = "<group>"; };
 		235E628E1D5AE4C300E7B099 /* TimeLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineViewController.swift; sourceTree = "<group>"; };
-		235E62961D5AE50300E7B099 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		235E629A1D5AE51800E7B099 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		235E629F1D5AE8AA00E7B099 /* TimelineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineCell.swift; sourceTree = "<group>"; };
 		235E62A31D5AE96200E7B099 /* MegaTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MegaTheme.swift; sourceTree = "<group>"; };
@@ -351,7 +347,6 @@
 				23B218941D5F70BB00F6C52D /* Post */,
 				23FE70AF1D8D9ECB00E32DCD /* 聊天 */,
 				23D734981D8CDA0C000FC54E /* Setting */,
-				235E62961D5AE50300E7B099 /* SettingTableViewController.swift */,
 				235E621C1D5AB6EA00E7B099 /* AppDelegate.swift */,
 				235E62201D5AB6EA00E7B099 /* Main.storyboard */,
 				2367B7491D68039000185B5C /* Money.storyboard */,
@@ -906,7 +901,6 @@
 				71F9B1911D6F16DE004C0772 /* AccountViewController.swift in Sources */,
 				23D734A01D8CDA21000FC54E /* MyAPIClient.swift in Sources */,
 				23B4B76E1D613405006F99D5 /* WriteTitleViewController.swift in Sources */,
-				235E62971D5AE50300E7B099 /* SettingTableViewController.swift in Sources */,
 				2367B74D1D680E3700185B5C /* HowMuchMoneyYouWantViewController.swift in Sources */,
 				235E628B1D5AE49700E7B099 /* PostBlogViewController.swift in Sources */,
 				23FE70B81D8D9EF300E32DCD /* UIColor+Hexadecimal.m in Sources */,
@@ -960,7 +954,6 @@
 				2367B7541D681EA600185B5C /* WhyViewController.swift in Sources */,
 				235E62841D5ADE7300E7B099 /* FNFoldingTabBarController.swift in Sources */,
 				235E62771D5AC50C00E7B099 /* Reachability.swift in Sources */,
-				235E62981D5AE50300E7B099 /* SettingTableViewController.swift in Sources */,
 				235E62A51D5AE96200E7B099 /* MegaTheme.swift in Sources */,
 				7167E7CA1D6C48560042FECB /* ApiManager.swift in Sources */,
 				235E62321D5AB6EA00E7B099 /* KenkoTests.swift in Sources */,
@@ -985,7 +978,6 @@
 				2367B7551D681EA600185B5C /* WhyViewController.swift in Sources */,
 				235E62851D5ADE7300E7B099 /* FNFoldingTabBarController.swift in Sources */,
 				235E62781D5AC50C00E7B099 /* Reachability.swift in Sources */,
-				235E62991D5AE50300E7B099 /* SettingTableViewController.swift in Sources */,
 				235E62A61D5AE96200E7B099 /* MegaTheme.swift in Sources */,
 				7167E7CB1D6C48560042FECB /* ApiManager.swift in Sources */,
 				235E623D1D5AB6EA00E7B099 /* KenkoUITests.swift in Sources */,
@@ -1160,7 +1152,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.today.kenko;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1a086805-d18d-43b8-8992-4a4e6ec33b92";
+				PROVISIONING_PROFILE = "c3dbf577-58b1-447e-a591-6488b3a5f766";
 				SWIFT_OBJC_BRIDGING_HEADER = "Kenko/Kenko-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1186,7 +1178,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.today.kenko;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1a086805-d18d-43b8-8992-4a4e6ec33b92";
+				PROVISIONING_PROFILE = "c3dbf577-58b1-447e-a591-6488b3a5f766";
 				SWIFT_OBJC_BRIDGING_HEADER = "Kenko/Kenko-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

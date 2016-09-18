@@ -34,35 +34,35 @@ class BrowseProductsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Emoji Apparel"
-        self.navigationController?.navigationBar.translucent = false
+//        self.navigationController?.navigationBar.translucent = true
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Products", style: .Plain, target: nil, action: nil)
 //        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Settings", style: .Plain, target: self, action: #selector(showSettings))
     }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        let theme = self.settingsVC.settings.theme
-        self.view.backgroundColor = theme.primaryBackgroundColor
-        self.navigationController?.navigationBar.barTintColor = theme.primaryBackgroundColor
-        self.navigationController?.navigationBar.tintColor = theme.accentColor
-        let titleAttributes = [
-            NSForegroundColorAttributeName: theme.primaryForegroundColor,
-            NSFontAttributeName: theme.font,
-        ]
-        let buttonAttributes = [
-            NSForegroundColorAttributeName: theme.accentColor,
-            NSFontAttributeName: theme.font,
-        ]
-        self.navigationController?.navigationBar.titleTextAttributes = titleAttributes
-        self.navigationItem.leftBarButtonItem?.setTitleTextAttributes(buttonAttributes, forState: .Normal)
-        self.navigationItem.backBarButtonItem?.setTitleTextAttributes(buttonAttributes, forState: .Normal)
-        self.tableView.separatorColor = theme.primaryBackgroundColor
-        self.tableView.reloadData()
+//        let theme = self.settingsVC.settings.theme
+//        self.view.backgroundColor = theme.primaryBackgroundColor
+//        self.navigationController?.navigationBar.barTintColor = theme.primaryBackgroundColor
+//        self.navigationController?.navigationBar.tintColor = theme.accentColor
+//        let titleAttributes = [
+//            NSForegroundColorAttributeName: theme.primaryForegroundColor,
+//            NSFontAttributeName: theme.font,
+//        ]
+//        let buttonAttributes = [
+//            NSForegroundColorAttributeName: theme.accentColor,
+//            NSFontAttributeName: theme.font,
+//        ]
+//        self.navigationController?.navigationBar.titleTextAttributes = titleAttributes
+//        self.navigationItem.leftBarButtonItem?.setTitleTextAttributes(buttonAttributes, forState: .Normal)
+//        self.navigationItem.backBarButtonItem?.setTitleTextAttributes(buttonAttributes, forState: .Normal)
+//        self.tableView.separatorColor = theme.primaryBackgroundColor
+//        self.tableView.reloadData()
     }
 
     func showSettings() {
-        let navController = UINavigationController(rootViewController: settingsVC)
-        self.presentViewController(navController, animated: true, completion: nil)
+//        let navController = UINavigationController(rootViewController: settingsVC)
+//        self.presentViewController(navController, animated: true, completion: nil)
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

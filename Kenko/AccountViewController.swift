@@ -108,8 +108,20 @@ class AccountViewController : UITableViewController, UITextFieldDelegate {
                 }
             }
         }
+        
+        
     }
     
+    override func viewWillLayoutSubviews() {
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+//        tableView.separatorInset = UIEdgeInsetsZero
+//        tableView.layoutMargins = UIEdgeInsetsZero
+        tableView.contentSize = CGSizeMake(self.view.frame.width, self.view.frame.height + 30)
+        tableView.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height)
+    }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (isBuy == true) {
@@ -248,10 +260,6 @@ class AccountViewController : UITableViewController, UITextFieldDelegate {
         }
     }
     
-    override func viewDidLayoutSubviews() {
-        tableView.separatorInset = UIEdgeInsetsZero
-        tableView.layoutMargins = UIEdgeInsetsZero
-    }
     
     
     @IBAction func facebookbuttonPressed(sender: AnyObject) {
